@@ -1,0 +1,21 @@
+{
+  "name": "Formplate",
+  "version": "0.0.1",
+  "description": "A global form plugin.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrishumboldt/Formplate.git"
+  },
+  "keywords": [
+    "Forms",
+    "CSS",
+    "Webplate",
+    "jQuery"
+  ],
+  "author": "Chris Humboldt",
+  "license": "Apache License, Version 2.0",
+  "bugs": {
+    "url": "https://github.com/chrishumboldt/Formplate/issues"
+  },
+  "homepage": "http://getwebplate.com/plugins/formplate"
+}
