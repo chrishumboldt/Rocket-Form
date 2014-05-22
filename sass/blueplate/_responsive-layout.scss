@@ -162,8 +162,7 @@ $min-max 							: false !default;
 	width: $limit-width;
 	margin: 0px auto;
 
-	@media screen and (max-width: $limit-width) 
-	{
+	@media screen and (max-width: $limit-width) {
 		width: 100%;
 	}
 }

@@ -1,0 +1,95 @@
+/**
+ * SASS File: 		_input-check.scss
+ * Type: 			partial
+ * Author:        	Chris Humboldt
+ * Last Edited:   	19 May 2014
+ */
+
+
+// Table of contents
+// ---------------------------------------------------------------------------------------
+// Font face
+// Check input
+// Radio inputs
+
+
+// Font face
+// ---------------------------------------------------------------------------------------
+@font-face {
+	font-family: 'formplate';
+	src:url('icon-font-formplate/icomoon.eot?c4hmew');
+	src:url('icon-font-formplate/icomoon.eot?#iefixc4hmew') format('embedded-opentype'),
+		url('icon-font-formplate/icomoon.woff?c4hmew') format('woff'),
+		url('icon-font-formplate/icomoon.ttf?c4hmew') format('truetype'),
+		url('icon-font-formplate/icomoon.svg?c4hmew#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+// Check input
+// ---------------------------------------------------------------------------------------
+.formplate {
+	.fp-checkbox,
+	.fp-radio {
+		display: inline-block;
+		position: relative;
+		width: 22px;
+		height: 22px;
+		line-height: 22px;
+		vertical-align: middle;
+		border: 1px solid $grey-form;
+		@include border-radius();
+
+		> input {
+			@include spacing-no();
+			display: inline-block;
+			height:22px;
+			width:22px; 
+			@include opacity(0);
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+// Hover
+@each $colour-name, $colour in $ar-colours-primary {
+	html.fp-colour-#{$colour-name} .formplate {
+
+		.fp-checkbox,
+		.fp-radio {
+
+			// Hover
+			&:hover {
+				cursor: pointer;
+				border: 1px solid $colour;
+			}
+
+			// Checked
+			&.checked {
+				font-family: 'formplate';
+				color: $white;
+				font-size: 0.613em;
+				text-align: center;
+				border: 1px solid $colour;
+				background-color: $colour;
+
+				&:before {
+					content: "\e600";
+				}
+			}
+		}
+	}
+}
+
+
+// Radio inputs
+// ---------------------------------------------------------------------------------------
+.formplate .fp-radio {
+	@include border-radius(50%);
+}
+
+

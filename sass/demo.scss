@@ -1,0 +1,50 @@
+/**
+ * SASS File: 		demo.scss
+ * Type: 			execute
+ * Author:        	Chris Humboldt
+ * Last Edited:   	13 May 2014
+ */
+
+
+// Table of contents
+// ---------------------------------------------------------------------------------------
+// Import
+// Demo styles
+
+
+// Import
+// ---------------------------------------------------------------------------------------
+@import "blueplate/import";
+
+
+// Demo styles
+// ---------------------------------------------------------------------------------------
+@include global-setup();
+
+body {
+	@include no-spacing();
+}
+
+// Container
+.container {
+	@include limit();
+	padding: 20px 20px;
+
+	@include respond-to(large) {
+		padding: 40px 20px;
+	}
+}
+
+// Blocks
+.block {
+	@include row();
+
+	.confine {
+		@include span(12);
+
+		@include respond-to(large) {
+			@include new-span(6);
+		}
+	}
+}
+
