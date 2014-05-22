@@ -8,8 +8,14 @@
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
+// Variables
 // Global
 // Basic resets
+
+
+// Variables
+// ---------------------------------------------------------------------------------------
+$font-family 				: 'Open Sans', Helvetica, Arial, sans-serif;
 
 
 // Global
@@ -34,7 +40,7 @@
 	}
 }
 @mixin global-html() {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: $font-family;
 	color: lighten(#000, 20%);
 	background-color: #fff;
 	-ms-text-size-adjust: 100%;

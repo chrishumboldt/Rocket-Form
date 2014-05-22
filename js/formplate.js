@@ -2,7 +2,7 @@
  * jQuery File: 	formplate.js
  * Type:			plugin
  * Author:        	Chris Humboldt
- * Last Edited:   	19 May 2014
+ * Last Edited:   	22 May 2014
  */
 
 
@@ -53,6 +53,10 @@
 			var $this 					= this;
 			var $settings 				= $this.settings;
 
+			// Set the colour scheme
+			$data_form_colour			= $('body').data('formplate-colour');
+			$('html').addClass('fp-colour-' + $data_form_colour);
+
 			// Checkboxes
 			$('.formplate input[type="checkbox"]').each(function()
 			{
@@ -64,25 +68,25 @@
 				{
 					$(this).parents('.fp-checkbox').addClass('checked');
 				}
+			});
 
-				// Toggle on change
-				$(this).parents('.fp-checkbox').on('click', function()
+			// Toggle on change
+			$('.formplate .fp-checkbox').on('click', function()
+			{
+				var $checkbox 		= $(this).find('input[type="checkbox"]');
+
+				// Check current state
+				if($(this).hasClass('checked'))
 				{
-					var $checkbox 		= $(this).find('input[type="checkbox"]');
+					$checkbox.removeAttr('checked');
+				}
+				else
+				{
+					$checkbox.attr('checked', 'checked');
+				}
 
-					// Check current state
-					if($(this).hasClass('checked'))
-					{
-						$checkbox.removeAttr('checked');
-					}
-					else
-					{
-						$checkbox.attr('checked', 'checked');
-					}
-
-					// Toggle the class
-					$(this).toggleClass('checked');
-				});
+				// Toggle the class
+				$(this).toggleClass('checked');
 			});
 
 			// Radio inputs
@@ -96,17 +100,24 @@
 				{
 					$(this).parents('.fp-radio').addClass('checked');
 				}
+			});
 
-				// Execute on change
-				$(this).change(function()
-				{
-					// Check for all other similarly named elements
-					var $radio_name 	= $(this).attr('name');
-					$('input[name="'+ $radio_name +'"]').parents('.fp-radio').removeClass('checked');
-					
-					// Check current one
-					$(this).parents('.fp-radio').toggleClass('checked');
-				});
+			// Execute on change
+			$('.formplate input[type="radio"]').change(function()
+			{
+				// Check for all other similarly named elements
+				var $radio_name 	= $(this).attr('name');
+				$('input[name="'+ $radio_name +'"]').parents('.fp-radio').removeClass('checked');
+				
+				// Check current one
+				$(this).parents('.fp-radio').toggleClass('checked');
+			});
+
+			// Drop-down selects
+			$('.formplate select').each(function()
+			{
+				// Wrap select
+				$(this).wrap('<span class="fp-select"></span>');
 			});
 		}
 	};

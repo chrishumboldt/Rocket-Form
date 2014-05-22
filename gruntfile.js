@@ -27,6 +27,7 @@ module.exports = function(grunt) {
 			my_target: {
 				files: {
 					'js/min/jquery-v1.10.2.min.js'			: ['js/jquery-v1.10.2.js'],
+					'js/min/modernizr-custom-v2.7.1min.js'	: ['js/modernizr-custom-v2.7.1.js'],
 					'js/min/formplate.min.js'				: ['js/formplate.js']
 				}
 			}
