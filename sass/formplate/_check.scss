@@ -2,7 +2,7 @@
  * SASS File: 		_check.scss
  * Type: 			partial
  * Author:        	Chris Humboldt
- * Last Edited:   	22 May 2014
+ * Last Edited:   	23 May 2014
  */
 
 
@@ -23,6 +23,8 @@
 		position: relative;
 		width: 22px;
 		height: 22px;
+		margin-right: $space-extra-small;
+		margin-bottom: $space-extra-small - 1px;
 		line-height: 22px;
 		vertical-align: middle;
 		border: 1px solid $grey-form;

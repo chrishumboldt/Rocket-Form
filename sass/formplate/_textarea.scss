@@ -1,26 +1,27 @@
 /**
- * SASS File: 		_input.scss
+ * SASS File: 		_textarea.scss
  * Type: 			partial
  * Author:        	Chris Humboldt
- * Last Edited:   	22 May 2014
+ * Last Edited:   	23 May 2014
  */
 
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
-// Input
-// Input colour states
+// Textarea
 
 
-// Input
+// Textarea
 // ---------------------------------------------------------------------------------------
-#{$basic-inputs} {
+textarea {
 	width: 100%;
+	height: 114px;
 	padding: 10px;
 	margin: 0px;
 	margin-bottom: 1.5em;
 	font-family: $font-family;
 	font-size: 0.813em;
+	line-height: 1.5em;
 	background-color: $white;
 	border: 1px solid $grey-form;
 	outline: none;
@@ -36,18 +37,3 @@
 		padding: 12px;
 	}
 }
-
-
-// Input colour states
-// ---------------------------------------------------------------------------------------
-@each $colour-name, $colour in $ar-colours-form {
-	.fp-colour-#{$colour-name} {
-
-		// Focus
-		#{$basic-inputs-focus} {
-			border-color: $colour;
-		}
-	}
-}
-
-

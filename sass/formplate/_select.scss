@@ -27,8 +27,9 @@
 		position: absolute;
 		content: "\e601";
 		margin-left: -31px;
-		margin-top: 8px;
+		margin-top: 6px;
 		font-size: 1.25em;
+		line-height: 1.25em;
 		color: $grey-form;
 		z-index: 1;
 	}
@@ -86,7 +87,7 @@
 // ---------------------------------------------------------------------------------------
 @-moz-document url-prefix() {
 	.fp-select:after {
-		margin-top: 5px;
+		margin-top: 4px;
 	}
 }
 .no-cssanimations .fp-select {
