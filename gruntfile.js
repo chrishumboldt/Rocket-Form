@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 			},
 			// Live reload
 			options: {
-				livereload: true,
+				livereload: true
 		    } 
 		} 
 	});
