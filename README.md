@@ -1,4 +1,4 @@
 Formplate
 =========
 
-A global form plugin.
+A small plugin to style all forms uniformly across all screens
