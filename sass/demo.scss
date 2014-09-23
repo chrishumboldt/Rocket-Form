@@ -2,7 +2,7 @@
  * SASS File: 		demo.scss
  * Type: 			execute
  * Author:        	Chris Humboldt
- * Last Edited:   	13 May 2014
+ * Last Edited:   	23 September 2014
  */
 
 
@@ -14,7 +14,8 @@
 
 // Import
 // ---------------------------------------------------------------------------------------
-@import "blueplate/import";
+@import "../bower_components/blueplate/sass/blueplate";
+@import "../bower_components/font-awesome/css/font-awesome.css";
 
 
 // Demo styles
@@ -33,17 +34,13 @@ body {
 	@include respond-to(large) {
 		padding: 40px 20px;
 	}
-}
 
-// Blocks
-.block {
-	@include row();
+	// Confine
+	&.confine {
+		@include width(100%);
 
-	.confine {
-		@include span(12);
-
-		@include respond-to(large) {
-			@include new-span(6);
+		@include respond-to(40em) {
+			@include width(40em);
 		}
 	}
 }
