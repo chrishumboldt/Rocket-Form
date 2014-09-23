@@ -27,98 +27,120 @@
 		$('body').formplate();
 	});
 	</script>
-	<link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
 	<link href="css/demo.css" rel="stylesheet" type="text/css">
 
 </head>
 <body data-formplate-colour="red">
 	
 	<!--Container-->
-	<div class="container">
+	<div class="container confine">
 
 		<h3>Basic Input</h3>
 
-		<div class="block"><div class="confine">
+		<div class="formplate">
+			<label for="text-1">Text Label</label>
+			<input type="text" id="text-1" placeholder="Text input">
+		</div>
 
-			<div class="formplate">
-				<label for="text-1">Text Label</label>
-				<input type="text" id="text-1" placeholder="Text input">
+		<div class="formplate">
+			<label for="password-1">Password Label</label>
+			<input type="password" id="password-1" placeholder="Password input">
+		</div>
+
+		<div class="formplate">
+			<label for="textarea-1">Textarea Label</label>
+			<textarea id="textarea-1" placeholder="Textarea"></textarea>
+		</div>
+
+		<div class="formplate">
+			<label for="text-2">Input Icon</label>
+			<div class="input-icon">
+				<i class="fa fa-cog"></i>
+				<input type="text" id="text-2" placeholder="Text input">
 			</div>
-
-			<div class="formplate">
-				<label for="password-1">Password Label</label>
-				<input type="password" id="password-1" placeholder="Password input">
-			</div>
-
-			<div class="formplate">
-				<label for="textarea-1">Textarea Label</label>
-				<textarea id="textarea-1" placeholder="Textarea"></textarea>
-			</div>
-
-			<div class="formplate">
-				<label for="text-1">Input Group With Icon</label>
-				<div class="input-group-icon">
-					<i class="fa fa-cog"></i>
-					<input type="text" id="text-1" placeholder="Text input">
-				</div>
-			</div>
-
-		</div></div>
+		</div>
 
 		<h3>Drop-down</h3>
 
-		<div class="block">
-
-			<div class="formplate">
-				<select>
-					<option value="1">Select Option 1</option>
-					<option value="2">Select Option 2</option>
-					<option value="3">Select Option 3</option>
-				</select>
-			</div>
-			
+		<div class="formplate">
+			<select>
+				<option value="1">Select Option 1</option>
+				<option value="2">Select Option 2</option>
+				<option value="3">Select Option 3</option>
+			</select>
 		</div>
 
 		<h3>Checkboxes</h3>
+			
+		<div class="formplate">
+			<input type="checkbox" id="checkbox-1" checked="checked">
+			<label for="checkbox-1">Checkbox 1</label>
+		</div>
+		
+		<div class="formplate">
+			<input type="checkbox" id="checkbox-2">
+			<label for="checkbox-2">Checkbox 2</label>
+		</div>
+		
+		<div class="formplate">
+			<input type="checkbox" id="checkbox-3">
+			<label for="checkbox-3">Checkbox 3</label>
+		</div>
 
-		<div class="block">
-			
-			<div class="formplate">
-				<input type="checkbox" id="checkbox-1" checked="checked">
-				<label for="checkbox-1">Checkbox 1</label>
-			</div>
-			
-			<div class="formplate">
-				<input type="checkbox" id="checkbox-2">
-				<label for="checkbox-2">Checkbox 2</label>
-			</div>
-			
-			<div class="formplate">
-				<input type="checkbox" id="checkbox-3">
-				<label for="checkbox-3">Checkbox 3</label>
-			</div>
+		<h3>Toggler</h3>
 
+		<div class="formplate">
+			<input type="checkbox" class="toggler">
 		</div>
 
 		<h3>Radio Inputs</h3>
+			
+		<div class="formplate">
+			<input type="radio" id="radio-1" name="radio-selection" value="1" checked="checked">
+			<label for="radio-1">Radio Selection</label>
+		</div>
+		
+		<div class="formplate">
+			<input type="radio" id="radio-2" name="radio-selection" value="2">
+			<label for="radio-2">Radio Selection</label>
+		</div>
+		
+		<div class="formplate">
+			<input type="radio" id="radio-3" name="radio-selection" value="2">
+			<label for="radio-3">Radio Selection</label>
+		</div>
 
-		<div class="block">
-			
-			<div class="formplate">
-				<input type="radio" id="radio-1" name="radio-selection" value="1" checked="checked">
-				<label for="radio-1">Radio Selection</label>
-			</div>
-			
-			<div class="formplate">
-				<input type="radio" id="radio-2" name="radio-selection" value="2">
-				<label for="radio-2">Radio Selection</label>
-			</div>
-			
-			<div class="formplate">
-				<input type="radio" id="radio-3" name="radio-selection" value="2">
-				<label for="radio-3">Radio Selection</label>
-			</div>
+		<h3>Input Group</h3>
 
+		<div class="formplate">
+			<label for="text-3">Two</label>
+			<div class="input-group-two">
+				<input type="text" id="text-3" placeholder="Text input">
+				<input type="text" id="text-4" placeholder="Text input">
+			</div>
+		</div>
+
+		<div class="formplate">
+			<label for="text-5">Three</label>
+			<div class="input-group-three">
+				<input type="text" id="text-5" placeholder="Text input">
+				<input type="text" id="text-6" placeholder="Text input">
+				<input type="text" id="text-7" placeholder="Text input">
+			</div>
+		</div>
+
+		<div class="formplate">
+			<label for="text-8">Two With Icon</label>
+			<div class="input-group-two">
+				<div class="input-icon">
+					<i class="fa fa-cog"></i>
+					<input type="text" id="text-8" placeholder="Text input">
+				</div>
+				<div class="input-icon">
+					<i class="fa fa-cog"></i>
+					<input type="text" id="text-9" placeholder="Text input">
+				</div>
+			</div>
 		</div>
 
 	</div>
