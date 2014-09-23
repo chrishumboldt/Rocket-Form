@@ -3,23 +3,23 @@
 <head>
 
 	<!-- Meta setup - Required for apple device -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!-- Title -->
-    <title>Forms Plugin</title>
-	
+	<!-- Title -->
+	<title>Forms Plugin</title>
+
 	<!-- jQuery (Required) -->
 	<script src="js/min/jquery-v1.10.2.min.js"></script>
 
 	<!-- Modernizr (optional) -->
 	<script src="js/min/modernizr-custom-v2.7.1min.js"></script>
 
-    <!-- Include Formplate -->
-    <script src="js/min/formplate.min.js"></script>
-    <link href="css/formplate.css" rel="stylesheet" type="text/css">
+	<!-- Include Formplate -->
+	<script src="js/min/formplate.min.js"></script>
+	<link href="css/formplate.css" rel="stylesheet" type="text/css">
 
-    <!-- Demo -->
+	<!-- Demo -->
 	<script>
 	$(document).ready(function()
 	{	
@@ -27,8 +27,9 @@
 		$('body').formplate();
 	});
 	</script>
-    <link href="css/demo.css" rel="stylesheet" type="text/css">
-    
+	<link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/demo.css" rel="stylesheet" type="text/css">
+
 </head>
 <body data-formplate-colour="red">
 	
@@ -52,6 +53,14 @@
 			<div class="formplate">
 				<label for="textarea-1">Textarea Label</label>
 				<textarea id="textarea-1" placeholder="Textarea"></textarea>
+			</div>
+
+			<div class="formplate">
+				<label for="text-1">Input Group With Icon</label>
+				<div class="input-group-icon">
+					<i class="fa fa-cog"></i>
+					<input type="text" id="text-1" placeholder="Text input">
+				</div>
 			</div>
 
 		</div></div>
