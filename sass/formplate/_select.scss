@@ -29,9 +29,11 @@
 
 		// Icon
 		&:before {
-			@include position(absolute, right ($space-x-small + 1px) margin-top ($space-x-small + 2px));
+			@include position(absolute, right ($space-x-small + 1px));
+			@include height(36px);
 			content: "\e601";
-			@include text-size(20px);
+			font-size: 20px;
+			@include text-line-height(37px);
 			@include text-colour($grey-form);
 			@include background-colour($white);
 			@include level(1);
@@ -49,11 +51,11 @@
 
 		select {
 			position: relative;
+			@include height(36px);
 			@include width(110%);
 			@include margin(0px);
 			@include padding-left($space-small);
 			@include padding-right($space-medium);
-			@include padding-vertical($space-small - 3px);
 			@include border-no();
 			@include text-font($font-family);
 			@include text-letter-spacing(normal);
