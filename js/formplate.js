@@ -2,7 +2,7 @@
  * jQuery File: 	formplate.js
  * Type:			plugin
  * Author:        	Chris Humboldt
- * Last Edited:   	1 October 2014
+ * Last Edited:   	29 October 2014
  */
 
 
@@ -37,6 +37,12 @@
 			// ---------------------------------------------------------------------------------------
 			var $this 					= this;
 			var $settings 				= $this.settings;
+			var $other_cc_html 			= '';
+
+
+			// Set the other credit card inputs html
+			// ---------------------------------------------------------------------------------------
+			$other_cc_html += '<input type="">';
 
 
 			// Execute
@@ -59,6 +65,14 @@
 			{
 				$('html').addClass('fp-colour-' + $data_form_colour);
 			}
+
+			// Credit cards
+			$('.formplate input.credit-card').each(function()
+			{
+				$(this).wrap('<span class="fp-credit-card"></span>');
+				$(this).before('<div class="fp-cc-image"></div>');
+				$(this).after($other_cc_html);
+			});
 
 			// Checkboxes
 			$('.formplate input[type="checkbox"]').each(function()

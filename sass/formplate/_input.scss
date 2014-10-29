@@ -50,7 +50,7 @@
 		.fp-colour-#{$colour-name} {
 
 			// Focus
-			#{$basic-inputs-focus} {
+			input:focus {
 				border-color: $colour;
 			}
 		}
