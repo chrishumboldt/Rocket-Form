@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.registerTask('build', ['sass', 'uglify']);
 	grunt.registerTask('default', ['watch']);
-	
+
 	// Initialize config
 	grunt.initConfig({
 		// Package
@@ -23,14 +23,13 @@ module.exports = function(grunt) {
 					'css/demo.css': 'sass/demo.scss'
 				}
 			}
-		}, 
+		},
 		// Uglify
 		uglify: {
 			my_target: {
 				files: {
-					'js/min/jquery-v1.10.2.min.js'			: ['js/jquery-v1.10.2.js'],
-					'js/min/modernizr-custom-v2.7.1min.js'	: ['js/modernizr-custom-v2.7.1.js'],
-					'js/min/formplate.min.js'				: ['js/formplate.js']
+					'js/min/modernizr-custom-v2.7.1min.js': ['js/modernizr-custom-v2.7.1.js'],
+					'js/min/formplate.min.js': ['js/formplate.js']
 				}
 			}
 		},
@@ -49,7 +48,7 @@ module.exports = function(grunt) {
 			// Live reload
 			options: {
 				livereload: true
-		    } 
-		} 
+			}
+		}
 	});
 }

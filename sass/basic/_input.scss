@@ -118,7 +118,7 @@
 	// Icons
 	i {
 		@include position(absolute, margin-top ($space-small + 1px) right $space-small);
-		@include font-size($font-base);
+		@include font-size($size-base);
 		@include level(4);
 	}
 
