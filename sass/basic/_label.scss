@@ -1,15 +1,13 @@
 /**
- * SASS File: 		_label.scss
- * Type: 			partial
- * Author:        	Chris Humboldt
- * Last Edited:   	1 May 2015
+ * File: _label.scss
+ * Type: SASS basic file
+ * Author: Chris Humboldt
+ * Last Edited: 1 May 2015
  */
-
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
 // Label
-
 
 // Label
 // ---------------------------------------------------------------------------------------
@@ -24,7 +22,7 @@
 		@include text-weight(normal);
 
 		// Hover
-		.fp-no-touchevents &:hover {
+		.fp-no-touch &:hover {
 			cursor: pointer;
 		}
 	}

@@ -1,23 +1,20 @@
 /**
- * SASS File: 		_toggler.scss
- * Type: 			partial
- * Author:        	Chris Humboldt
- * Last Edited:   	1 May 2015
+ * File: _toggler.scss
+ * Type: SASS basic file
+ * Author: CHris Humboldt
+ * Last Edited: 1 May 2015
  */
-
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
 // Variables
 // Toggler
 
-
 // Variables
 // ---------------------------------------------------------------------------------------
 $toggler-h 						: 30px;
 $toggler-w 						: 50px;
 $toggler-handle-dim				: $toggler-h - 2px;
-
 
 // Toggler
 // ---------------------------------------------------------------------------------------
@@ -60,7 +57,7 @@ $toggler-handle-dim				: $toggler-h - 2px;
 			}
 
 			// Hover
-			.fp-no-touchevents &:hover {
+			.fp-no-touch &:hover {
 				cursor: pointer;
 			}
 		}
