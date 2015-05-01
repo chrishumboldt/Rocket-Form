@@ -2,7 +2,7 @@
  * SASS File: 		_label.scss
  * Type: 			partial
  * Author:        	Chris Humboldt
- * Last Edited:   	23 September 2014
+ * Last Edited:   	1 May 2015
  */
 
 
@@ -24,7 +24,7 @@
 		@include text-weight(normal);
 
 		// Hover
-		.no-touch &:hover {
+		.fp-no-touchevents &:hover {
 			cursor: pointer;
 		}
 	}

@@ -2,7 +2,7 @@
  * SASS File: 		_toggler.scss
  * Type: 			partial
  * Author:        	Chris Humboldt
- * Last Edited:   	23 September 2014
+ * Last Edited:   	1 May 2015
  */
 
 
@@ -60,7 +60,7 @@ $toggler-handle-dim				: $toggler-h - 2px;
 			}
 
 			// Hover
-			.no-touch &:hover {
+			.fp-no-touchevents &:hover {
 				cursor: pointer;
 			}
 		}

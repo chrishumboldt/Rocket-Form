@@ -28,7 +28,6 @@ module.exports = function(grunt) {
 		uglify: {
 			my_target: {
 				files: {
-					'js/min/modernizr-custom-v2.7.1min.js': ['js/modernizr-custom-v2.7.1.js'],
 					'js/min/formplate.min.js': ['js/formplate.js']
 				}
 			}
