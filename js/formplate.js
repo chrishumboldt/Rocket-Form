@@ -8,6 +8,7 @@
 // Table of contents
 // ---------------------------------------------------------------------------------------
 // Tools
+// Touch check
 // Component call
 
 // Tools
@@ -63,11 +64,17 @@ var tool = {
 	}
 };
 
+// Touch check
+// ---------------------------------------------------------------------------------------
+var $htmlElement = document.getElementsByTagName('html')[0];
+if (!tool.isTouch() && !tool.hasClass($htmlElement, 'fp-no-touch')) {
+	tool.classAdd($htmlElement, 'fp-no-touch');
+}
+
 // Component call
 // ---------------------------------------------------------------------------------------
 function Formplate($selector) {
 	// Variables
-	var $htmlElement = document.getElementsByTagName('html')[0];
 	var $bodyElement = document.getElementsByTagName('body')[0];
 	var $formColour = $bodyElement.getAttribute('data-formplate-colour');
 	var $formCheckboxes = document.querySelectorAll('.formplate input[type="checkbox"]');
@@ -75,11 +82,6 @@ function Formplate($selector) {
 	var $formSelects = document.querySelectorAll('.formplate select');
 	var $formTogglerHTML = document.createElement('span');
 	$formTogglerHTML.className = 'handle';
-
-	// Add touch detection
-	if (!tool.isTouch() && !tool.hasClass($htmlElement, 'fp-no-touch')) {
-		tool.classAdd($htmlElement, 'fp-no-touch');
-	}
 
 	// Set the colour
 	tool.classAdd($bodyElement, 'fp-colour-' + $formColour);
