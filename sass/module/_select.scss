@@ -1,10 +1,8 @@
 /**
- * SASS File: 		_select.scss
- * Type: 			partial
- * Author:        	Chris Humboldt
- * Last Edited:   	1 October 2014
+ * File: _select.scss
+ * Type: SASS module
+ * Author: Chris Humboldt
  */
-
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
@@ -12,11 +10,10 @@
 // Select colour states
 // Fixes
 
-
 // Select
 // ---------------------------------------------------------------------------------------
 @mixin form-select() {
-	.fp-select {
+	.formplate-select {
 		@include display(inline-block);
 		@include position(relative);
 		@include width(auto);
@@ -50,7 +47,7 @@
 		}
 
 		select {
-			position: relative;
+			@include position(relative);
 			@include height(36px);
 			@include width(110%);
 			@include margin(0px);
@@ -79,15 +76,12 @@
 	}
 }
 
-
 // Select colour states
 // ---------------------------------------------------------------------------------------
 @mixin form-select-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-colour-#{$colour-name} {
-
-			// Focus
-			.fp-select:hover {
+		.formplate-colour-#{$colour-name} {
+			.formplate-select:hover {
 				@include border($colour);
 
 				// Icon
@@ -99,20 +93,16 @@
 	}
 }
 
-
 // Fixes
 // ---------------------------------------------------------------------------------------
 @mixin form-select-fixes() {
 	@-moz-document url-prefix() {
-		// .fp-select:after {
-		// 	@include margin-top(4px);
-		// }
-		.fp-select select {
+		.formplate-select select {
 			@include padding-top($space-small - 2px);
 			@include padding-bottom($space-small - 4px);
 		}
 	}
-	.no-cssanimations .fp-select {
+	.no-cssanimations .formplate-select {
 		// Icon
 		&:after {
 			@include hide();
@@ -128,5 +118,3 @@
 		}
 	}
 }
-
-

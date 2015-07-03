@@ -9,24 +9,11 @@
 	<!-- Title -->
 	<title>Forms Plugin</title>
 
-	<!-- jQuery (Required) -->
-	<script src="js/min/jquery-v1.10.2.min.js"></script>
-
-	<!-- Modernizr (optional) -->
-	<script src="js/min/modernizr-custom-v2.7.1min.js"></script>
-
 	<!-- Include Formplate -->
-	<script src="js/min/formplate.min.js"></script>
+	<script src="js/formplate.js"></script>
 	<link href="css/formplate.css" rel="stylesheet" type="text/css">
 
 	<!-- Demo -->
-	<script>
-	$(document).ready(function()
-	{	
-		// Execute formplate
-		$('body').formplate();
-	});
-	</script>
 	<link href="css/demo.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -150,6 +137,10 @@
 		</div>
 
 	</div>
+
+	<script>
+	new Formplate();
+	</script>
 
 </body>
 </html>

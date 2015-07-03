@@ -1,16 +1,13 @@
 /**
- * SASS File: 		_textarea.scss
- * Type: 			partial
- * Author:        	Chris Humboldt
- * Last Edited:   	30 July 2014
+ * File: _textarea.scss
+ * Type: SASS module
+ * Author: Chris Humboldt
  */
-
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
 // Textarea
 // Textarea colour states
-
 
 // Textarea
 // ---------------------------------------------------------------------------------------
@@ -41,12 +38,11 @@
 	}
 }
 
-
 // Textarea colour states
 // ---------------------------------------------------------------------------------------
 @mixin form-textarea-states() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-colour-#{$colour-name} {
+		.formplate-colour-#{$colour-name} {
 
 			// Focus
 			textarea:active,

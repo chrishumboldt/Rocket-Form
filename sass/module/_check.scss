@@ -1,10 +1,8 @@
 /**
- * SASS File: 		_check.scss
- * Type: 			partial
- * Author:        	Chris Humboldt
- * Last Edited:   	23 September 2014
+ * File: _cehck.scss
+ * Type: SASS module
+ * Author: Chris Humboldt
  */
-
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
@@ -13,13 +11,12 @@
 // Radio inputs
 // Fixes
 
-
 // Check input
 // ---------------------------------------------------------------------------------------
 @mixin form-check-all() {
 	.formplate {
-		.fp-checkbox,
-		.fp-radio {
+		.formplate-checkbox,
+		.formplate-radio {
 			@include display(inline-block);
 			@include position(relative, margin-right $space-x-small margin-bottom ($space-x-small - 1px));
 			@include margin-top(0px);
@@ -67,9 +64,9 @@
 
 	// Hover / checked
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-colour-#{$colour-name} .formplate {
-			.fp-checkbox,
-			.fp-radio {
+		.formplate-colour-#{$colour-name} .formplate {
+			.formplate-checkbox,
+			.formplate-radio {
 
 				// Hover
 				&:hover {
@@ -86,28 +83,24 @@
 	}
 }
 
-
 // Radio inputs
 // ---------------------------------------------------------------------------------------
 @mixin form-check-radio() {
-	.formplate .fp-radio {
+	.formplate .formplate-radio {
 		@include border-radius(50%);
 		@include background-clip();
 	}
 }
-
 
 // Fixes
 // ---------------------------------------------------------------------------------------
 @mixin form-check-fixes() {
 	@-moz-document url-prefix() {
 		.formplate {
-			.fp-checkbox,
-			.fp-radio {
+			.formplate-checkbox,
+			.formplate-radio {
 				@include text-line-height(21px);
 			}
 		}
 	}
 }
-
-

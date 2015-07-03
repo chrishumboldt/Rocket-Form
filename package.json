@@ -1,27 +1,27 @@
 {
-  "name": "Formplate",
-  "version": "1.4.2",
-  "description": "A global form plugin.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chrishumboldt/Formplate.git"
-  },
-  "keywords": [
-    "Forms",
-    "CSS",
-    "Webplate",
-    "jQuery"
-  ],
-  "author": "Chris Humboldt",
-  "license": "Apache License, Version 2.0",
-  "bugs": {
-    "url": "https://github.com/chrishumboldt/Formplate/issues"
-  },
-  "homepage": "http://getwebplate.com/plugins/formplate",
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-sass": "~0.8.0",
-    "grunt-contrib-uglify": "~0.5.1",
-    "grunt-contrib-watch": "~0.6.1"
-  }
+	"name": "Formplate",
+	"version": "2.0.0",
+	"description": "A global form plugin.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chrishumboldt/Formplate.git"
+	},
+	"keywords": [
+		"Forms",
+		"CSS",
+		"Webplate",
+		"jQuery"
+	],
+	"author": "Chris Humboldt",
+	"license": "Apache License, Version 2.0",
+	"bugs": {
+		"url": "https://github.com/chrishumboldt/Formplate/issues"
+	},
+	"homepage": "http://getwebplate.com/plugins/formplate",
+	"devDependencies": {
+		"grunt": "~0.4.5",
+		"grunt-contrib-sass": "~0.8.0",
+		"grunt-contrib-uglify": "~0.5.1",
+		"grunt-contrib-watch": "~0.6.1"
+	}
 }

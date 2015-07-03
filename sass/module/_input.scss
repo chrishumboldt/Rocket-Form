@@ -1,10 +1,8 @@
 /**
- * SASS File: 		_input.scss
- * Type: 			partial
- * Author:        	Chris Humboldt
- * Last Edited:   	23 September 2014
+ * File: _input.scss
+ * Type: SASS module
+ * Author: Chris Humboldt
  */
-
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
@@ -12,7 +10,6 @@
 // Input colour states
 // Input groups
 // Input icon
-
 
 // Input
 // ---------------------------------------------------------------------------------------
@@ -42,12 +39,11 @@
 	}
 }
 
-
 // Input colour states
 // ---------------------------------------------------------------------------------------
 @mixin form-input-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-colour-#{$colour-name} {
+		.formplate-colour-#{$colour-name} {
 
 			// Focus
 			input:focus {
@@ -56,7 +52,6 @@
 		}
 	}
 }
-
 
 // Input groups
 // ---------------------------------------------------------------------------------------
@@ -109,7 +104,6 @@
 	}
 }
 
-
 // Input icon
 // ---------------------------------------------------------------------------------------
 .input-icon {
@@ -118,7 +112,7 @@
 	// Icons
 	i {
 		@include position(absolute, margin-top ($space-small + 1px) right $space-small);
-		@include font-size($font-base);
+		@include font-size($size-base);
 		@include level(4);
 	}
 
@@ -127,5 +121,3 @@
 		@include padding-right($space-slight);
 	}
 }
-
-
