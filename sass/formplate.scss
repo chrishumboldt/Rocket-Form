@@ -1,8 +1,7 @@
 /**
  * File: formplate.scss
- * Type: SASS execute file
+ * Type: SASS execute
  * Author: Chris Humboldt
- * Last Edited: 29 April 2015
  */
 
 // Table of contents
@@ -11,9 +10,7 @@
 // Call styles
 
 // Imports
-// ---------------------------------------------------------------------------------------
 @import "import";
 
 // Call styles
-// ---------------------------------------------------------------------------------------
 @include formplate-css();

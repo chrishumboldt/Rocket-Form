@@ -1,8 +1,7 @@
 /**
  * File: _toggler.scss
- * Type: SASS basic file
- * Author: CHris Humboldt
- * Last Edited: 1 May 2015
+ * Type: SASS module
+ * Author: Chris Humboldt
  */
 
 // Table of contents
@@ -20,7 +19,7 @@ $toggler-handle-dim				: $toggler-h - 2px;
 // ---------------------------------------------------------------------------------------
 @mixin form-toggler() {
 	.formplate {
-		.fp-toggler {
+		.formplate-toggler {
 			@include position(relative);
 			@include display(inline-block);
 			@include size($toggler-w, $toggler-h);
@@ -57,7 +56,7 @@ $toggler-handle-dim				: $toggler-h - 2px;
 			}
 
 			// Hover
-			.fp-no-touch &:hover {
+			.formplate-no-touch &:hover {
 				cursor: pointer;
 			}
 		}
@@ -65,8 +64,8 @@ $toggler-handle-dim				: $toggler-h - 2px;
 
 	// Hover / checked
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-colour-#{$colour-name} .formplate {
-			.fp-toggler {
+		.formplate-colour-#{$colour-name} .formplate {
+			.formplate-toggler {
 
 				// Checked
 				&.checked {
@@ -76,5 +75,3 @@ $toggler-handle-dim				: $toggler-h - 2px;
 		}
 	}
 }
-
-

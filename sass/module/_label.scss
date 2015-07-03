@@ -1,8 +1,7 @@
 /**
  * File: _label.scss
- * Type: SASS basic file
+ * Type: SASS module
  * Author: Chris Humboldt
- * Last Edited: 1 May 2015
  */
 
 // Table of contents
@@ -22,10 +21,8 @@
 		@include text-weight(normal);
 
 		// Hover
-		.fp-no-touch &:hover {
+		.formplate-no-touch &:hover {
 			cursor: pointer;
 		}
 	}
 }
-
-

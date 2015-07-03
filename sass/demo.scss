@@ -1,25 +1,19 @@
 /**
- * SASS File: 		demo.scss
- * Type: 			execute
- * Author:        	Chris Humboldt
- * Last Edited:   	1 October 2014
+ * File: demo.scss
+ * Type: SASS demo
+ * Author: Chris Humboldt
  */
-
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
 // Import
 // Demo styles
 
-
 // Import
-// ---------------------------------------------------------------------------------------
 @import "../bower_components/blueplate/sass/blueplate";
 @import "../bower_components/font-awesome/css/font-awesome.css";
 
-
 // Demo styles
-// ---------------------------------------------------------------------------------------
 @include global-setup();
 
 body {
@@ -44,4 +38,3 @@ body {
 		}
 	}
 }
-
