@@ -9,7 +9,7 @@
 // Tools
 // Variables
 
-function Formplate($selector) {
+function formplate($selector) {
 	// Tools
 	var tool = function(document) {
 		// Elements
