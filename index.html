@@ -5,40 +5,61 @@
 	<!-- Meta setup - Required for apple device -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
 	<!-- Title -->
-	<title>Forms Plugin</title>
-
-	<!-- Include Formplate -->
-	<script src="js/formplate.js"></script>
+	<title>Formplate Component</title>
+	<!-- Styles -->
 	<link href="css/formplate.css" rel="stylesheet" type="text/css">
-
-	<!-- Demo -->
 	<link href="css/demo.css" rel="stylesheet" type="text/css">
 
 </head>
 <body data-formplate-colour="red">
-	
-	<!--Container-->
-	<div class="container confine">
 
-		<h3>Basic Input</h3>
+	<div class="heading"><div class="container">
+		<h2>Flickerplate Component</h2>
+	</div></div>
 
+	<div class="container">
+		<h4>Getting Started</h4>
+		<p>You can either download a copy of the source files or install Formplate via Bower.</p>
+<pre class="prettyprint linenums">
+bower install formplate
+</pre>
+		<p>Start by including the necessary files. <b>NOTE</b> to include the formplate data attribute (data-formplate-colour) on the <b>body</b> tag.</p>
+<pre class="prettyprint linenums">
+&lt;head&gt;
+    &lt;link href=&quot;css/formplate.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+&lt;/head&gt;
+&lt;body data-formplate-colour="red"&gt;
+    /* Your content goes here */
+    &lt;script src=&quot;js/min/formplate.js&quot;>&lt;/script&gt;
+&lt;/body&gt;
+</pre>
+		<br>
+		<h4>Basic Example</h4>
+		<p>You will need to wrap your form elements with an identifier of your choice. Below is an example of executing the component complete with required HTML and Javascript.</p>
+<pre class="prettyprint linenums">
+&lt;div class="form-example"&gt;
+    &lt;label for="input-example"&gt;Example Label&lt;label&gt;
+    &lt;input id="input-example" type="text" placeholder="Example Input"&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new formplate('.form-example');
+&lt;/script&gt;
+</pre>
+		<br>
+		<h4>Working Examples</h4>
 		<div class="formplate">
 			<label for="text-1">Text Label</label>
 			<input type="text" id="text-1" placeholder="Text input">
 		</div>
-
 		<div class="formplate">
 			<label for="password-1">Password Label</label>
 			<input type="password" id="password-1" placeholder="Password input">
 		</div>
-
 		<div class="formplate">
 			<label for="textarea-1">Textarea Label</label>
 			<textarea id="textarea-1" placeholder="Textarea"></textarea>
 		</div>
-
 		<div class="formplate">
 			<label for="text-2">Input Icon</label>
 			<div class="input-icon">
@@ -46,15 +67,7 @@
 				<input type="text" id="text-2" placeholder="Text input">
 			</div>
 		</div>
-
-		<!-- <h3>Credit Card Input</h3>
-
-		<div class="formplate">
-			<input type="text" class="credit-card">
-		</div> -->
-
 		<h3>Drop-down</h3>
-
 		<div class="formplate">
 			<select>
 				<option value="1">Select Option 1</option>
@@ -64,17 +77,17 @@
 		</div>
 
 		<h3>Checkboxes</h3>
-			
+
 		<div class="formplate">
 			<input type="checkbox" id="checkbox-1" checked="checked">
 			<label for="checkbox-1">Checkbox 1</label>
 		</div>
-		
+
 		<div class="formplate">
 			<input type="checkbox" id="checkbox-2">
 			<label for="checkbox-2">Checkbox 2</label>
 		</div>
-		
+
 		<div class="formplate">
 			<input type="checkbox" id="checkbox-3">
 			<label for="checkbox-3">Checkbox 3</label>
@@ -87,17 +100,17 @@
 		</div>
 
 		<h3>Radio Inputs</h3>
-			
+
 		<div class="formplate">
 			<input type="radio" id="radio-1" name="radio-selection" value="1" checked="checked">
 			<label for="radio-1">Radio Selection</label>
 		</div>
-		
+
 		<div class="formplate">
 			<input type="radio" id="radio-2" name="radio-selection" value="2">
 			<label for="radio-2">Radio Selection</label>
 		</div>
-		
+
 		<div class="formplate">
 			<input type="radio" id="radio-3" name="radio-selection" value="2">
 			<label for="radio-3">Radio Selection</label>
@@ -138,6 +151,9 @@
 
 	</div>
 
+	<!-- Scripts -->
+	<script src="js/formplate.js"></script>
+	<script src="js/min/demo.js"></script>
 	<script>
 	new formplate();
 	</script>
