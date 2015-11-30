@@ -216,14 +216,4 @@ footer {
 		    @include span-new(6);
 		}
 	}
-
-	// Adapt
-	@include breakpoint(large) {
-		.left {
-			@include text-align(left);
-		}
-		.right {
-			@include text-align(right);
-		}
-	}
 }
