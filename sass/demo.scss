@@ -180,6 +180,22 @@ footer a {
 // Blocks
 .block {
 	@include row();
+	.left,
+	.right {
+		@include span(12);
+	}
+	@include breakpoint(large) {
+		.left,
+		.right {
+			@include span(6);
+		}
+		.left {
+			@include padding-right($space-minor);
+		}
+		.right {
+			@include padding-left($space-minor);
+		}
+	}
 }
 
 footer {
@@ -198,16 +214,6 @@ footer {
 		@include text-size(13px);
 		@include breakpoint(large) {
 		    @include span-new(6);
-		}
-	}
-
-	// Adapt
-	@include breakpoint(large) {
-		.left {
-			@include text-align(left);
-		}
-		.right {
-			@include text-align(right);
 		}
 	}
 }
