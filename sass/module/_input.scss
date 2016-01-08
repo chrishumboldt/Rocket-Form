@@ -5,14 +5,12 @@
  */
 
 // Table of contents
-// ---------------------------------------------------------------------------------------
 // Input
 // Input colour states
 // Input groups
 // Input icon
 
 // Input
-// ---------------------------------------------------------------------------------------
 @mixin form-input() {
 	input {
 		@include width(100%);
@@ -27,20 +25,17 @@
 		@include level(1);
 		outline: none;
 		-webkit-appearance: none;
-
 		&:focus {
 			@include border($blue);
 			@include level(2);
 		}
-
-		@include respond-to(large) {
+		@include breakpoint(large) {
 			@include text-size(14px);
 		}
 	}
 }
 
 // Input colour states
-// ---------------------------------------------------------------------------------------
 @mixin form-input-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
 		.formplate-colour-#{$colour-name} {
@@ -54,7 +49,6 @@
 }
 
 // Input groups
-// ---------------------------------------------------------------------------------------
 .input-group {
 	@include row();
 
@@ -70,7 +64,6 @@
 	input:last-child {
 		@include border-radius-right(2px);
 	}
-
 	// Inputs with icon
 	.input-icon {
 		input {
@@ -87,7 +80,6 @@
 }
 .input-group-two {
 	@extend .input-group;
-
 	// Inputs and input icon divs
 	input,
 	.input-icon {
@@ -96,7 +88,6 @@
 }
 .input-group-three {
 	@extend .input-group;
-
 	// Inputs and input icon divs
 	input,
 	.input-icon {
@@ -105,17 +96,14 @@
 }
 
 // Input icon
-// ---------------------------------------------------------------------------------------
 .input-icon {
 	@include position(relative);
-
 	// Icons
 	i {
-		@include position(absolute, margin-top ($space-small + 1px) right $space-small);
+		@include position(absolute, margin-top ($space-small + 2px) right $space-small);
 		@include font-size($size-base);
 		@include level(4);
 	}
-
 	// Input
 	input {
 		@include padding-right($space-slight);

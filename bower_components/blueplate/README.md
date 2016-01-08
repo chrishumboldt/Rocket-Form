@@ -20,7 +20,6 @@ A lightweight SASS mixin library and responsive CSS layout engine.
    * [Layout](#layout)
    * [Layout Floats](#layout-floats)
    * [Layout Responsive](#layout-responsive)
-   * [Layout Flex](#layout-flex)
    * [Position](#position)
    * [Size](#size)
    * [Spacing Margins](#spacing-margins)
@@ -36,7 +35,6 @@ A lightweight SASS mixin library and responsive CSS layout engine.
    * [Sizing](#sizing)
    * [Spacing](#spacing)
    * [Text](#text-1)
-* [Mixins](#mixins)
 
 ## Getting Started
 You can either download a copy of the source files or install Blueplate via Bower.
@@ -226,6 +224,9 @@ Apply a linear gradient to the background with the appropriate left to right col
 ##### gradient-vertical($top-colour, $bottom-colour)
 Apply a linear gradient to the background with the appropriate top to bottom colours.
 
+##### gradient-no()
+Remove the gradient styling.
+
 ### iOS
 
 ##### ios-render()
@@ -290,36 +291,6 @@ Change the span to occupy $x amount of columns within the $column-limit. Apply t
 
 ##### span-reset()
 Reset the spanned element to the the $column-limit and remove all offsets.
-
-### Layout Flex
-Please note that the flex model is not fully adopted and should be used under very strict conditions.
-
-##### flex($x, $percent: false)
-Apply the flex grow style of $x to an element. If $percent is set to true then the grow style is set to 1 and the flex basis style of $x is applied instead.
-
-##### flex-container()
-Apply the flex display type to an element with all the neccessary prefixes for all the browser types.
-
-##### flex-column()
-Apply the flex direction of column with all the necessary prefixes for all the browser types. This mixin automatically includes the flex-container() mixin.
-
-##### flex-new($x, $percent: false)
-Apply a new flex grow style of $x to an element. If $percent is set to true then the grow style is set to 1 and the flex basis style of $x is applied instead.
-
-##### flex-order($x)
-Set the order style of an element to $x with all the necessary prefixes for all the browser types.
-
-##### flex-reset()
-Reset all flex styles that have been applied to an element.
-
-##### flex-row()
-Apply the flex direction of row with all the necessary prefixes for all the browser types. This mixin automatically includes the flex-container() mixin.
-
-##### flex-span($x)
-Turns an element into a flex span which can occupy $x amount of columns within the $column-limit.
-
-##### flex-span-new($x)
-Change the flex span to occupy $x amount of columns within the $column-limit. Apply to already flex spanned elements.
 
 ### Position
 
@@ -467,17 +438,17 @@ Now class your HTML to manage your layout. For example:
 Find the other available classes below:
 
 ### Background
-Class | Options | Description
----- | ---- | ----
-.back-pos-[p] | [p] = t, r, b, l, c | Set the background position of an element to [p] for top, right, bottom, left or center.
-.back-repeat-[r] | [r] = no, y, x | Set the background repeat of an element to [r] for no repeating, repeat along y axis or repeat along x axis.
-.back-single | | Set the background of an element to not repeat and to be centered.
-.back-contain | | Set the background of an element to not repeat and to contain within the element.
-.back-cover | | Set the background of an element to not repeat and to cover the element completely.
-.back-black | | Set the background colour to black.
-.back-grey | | Set the background colour to medium grey.
-.back-grey-light | | Set the background colour to light grey.
-.back-white | | Set the background colour to white.
+| Class | Options | Description |
+| ---- | ---- | ---- |
+| .back-pos-[p] | [p] = t, r, b, l, c | Set the background position of an element to [p] for top, right, bottom, left or center. |
+| .back-repeat-[r] | [r] = no, y, x | Set the background repeat of an element to [r] for no repeating, repeat along y axis or repeat along x axis. |
+| .back-single | | Set the background of an element to not repeat and to be centered. |
+| .back-contain | | Set the background of an element to not repeat and to contain within the element. |
+| .back-cover | | Set the background of an element to not repeat and to cover the element completely. |
+| .back-black | | Set the background colour to black. |
+| .back-grey | | Set the background colour to medium grey. |
+| .back-grey-light | | Set the background colour to light grey. |
+| .back-white | | Set the background colour to white. |
 
 ### Display
 Class | Options | Description

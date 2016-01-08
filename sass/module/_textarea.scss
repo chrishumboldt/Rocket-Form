@@ -24,14 +24,14 @@
 		background-color: $white;
 		border: 1px solid $grey-form;
 		outline: none;
-		-webkit-appearance: none;	
+		-webkit-appearance: none;
 		@include border-radius(2px);
 
 		&:focus {
 			border-color: $blue;
 		}
 
-		@include respond-to(large) {
+		@include breakpoint(large) {
 			font-size: 0.875em;
 			padding: 12px;
 		}
@@ -52,5 +52,3 @@
 		}
 	}
 }
-
-
