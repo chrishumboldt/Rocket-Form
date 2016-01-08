@@ -13,7 +13,7 @@
 	<link href="css/demo.css" rel="stylesheet" type="text/css">
 
 </head>
-<body data-formplate-colour="red">
+<body>
 
 	<div class="heading"><div class="container">
 		<h2>Formplate Component</h2>
@@ -25,7 +25,7 @@
 <pre class="prettyprint linenums">
 bower install formplate
 </pre>
-		<p>Start by including the necessary files. <b>NOTE</b> to include the formplate data attribute (data-formplate-colour) on the <b>body</b> tag.</p>
+		<p>Start by including the necessary files. <b>NOTE</b> to include the formplate data attribute (data-formplate-colour) on the <b>body</b> tag else it will default to a blue fallback.</p>
 <pre class="prettyprint linenums">
 &lt;head&gt;
     &lt;link href=&quot;css/formplate.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
@@ -44,7 +44,9 @@ bower install formplate
     &lt;input id="input-example" type="text" placeholder="Example Input"&gt;
 &lt;/div&gt;
 &lt;script&gt;
-new formplate('.form-example');
+new formplate({
+    selector: '.form-example'
+});
 &lt;/script&gt;
 </pre>
 		<br>
@@ -155,7 +157,9 @@ new formplate('.form-example');
 				</div>
 			</div>
 		</div>
-
+      <br><br>
+      <h4>Detailed Documentation</h4>
+      <p>For a more detailed look into the available options, you can read the documentation at <a target="_blank" href="https://github.com/chrishumboldt/Formplate" class="link">https://github.com/chrishumboldt/Formplate</a></p>
 	</div>
 
 	<footer><div class="container"><div class="col-double">
@@ -172,7 +176,9 @@ new formplate('.form-example');
 	<script src="js/formplate.js"></script>
 	<script src="js/min/demo.js"></script>
 	<script>
-	new formplate();
+	new formplate({
+		selector: '.formplate'
+	});
 	</script>
 
 </body>
