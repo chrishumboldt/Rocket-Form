@@ -8,7 +8,7 @@ You can either download a copy of the source files or install Formplate via Bowe
 bower install formplate
 ```
 
-Start by including the necessary files. **NOTE** to include the formplate data attribute (data-formplate-colour) on the **body** tag.
+Start by including the necessary files. **NOTE** to include the formplate data attribute (data-formplate-colour) on the **body** tag else it will default to a blue fallback.
 
 ```
 <head>
@@ -24,11 +24,13 @@ Start by including the necessary files. **NOTE** to include the formplate data a
 You will need to wrap your form elements with an identifier of your choice. Below is an example of executing the component complete with required HTML and Javascript.
 ```
 <div class="form-example">
-    <label for="input-example">Example Label<label>
-    <input id="input-example" type="text" placeholder="Example Input">
+   <label for="input-example">Example Label<label>
+   <input id="input-example" type="text" placeholder="Example Input">
 </div>
 <script>
-new formplate('.form-example');
+new formplate({
+   selector: '.form-example'
+});
 </script>
 ```
 
