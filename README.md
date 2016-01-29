@@ -130,6 +130,9 @@ Website: <a href="http://chrishumboldt.com/">chrishumboldt.com</a><br>
 Twitter: <a href="https://twitter.com/chrishumboldt">twitter.com/chrishumboldt</a><br>
 GitHub <a href="https://github.com/chrishumboldt">github.com/chrishumboldt</a><br>
 
+## Contributors
+[mozisan](https://github.com/mozisan)
+
 ## Copyright and License
 Copyright 2015 Webplate Project
 
