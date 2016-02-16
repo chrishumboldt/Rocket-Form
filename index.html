@@ -54,18 +54,18 @@ new formplate({
 		<div class="block">
 			<div class="left">
 				<h3>Basic Inputs</h3>
-				<div class="formplate">
+				<div class="formEl">
 					<input type="text" id="text-1" placeholder="Text input">
 				</div>
-				<div class="formplate">
+				<div class="formEl">
 					<label for="password-1">Password Label</label>
 					<input type="password" id="password-1" placeholder="Password input">
 				</div>
-				<div class="formplate">
+				<div class="formEl">
 					<label for="textarea-1">Textarea Label</label>
 					<textarea id="textarea-1" placeholder="Textarea"></textarea>
 				</div>
-				<div class="formplate">
+				<div class="formEl">
 					<label for="text-2">Input Icon</label>
 					<div class="input-icon">
 						<i class="fa fa-cog"></i>
@@ -73,7 +73,7 @@ new formplate({
 					</div>
 				</div>
 				<h3>Drop-down</h3>
-				<div class="formplate">
+				<div class="formEl">
 					<select>
 						<option value="1">Select Option 1</option>
 						<option value="2">Select Option 2</option>
@@ -84,40 +84,41 @@ new formplate({
 			<div class="right">
 				<h3>Checkboxes</h3>
 
-				<div class="formplate">
+				<div class="formEl">
 					<input type="checkbox" id="checkbox-1" checked="checked">
 					<label for="checkbox-1">Checkbox 1</label>
 				</div>
 
-				<div class="formplate">
+				<div class="formEl">
 					<input type="checkbox" id="checkbox-2">
 					<label for="checkbox-2">Checkbox 2</label>
 				</div>
 
-				<div class="formplate">
+				<div class="formEl">
 					<input type="checkbox" id="checkbox-3">
 					<label for="checkbox-3">Checkbox 3</label>
 				</div>
 
 				<h3>Toggler</h3>
 
-				<div class="formplate">
+				<div class="formEl">
 					<input type="checkbox" class="toggler">
+					<span class="handle"></span>
 				</div>
 
 				<h3>Radio Inputs</h3>
 
-				<div class="formplate">
+				<div class="formEl">
 					<input type="radio" id="radio-1" name="radio-selection" value="1" checked="checked">
 					<label for="radio-1">Radio Selection</label>
 				</div>
 
-				<div class="formplate">
+				<div class="formEl">
 					<input type="radio" id="radio-2" name="radio-selection" value="2">
 					<label for="radio-2">Radio Selection</label>
 				</div>
 
-				<div class="formplate">
+				<div class="formEl">
 					<input type="radio" id="radio-3" name="radio-selection" value="2">
 					<label for="radio-3">Radio Selection</label>
 				</div>
@@ -126,7 +127,7 @@ new formplate({
 		<div class="block">
 			<h3>Input Group</h3>
 
-			<div class="formplate">
+			<div class="formEl">
 				<label for="text-3">Two</label>
 				<div class="input-group-two">
 					<input type="text" id="text-3" placeholder="Text input">
@@ -134,7 +135,7 @@ new formplate({
 				</div>
 			</div>
 
-			<div class="formplate">
+			<div class="formEl">
 				<label for="text-5">Three</label>
 				<div class="input-group-three">
 					<input type="text" id="text-5" placeholder="Text input">
@@ -143,7 +144,7 @@ new formplate({
 				</div>
 			</div>
 
-			<div class="formplate">
+			<div class="formEl">
 				<label for="text-8">Two With Icon</label>
 				<div class="input-group-two">
 					<div class="input-icon">
@@ -177,7 +178,7 @@ new formplate({
 	<script src="js/min/demo.js"></script>
 	<script>
 	new formplate({
-		selector: '.formplate'
+		selector: '.formEl'
 	});
 	</script>
 

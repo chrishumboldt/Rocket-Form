@@ -1,17 +1,15 @@
 /**
  * File: _select.scss
- * Type: SASS module
+ * Type: SASS component
  * Author: Chris Humboldt
  */
 
 // Table of contents
-// ---------------------------------------------------------------------------------------
 // Select
 // Select colour states
 // Fixes
 
 // Select
-// ---------------------------------------------------------------------------------------
 @mixin form-select() {
 	.formplate-select {
 		@include display(inline-block);
@@ -23,7 +21,6 @@
 		@include border-radius();
 		@include overflow(hidden);
 		@include level(1);
-
 		// Icon
 		&:before {
 			@include position(absolute, right ($space-x-small + 1px));
@@ -35,17 +32,12 @@
 			@include background-colour($white);
 			@include level(1);
 		}
-
-		// Hover
 		&:hover {
 			@include border($blue);
-
-			// Icon
 			&:before {
 				@include text-colour($blue);
 			}
 		}
-
 		select {
 			@include position(relative);
 			@include height(36px);
@@ -77,14 +69,11 @@
 }
 
 // Select colour states
-// ---------------------------------------------------------------------------------------
 @mixin form-select-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
 		.formplate-colour-#{$colour-name} {
 			.formplate-select:hover {
 				@include border($colour);
-
-				// Icon
 				&:before {
 					@include text-colour($colour);
 				}
@@ -94,7 +83,6 @@
 }
 
 // Fixes
-// ---------------------------------------------------------------------------------------
 @mixin form-select-fixes() {
 	@-moz-document url-prefix() {
 		.formplate-select select {
@@ -103,12 +91,10 @@
 		}
 	}
 	.no-cssanimations .formplate-select {
-		// Icon
 		&:after {
 			@include hide();
 			content: "";
 		}
-
 		select {
 			@include width(100%);
 			@include padding-top(7px);

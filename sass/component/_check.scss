@@ -14,67 +14,54 @@
 // Check input
 // ---------------------------------------------------------------------------------------
 @mixin form-check-all() {
-	.formplate {
-		.formplate-checkbox,
-		.formplate-radio {
+	.formplate-checkbox,
+	.formplate-radio {
+		@include position(relative);
+		@include text-font('formplate');
+		&:before {
+			content: "";
 			@include display(inline-block);
-			@include position(relative, margin-right $space-x-small margin-bottom ($space-x-small - 1px));
+			@include position(relative, margin-right 0px);
 			@include margin-top(0px);
 			@include margin-bottom(2px);
 			@include size(22px, 22px);
+			@include text-align(center);
 			@include text-line-height(22px);
 			@include text-size(10px);
 			@include vertical-align(middle);
 			@include border($grey-form);
 			@include border-radius();
 			@include background-clip();
+			@include level(1);
+		}
+		&._checked:before {
+			content: "\e600";
+			@include text-colour($white);
+		}
+		// Hide inputs
+		> input {
+			@include spacing-no();
+			@include position(absolute, left 0);
+			@include display(inline-block);
+			@include size(22px, 22px);
+			@include opacity(0);
+			@include level(2);
 
-			// Hover
 			&:hover {
 				cursor: pointer;
-				@include border($blue);
-			}
-
-			// Checked
-			&.checked {
-				@include text-align(center);
-				@include text-colour($white);
-				@include text-font('formplate');
-				@include border($blue);
-				@include background-colour($blue);
-
-				&:before {
-					content: "\e600";
-				}
-			}
-
-			// Hide inputs
-			> input {
-				@include spacing-no();
-				@include display(inline-block);
-				@include size(22px, 22px);
-				@include opacity(0);
-
-				&:hover {
-					cursor: pointer;
-				}
 			}
 		}
 	}
 
 	// Hover / checked
 	@each $colour-name, $colour in $ar-colours-form {
-		.formplate-colour-#{$colour-name} .formplate {
+		.formplate-no-touch .formplate-colour-#{$colour-name} {
 			.formplate-checkbox,
 			.formplate-radio {
-
-				// Hover
-				&:hover {
+				&:hover:before {
 					@include border($colour);
 				}
-
-				// Checked
-				&.checked {
+				&._checked:before {
 					@include border($colour);
 					@include background-color($colour);
 				}
@@ -84,23 +71,19 @@
 }
 
 // Radio inputs
-// ---------------------------------------------------------------------------------------
 @mixin form-check-radio() {
-	.formplate .formplate-radio {
+	.formplate-radio:before {
 		@include border-radius(50%);
 		@include background-clip();
 	}
 }
 
 // Fixes
-// ---------------------------------------------------------------------------------------
 @mixin form-check-fixes() {
 	@-moz-document url-prefix() {
-		.formplate {
-			.formplate-checkbox,
-			.formplate-radio {
-				@include text-line-height(21px);
-			}
+		.formplate-checkbox,
+		.formplate-radio {
+			@include text-line-height(21px);
 		}
 	}
 }
