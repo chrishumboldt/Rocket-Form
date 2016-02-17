@@ -12,7 +12,7 @@
 
 // Input
 @mixin form-input() {
-	input {
+	.formplate-input input {
 		@include width(100%);
 		@include padding(12px);
 		@include margin(0px);
@@ -39,9 +39,7 @@
 @mixin form-input-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
 		.formplate-colour-#{$colour-name} {
-
-			// Focus
-			input:focus {
+			.formplate-input input:focus {
 				border-color: $colour;
 			}
 		}
@@ -49,7 +47,7 @@
 }
 
 // Input groups
-.input-group {
+.formplate-input .input-group {
 	@include row();
 
 	// Inputs
@@ -78,7 +76,7 @@
 		}
 	}
 }
-.input-group-two {
+.formplate-input .input-group-two {
 	@extend .input-group;
 	// Inputs and input icon divs
 	input,
@@ -86,7 +84,7 @@
 		@include span(6);
 	}
 }
-.input-group-three {
+.formplate-input .input-group-three {
 	@extend .input-group;
 	// Inputs and input icon divs
 	input,
@@ -96,7 +94,7 @@
 }
 
 // Input icon
-.input-icon {
+.formplate-input .input-icon {
 	@include position(relative);
 	// Icons
 	i {

@@ -15,12 +15,13 @@ $font-face-formplate: "icon-font-formplate" !default;
 // Imports
 @import "../bower_components/blueplate/sass/import";
 
-@import "module/check";
-@import "module/input";
-@import "module/label";
-@import "module/select";
-@import "module/setup";
-@import "module/textarea";
-@import "module/toggler";
+@import "component/setup";
+
+@import "component/check";
+@import "component/input";
+@import "component/label";
+@import "component/select";
+@import "component/textarea";
+@import "component/toggler";
 
 @import "css/execute";
