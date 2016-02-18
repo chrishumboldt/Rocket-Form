@@ -16,9 +16,10 @@
 @mixin formplate-css() {
 
 	// Checks
-	@include form-check-all();
-	@include form-check-radio();
-	@include form-check-fixes();
+	@include form-checkbox-all();
+	@include form-checkbox-hover();
+	@include form-checkbox-radio();
+	@include form-checkbox-fixes();
 
 	// Inputs
 	@include form-input();
@@ -39,5 +40,3 @@
 	// Toggler
 	@include form-toggler();
 }
-
-

@@ -13,7 +13,8 @@
 // Defaults
 var $formplateDefault = {
    selector: '.formplate',
-   colour: 'blue'
+   colour: 'blue',
+   style: 'line'
 };
 
 function formplate($userOptions) {
@@ -77,10 +78,10 @@ function formplate($userOptions) {
    var $self = this;
    $self.options = {
       selector: ($userOptions && $userOptions.selector) ? $userOptions.selector : $formplateDefault.selector,
-      colour: ($userOptions && $userOptions.colour) ? $userOptions.colour : false,
+      colour: ($userOptions && $userOptions.colour) ? $userOptions.colour : $formplateDefault.colour,
+      style: ($userOptions && $userOptions.style) ? $userOptions.style : $formplateDefault.style
    }
 
-   var $formColour = $self.options.colour || tool.element.body.getAttribute('data-formplate-colour') || $formplateDefault.colour;
    var $formplateEls = document.querySelectorAll($self.options.selector);
 
    if (!tool.isTouch() && !tool.hasClass(tool.element.html, 'formplate-no-touch')) {
@@ -129,43 +130,43 @@ function formplate($userOptions) {
       };
    };
 
-   // Set the colour
-   tool.classAdd(tool.element.body, 'formplate-colour-' + $formColour);
-
-   // Loop over all elements
+   // Loop over all elements and apply
    for (var $i = 0, $len = $formplateEls.length; $i < $len; $i++) {
       var $thisFormEl = $formplateEls[$i];
+      var $baseClasses = ' _colour-' + $self.options.colour + ' _style-' + $self.options.style;
 
       // Set the input classes
       if ($thisFormEl.querySelector('input')) {
          var $input = $thisFormEl.querySelector('input');
          var $inputType = $input.getAttribute('type');
-         var $inputCheckClass = ($input.getAttribute('checked') === 'checked') ? ' _checked' : '';
+
          if ($inputType === 'checkbox') {
+            $baseClasses += ($input.getAttribute('checked') === 'checked') ? ' _checked' : '';
             if (tool.hasClass($input, 'toggler')) {
-               tool.classAdd($thisFormEl, 'formplate-toggler' + $inputCheckClass);
+               tool.classAdd($thisFormEl, 'formplate-toggler' + $baseClasses);
             } else {
-               tool.classAdd($thisFormEl, 'formplate-checkbox' + $inputCheckClass);
+               tool.classAdd($thisFormEl, 'formplate-checkbox' + $baseClasses);
             }
             checkToggle($input);
          } else if ($inputType === 'radio') {
-            tool.classAdd($thisFormEl, 'formplate-radio' + $inputCheckClass);
+            $baseClasses += ($input.getAttribute('checked') === 'checked') ? ' _checked' : '';
+            tool.classAdd($thisFormEl, 'formplate-radio' + $baseClasses);
             radioToggle($input);
          } else if ($inputType === 'password') {
-            tool.classAdd($thisFormEl, 'formplate-input _password');
+            tool.classAdd($thisFormEl, 'formplate-input _password' + $baseClasses);
             inputFocus($thisFormEl);
          } else {
-            tool.classAdd($thisFormEl, 'formplate-input');
+            tool.classAdd($thisFormEl, 'formplate-input' + $baseClasses);
             inputFocus($thisFormEl);
          }
       } else if ($thisFormEl.querySelector('textarea')) {
          var $textarea = $thisFormEl.querySelector('textarea');
-         tool.classAdd($thisFormEl, 'formplate-textarea');
+         tool.classAdd($thisFormEl, 'formplate-textarea' + $baseClasses);
          textareaFocus($textarea);
       } else if ($thisFormEl.querySelector('select')) {
          var $select = $thisFormEl.querySelector('select');
          if ($select != null) {
-            tool.classAdd($thisFormEl, 'formplate-select');
+            tool.classAdd($thisFormEl, 'formplate-select' + $baseClasses);
          }
       }
    }

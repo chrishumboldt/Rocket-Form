@@ -1,19 +1,23 @@
 /**
- * File: _cehck.scss
- * Type: SASS module
+ * File: sass/_check.scss
+ * Type: SASS component
  * Author: Chris Humboldt
  */
 
 // Table of contents
-// ---------------------------------------------------------------------------------------
-// Font face
-// Check input
-// Radio inputs
+// Variables
+// Checkbox / radio
+// Checkbox / radio colour states
+// Checkbox
+// Radio
 // Fixes
+// Tick animation
 
-// Check input
-// ---------------------------------------------------------------------------------------
-@mixin form-check-all() {
+// Variables
+$tick-scale-large: 1.4;
+
+// Checkbox / radio
+@mixin form-checkbox-all() {
 	.formplate-checkbox,
 	.formplate-radio {
 		@include position(relative);
@@ -24,40 +28,67 @@
 			@include position(relative, margin-right 0px);
 			@include margin-top(0px);
 			@include margin-bottom(2px);
-			@include size(22px, 22px);
-			@include text-align(center);
-			@include text-line-height(22px);
-			@include text-size(10px);
+			@include size(25px, 25px);
 			@include vertical-align(middle);
-			@include border($grey-form);
-			@include border-radius();
 			@include background-clip();
 			@include level(1);
+			@include animate(all);
 		}
-		&._checked:before {
-			content: "\e600";
+		&:after {
+			content: "";
+			@include position(absolute, left 7px top 2px);
 			@include text-colour($white);
+			@include text-size(11px);
+			@include level(2);
+		}
+		&._checked {
+			&:after {
+				content: "\e600";
+				-webkit-animation: form-checkbox-animate-tick 0.5s;
+    			animation: form-checkbox-animate-tick 0.5s;
+			}
 		}
 		// Hide inputs
 		> input {
 			@include spacing-no();
 			@include position(absolute, left 0);
 			@include display(inline-block);
-			@include size(22px, 22px);
+			@include size(25px, 25px);
 			@include opacity(0);
-			@include level(2);
-
+			@include level(3);
 			&:hover {
 				cursor: pointer;
 			}
 		}
+		// Styles
+		&._style-line {
+			&:before {
+				@include border($grey-form);
+				@include border-radius();
+			}
+		}
+		&._style-flat {
+			&:before {
+				@include background-colour($grey-x2-light);
+			}
+		}
+		&._style-raised {
+			&:before {
+				@include border-radius();
+				@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
+			}
+		}
 	}
-
-	// Hover / checked
+}
+// Checkbox / radio colour states
+@mixin form-checkbox-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.formplate-no-touch .formplate-colour-#{$colour-name} {
-			.formplate-checkbox,
-			.formplate-radio {
+		.formplate-checkbox._colour-#{$colour-name},
+		.formplate-radio._colour-#{$colour-name} {
+			&._checked:before {
+				@include background-color($colour);
+			}
+			&._style-line {
 				&:hover:before {
 					@include border($colour);
 				}
@@ -66,24 +97,75 @@
 					@include background-color($colour);
 				}
 			}
+			&._style-flat {
+				&:hover:before {
+					@include background-colour(fade-out($colour, 0.92));
+				}
+				&._checked:before {
+					@include background-color($colour);
+				}
+			}
+			&._style-raised {
+				&:hover:before {
+					@include drop-shadow(fade-out($colour, 0.4), 4px, 1px);
+				}
+				&._checked:before {
+					@include drop-shadow(fade-out($colour, 0.4), 4px, 1px);
+				}
+			}
 		}
 	}
 }
 
 // Radio inputs
-@mixin form-check-radio() {
-	.formplate-radio:before {
+@mixin form-checkbox-radio() {
+	.formplate-radio:before,
+	.formplate-radio._style-flat:before,
+	.formplate-radio._style-line:before,
+	.formplate-radio._style-raised:before {
 		@include border-radius(50%);
 		@include background-clip();
 	}
 }
 
 // Fixes
-@mixin form-check-fixes() {
+@mixin form-checkbox-fixes() {
 	@-moz-document url-prefix() {
 		.formplate-checkbox,
 		.formplate-radio {
-			@include text-line-height(21px);
+			&._style-line,
+			&._style-raised,
+			&._style-flat {
+				@include text-line-height(24px);
+			}
 		}
+	}
+}
+
+// Tick animation
+@-webkit-keyframes form-checkbox-animate-tick {
+	0% {
+		@include opacity(0);
+		@include transform-scale-3d(0,0,0);
+	}
+	50% {
+		@include opacity(1);
+		@include transform-scale-3d($tick-scale-large,$tick-scale-large,$tick-scale-large);
+	}
+	100% {
+		@include transform-scale-3d(1,1,1);
+	}
+}
+@keyframes form-checkbox-animate-tick {
+	0% {
+		@include opacity(0);
+		@include transform-scale-3d(0,0,0);
+	}
+	50% {
+		@include opacity(1);
+		@include transform-scale-3d($tick-scale-large,$tick-scale-large,$tick-scale-large);
+	}
+	100% {
+		@include transform-scale-3d(1,1,1);
 	}
 }

@@ -1,6 +1,6 @@
 /**
- * File: _input.scss
- * Type: SASS module
+ * File: sass/_input.scss
+ * Type: SASS component
  * Author: Chris Humboldt
  */
 
@@ -12,25 +12,49 @@
 
 // Input
 @mixin form-input() {
-	.formplate-input input {
-		@include width(100%);
-		@include padding(12px);
-		@include margin(0px);
-		@include margin-bottom(1.5em);
-		@include text-font($font-family);
-		@include text-size(13px);
-		@include background-colour($white);
-		@include border($grey-form);
-		@include border-radius(2px);
-		@include level(1);
-		outline: none;
-		-webkit-appearance: none;
-		&:focus {
-			@include border($blue);
-			@include level(2);
+	.formplate-input {
+		input {
+			@include width(100%);
+			@include padding(14px);
+			@include margin(0px);
+			@include margin-bottom(1.5em);
+			@include text-font($font-family);
+			@include text-size(13px);
+			@include background-colour($white);
+			@include border-no();
+			@include level(1);
+			outline: none;
+			-webkit-appearance: none;
+			@include animate(all);
+			&:focus {
+				@include level(2);
+			}
+			@include breakpoint(large) {
+				@include text-size(14px);
+			}
 		}
-		@include breakpoint(large) {
-			@include text-size(14px);
+		// Styles
+		&._style-line input {
+			@include border($grey-form);
+			@include border-radius(2px);
+			&:focus {
+				@include border($grey-dark);
+			}
+		}
+		&._style-flat input {
+			@include background-colour($grey-x2-light);
+			&:focus {
+				@include background-colour($grey-x-light);
+			}
+		}
+		&._style-raised {
+			input {
+				@include border-radius();
+				@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
+				&:focus {
+					@include drop-shadow(fade-out($black, 0.6), 4px, 1px);
+				}
+			}
 		}
 	}
 }
@@ -38,9 +62,24 @@
 // Input colour states
 @mixin form-input-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.formplate-colour-#{$colour-name} {
-			.formplate-input input:focus {
-				border-color: $colour;
+		.formplate-input._style-line._colour-#{$colour-name} input {
+			&:active,
+			&:focus {
+				@include border($colour);
+			}
+		}
+		.formplate-input._style-flat._colour-#{$colour-name} input {
+			&:active,
+			&:focus {
+				@include background-colour(fade-out($colour, 0.95));
+			}
+		}
+		.formplate-input._style-raised._colour-#{$colour-name} {
+			&._focused .input-group {
+				@include drop-shadow-no();
+			}
+			input:focus {
+				@include drop-shadow(fade-out($colour, 0.5), 4px, 1px);
 			}
 		}
 	}
@@ -49,26 +88,34 @@
 // Input groups
 .formplate-input .input-group {
 	@include row();
-
-	// Inputs
+	@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
 	input {
 		@include margin-left(-1px);
-		@include border-radius(0px);
 	}
 	input:first-child {
 		@include margin-left(0px);
-		@include border-radius-left(2px);
 	}
-	input:last-child {
-		@include border-radius-right(2px);
-	}
-	// Inputs with icon
 	.input-icon {
 		input {
 			@include width(100%);
 		}
 		&:first-child input {
 			@include margin-left(0px);
+		}
+	}
+}
+.formplate-input._style-line .input-group {
+	input {
+		@include border-radius(0px);
+	}
+	input:first-child {
+		@include border-radius-left(2px);
+	}
+	input:last-child {
+		@include border-radius-right(2px);
+	}
+	.input-icon {
+		&:first-child input {
 			@include border-radius-left(2px);
 		}
 		&:last-child input {
@@ -76,9 +123,16 @@
 		}
 	}
 }
+.formplate-input._style-raised .input-group {
+	@include margin-bottom(1.5em);
+	@include animate(all);
+	input {
+		@include margin-no();
+		@include drop-shadow-no();
+	}
+}
 .formplate-input .input-group-two {
 	@extend .input-group;
-	// Inputs and input icon divs
 	input,
 	.input-icon {
 		@include span(6);
@@ -86,7 +140,6 @@
 }
 .formplate-input .input-group-three {
 	@extend .input-group;
-	// Inputs and input icon divs
 	input,
 	.input-icon {
 		@include span(4);
@@ -98,7 +151,7 @@
 	@include position(relative);
 	// Icons
 	i {
-		@include position(absolute, margin-top ($space-small + 2px) right $space-small);
+		@include position(absolute, margin-top ($space-small + 3px) right $space-small);
 		@include font-size($size-base);
 		@include level(4);
 	}

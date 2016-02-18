@@ -5,7 +5,6 @@
  */
 
 // Table of contents
-// ---------------------------------------------------------------------------------------
 // Variables
 // Toggler
 
@@ -45,23 +44,24 @@ $toggler-handle-dim: $toggler-h - 2px;
 			@include animate(all);
 		}
 		&._checked {
-			@include background-colour($blue);
+			@include background-colour($grey-dark);
 			.handle {
 				@include transform-translate-x(20px);
 			}
+		}
+		&._style-raised {
+			@include background-colour(lighten($grey, 25%));
+			@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
 		}
 		.formplate-no-touch &:hover {
 			cursor: pointer;
 		}
 	}
-
 	// Hover / checked
 	@each $colour-name, $colour in $ar-colours-form {
-		.formplate-colour-#{$colour-name} {
-			.formplate-toggler {
-				&.checked {
-					@include background-color($colour);
-				}
+		.formplate-toggler._colour-#{$colour-name} {
+			&._checked {
+				@include background-color($colour);
 			}
 		}
 	}

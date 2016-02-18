@@ -52,12 +52,10 @@ $min-max: false !default;
    margin-right: percentage($off-by / $span-column-limit);
 }
 // Layout
-@mixin limit() {
-   width: $limit-width;
+@mixin limit($limit: $limit-width) {
+   width: 100%;
+	max-width: $limit;
    margin: 0 auto;
-   @media screen and (max-width: $limit-width) {
-      width: 100%;
-   }
 }
 // Breakpoint
 @mixin breakpoint($breakpoint, $breakpoint-type: false, $orientation: false) {
