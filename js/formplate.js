@@ -103,11 +103,11 @@ function formplate($userOptions) {
       for (var $i = 0, $len = $inputs.length; $i < $len; $i++) {
          var $thisInput = $inputs[$i];
          $thisInput.onfocus = function() {
-            var $parent = ($thisInput.parentNode.getAttribute('class').indexOf('formplate') > -1) ? $thisInput.parentNode : ($thisInput.parentNode.parentNode.getAttribute('class').indexOf('formplate') > -1) ? $thisInput.parentNode.parentNode : $thisInput.parentNode.parentNode.parentNode;
+            var $parent = ($thisInput.parentNode.getAttribute('class').indexOf('fp-') > -1) ? $thisInput.parentNode : ($thisInput.parentNode.parentNode.getAttribute('class').indexOf('fp-') > -1) ? $thisInput.parentNode.parentNode : $thisInput.parentNode.parentNode.parentNode;
             tool.classAdd($parent, '_focused');
          };
          $thisInput.onblur = function() {
-            var $parent = ($thisInput.parentNode.getAttribute('class').indexOf('formplate') > -1) ? $thisInput.parentNode : ($thisInput.parentNode.parentNode.getAttribute('class').indexOf('formplate') > -1) ? $thisInput.parentNode.parentNode : $thisInput.parentNode.parentNode.parentNode;
+            var $parent = ($thisInput.parentNode.getAttribute('class').indexOf('fp-') > -1) ? $thisInput.parentNode : ($thisInput.parentNode.parentNode.getAttribute('class').indexOf('fp-') > -1) ? $thisInput.parentNode.parentNode : $thisInput.parentNode.parentNode.parentNode;
             tool.classRemove($parent, '_focused');
          };
       }
@@ -133,7 +133,7 @@ function formplate($userOptions) {
    // Loop over all elements and apply
    for (var $i = 0, $len = $formplateEls.length; $i < $len; $i++) {
       var $thisFormEl = $formplateEls[$i];
-      var $baseClasses = ' _colour-' + $self.options.colour + ' _style-' + $self.options.style;
+      var $baseClasses = ' _c-' + $self.options.colour + ' _s-' + $self.options.style;
 
       // Set the input classes
       if ($thisFormEl.querySelector('input')) {
@@ -143,30 +143,30 @@ function formplate($userOptions) {
          if ($inputType === 'checkbox') {
             $baseClasses += ($input.getAttribute('checked') === 'checked') ? ' _checked' : '';
             if (tool.hasClass($input, 'toggler')) {
-               tool.classAdd($thisFormEl, 'formplate-toggler' + $baseClasses);
+               tool.classAdd($thisFormEl, 'fp-tog' + $baseClasses);
             } else {
-               tool.classAdd($thisFormEl, 'formplate-checkbox' + $baseClasses);
+               tool.classAdd($thisFormEl, 'fp-check' + $baseClasses);
             }
             checkToggle($input);
          } else if ($inputType === 'radio') {
             $baseClasses += ($input.getAttribute('checked') === 'checked') ? ' _checked' : '';
-            tool.classAdd($thisFormEl, 'formplate-radio' + $baseClasses);
+            tool.classAdd($thisFormEl, 'fp-check _t-radio' + $baseClasses);
             radioToggle($input);
          } else if ($inputType === 'password') {
-            tool.classAdd($thisFormEl, 'formplate-input _password' + $baseClasses);
+            tool.classAdd($thisFormEl, 'fp-inp _t-password' + $baseClasses);
             inputFocus($thisFormEl);
          } else {
-            tool.classAdd($thisFormEl, 'formplate-input' + $baseClasses);
+            tool.classAdd($thisFormEl, 'fp-inp' + $baseClasses);
             inputFocus($thisFormEl);
          }
       } else if ($thisFormEl.querySelector('textarea')) {
          var $textarea = $thisFormEl.querySelector('textarea');
-         tool.classAdd($thisFormEl, 'formplate-textarea' + $baseClasses);
+         tool.classAdd($thisFormEl, 'fp-text' + $baseClasses);
          textareaFocus($textarea);
       } else if ($thisFormEl.querySelector('select')) {
          var $select = $thisFormEl.querySelector('select');
          if ($select != null) {
-            tool.classAdd($thisFormEl, 'formplate-select' + $baseClasses);
+            tool.classAdd($thisFormEl, 'fp-sel' + $baseClasses);
          }
       }
    }

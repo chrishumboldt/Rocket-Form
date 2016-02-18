@@ -12,7 +12,7 @@
 
 // Input
 @mixin form-input() {
-	.formplate-input {
+	.fp-inp {
 		input {
 			@include width(100%);
 			@include padding(14px);
@@ -34,20 +34,20 @@
 			}
 		}
 		// Styles
-		&._style-line input {
+		&._s-line input {
 			@include border($grey-form);
 			@include border-radius(2px);
 			&:focus {
 				@include border($grey-dark);
 			}
 		}
-		&._style-flat input {
+		&._s-flat input {
 			@include background-colour($grey-x2-light);
 			&:focus {
 				@include background-colour($grey-x-light);
 			}
 		}
-		&._style-raised {
+		&._s-raised {
 			input {
 				@include border-radius();
 				@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
@@ -62,19 +62,19 @@
 // Input colour states
 @mixin form-input-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.formplate-input._style-line._colour-#{$colour-name} input {
+		.fp-inp._s-line._c-#{$colour-name} input {
 			&:active,
 			&:focus {
 				@include border($colour);
 			}
 		}
-		.formplate-input._style-flat._colour-#{$colour-name} input {
+		.fp-inp._s-flat._c-#{$colour-name} input {
 			&:active,
 			&:focus {
 				@include background-colour(fade-out($colour, 0.95));
 			}
 		}
-		.formplate-input._style-raised._colour-#{$colour-name} {
+		.fp-inp._s-raised._c-#{$colour-name} {
 			&._focused .input-group {
 				@include drop-shadow-no();
 			}
@@ -86,9 +86,8 @@
 }
 
 // Input groups
-.formplate-input .input-group {
+.fp-inp .input-group {
 	@include row();
-	@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
 	input {
 		@include margin-left(-1px);
 	}
@@ -104,7 +103,7 @@
 		}
 	}
 }
-.formplate-input._style-line .input-group {
+.fp-inp._s-line .input-group {
 	input {
 		@include border-radius(0px);
 	}
@@ -123,22 +122,23 @@
 		}
 	}
 }
-.formplate-input._style-raised .input-group {
+.fp-inp._s-raised .input-group {
 	@include margin-bottom(1.5em);
 	@include animate(all);
+	@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
 	input {
 		@include margin-no();
 		@include drop-shadow-no();
 	}
 }
-.formplate-input .input-group-two {
+.fp-inp .input-group-two {
 	@extend .input-group;
 	input,
 	.input-icon {
 		@include span(6);
 	}
 }
-.formplate-input .input-group-three {
+.fp-inp .input-group-three {
 	@extend .input-group;
 	input,
 	.input-icon {
@@ -147,7 +147,7 @@
 }
 
 // Input icon
-.formplate-input .input-icon {
+.fp-inp .input-icon {
 	@include position(relative);
 	// Icons
 	i {

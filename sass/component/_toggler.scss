@@ -15,13 +15,12 @@ $toggler-handle-dim: $toggler-h - 2px;
 
 // Toggler
 @mixin form-toggler() {
-	.formplate-toggler {
+	.fp-tog {
 		@include position(relative);
 		@include display(inline-block);
 		@include size($toggler-w, $toggler-h);
 		@include background-colour($grey-x-light);
 		@include border-radius($toggler-h / 2);
-		@include drop-shadow-inset(fade-out($black, 0.85), 2px, 1px);
 		@include animate(background-color);
 		// Hide the input
 		> input {
@@ -49,7 +48,10 @@ $toggler-handle-dim: $toggler-h - 2px;
 				@include transform-translate-x(20px);
 			}
 		}
-		&._style-raised {
+		&._s-line {
+			@include drop-shadow-inset(fade-out($black, 0.85), 2px, 1px);
+		}
+		&._s-raised {
 			@include background-colour(lighten($grey, 25%));
 			@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
 		}
@@ -59,7 +61,7 @@ $toggler-handle-dim: $toggler-h - 2px;
 	}
 	// Hover / checked
 	@each $colour-name, $colour in $ar-colours-form {
-		.formplate-toggler._colour-#{$colour-name} {
+		.fp-tog._c-#{$colour-name} {
 			&._checked {
 				@include background-color($colour);
 			}

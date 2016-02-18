@@ -10,7 +10,7 @@
 
 // Textarea
 @mixin form-textarea() {
-	.formplate-textarea {
+	.fp-text {
 		textarea {
 			@include size(100%, 114px);
 			@include padding(12px);
@@ -31,21 +31,21 @@
 			}
 		}
 		// Styles
-		&._style-line textarea {
+		&._s-line textarea {
 			@include border($grey-form);
 			@include border-radius(2px);
 			&:focus {
 				@include border($grey-dark);
 			}
 		}
-		&._style-flat textarea {
+		&._s-flat textarea {
 			@include padding-vertical(14px);
 			@include background-colour($grey-x2-light);
 			&:focus {
 				@include background-colour($grey-x-light);
 			}
 		}
-		&._style-raised textarea {
+		&._s-raised textarea {
 			@include border-radius();
 			@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
 			&:focus {
@@ -58,19 +58,19 @@
 // Textarea colour states
 @mixin form-textarea-states() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.formplate-textarea._style-line._colour-#{$colour-name} textarea {
+		.fp-text._s-line._c-#{$colour-name} textarea {
 			&:active,
 			&:focus {
 				@include border($colour);
 			}
 		}
-		.formplate-textarea._style-flat._colour-#{$colour-name} textarea {
+		.fp-text._s-flat._c-#{$colour-name} textarea {
 			&:active,
 			&:focus {
 				@include background-colour(fade-out($colour, 0.95));
 			}
 		}
-		.formplate-textarea._style-raised._colour-#{$colour-name} {
+		.fp-text._s-raised._c-#{$colour-name} {
 			textarea:focus {
 				@include drop-shadow(fade-out($colour, 0.5), 4px, 1px);
 			}
