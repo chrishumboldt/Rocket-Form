@@ -151,7 +151,7 @@
 	@include position(relative);
 	// Icons
 	i {
-		@include position(absolute, margin-top ($space-small + 3px) right $space-small);
+		@include position(absolute, margin-top ($space-small + 5px) right $space-small);
 		@include font-size($size-base);
 		@include level(4);
 	}
