@@ -21,36 +21,33 @@
 
 	<div class="container">
 		<h4>Getting Started</h4>
-		<p>You can either download a copy of the source files or install Formplate via Bower.</p>
+		<p>You can either download a copy of the <a href="https://github.com/chrishumboldt/Formplate/archive/master.zip" class="link">source files</a> or install Formplate via Bower.</p>
 <pre class="prettyprint linenums">
 bower install formplate
 </pre>
-		<p>Start by including the necessary files. <b>NOTE</b> to include the formplate data attribute (data-formplate-colour) on the <b>body</b> tag else it will default to a blue fallback.</p>
+		<p>Start by including the necessary files.</p>
 <pre class="prettyprint linenums">
 &lt;head&gt;
     &lt;link href=&quot;css/formplate.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
 &lt;/head&gt;
-&lt;body data-formplate-colour="red"&gt;
+&lt;body&gt;
     /* Your content goes here */
     &lt;script src=&quot;js/min/formplate.js&quot;>&lt;/script&gt;
 &lt;/body&gt;
 </pre>
 		<br>
-		<h4>Basic Example</h4>
-		<p>You will need to wrap your form elements with an identifier of your choice. Below is an example of executing the component complete with required HTML and Javascript.</p>
+		<h4>Javascript Call</h4>
 <pre class="prettyprint linenums">
-&lt;div class="form-example"&gt;
-    &lt;label for="input-example"&gt;Example Label&lt;label&gt;
-    &lt;input id="input-example" type="text" placeholder="Example Input"&gt;
-&lt;/div&gt;
 &lt;script&gt;
 new formplate({
-    selector: '.form-example'
+    selector: '.form-el',
+    colour: 'red',
+    style: 'flat'
 });
 &lt;/script&gt;
 </pre>
 		<br>
-		<h4>Working Examples</h4>
+		<h4>HTML Examples</h4>
 		<div class="block">
 			<div class="left">
 				<h3>Basic Inputs</h3>
@@ -178,7 +175,9 @@ new formplate({
 	<script src="js/min/demo.js"></script>
 	<script>
 	new formplate({
-		selector: '.form-el'
+		selector: '.form-el',
+		colour: 'blue',
+		style: 'line'
 	});
 	</script>
 

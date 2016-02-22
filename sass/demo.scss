@@ -169,7 +169,7 @@ footer a {
 
 // Container
 .container {
-	@include limit();
+	@include limit(60em);
 	@include padding(20px);
 	@include breakpoint(large) {
 		@include padding-vertical(60px);

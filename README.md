@@ -14,7 +14,7 @@ Start by including the necessary files. **NOTE** to include the formplate data a
 <head>
 	<link href="css/formplate.css" rel="stylesheet" type="text/css">
 </head>
-<body data-formplate-colour="red">
+<body>
     /* Your content goes here */
     <script src="js/min/formplate.js"></script>
 </body>
@@ -31,6 +31,30 @@ You will need to wrap your form elements with an identifier of your choice. Belo
 new formplate({
    selector: '.form-el'
 });
+</script>
+```
+
+## Javascript Options
+See the different options you have available on component call.
+
+| Name | Default | Options | Description |
+| ---- | ---- | ---- | ---- |
+| selector | false | | Set the HTML selector. |
+| colour | blue | grey, black, white, aqua, blue, green, orange, pink, purple, red, grey-blue | Set the colour of the form elements. |
+| style | line | flat, line, raised | Set the style of the form elements. |
+
+#### Defaults
+You can also set or overwrite the above options globally by altering the Formplate defaults. To do so reference the **$formplateDefault** object. For example:
+
+```
+<script>
+// Default change
+$formplateDefault.selector = '.form-element';
+$formplateDefault.colour = 'red';
+$formplateDefault.style = 'flat';
+
+// Execute
+new formplate();
 </script>
 ```
 

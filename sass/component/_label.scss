@@ -1,15 +1,8 @@
 /**
- * File: _label.scss
- * Type: SASS module
+ * File: sass/_label.scss
+ * Type: SASS component
  * Author: Chris Humboldt
  */
-
-// Table of contents
-// ---------------------------------------------------------------------------------------
-// Label
-
-// Label
-// ---------------------------------------------------------------------------------------
 @mixin form-label() {
 	label {
 		@include display(inline-block);
@@ -22,7 +15,7 @@
 
 		// Hover
 		.formplate-no-touch &:hover {
-			cursor: pointer;
+			@include cursor(pointer);
 		}
 	}
 }
