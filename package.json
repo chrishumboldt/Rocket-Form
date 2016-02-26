@@ -1,23 +1,12 @@
 {
-<<<<<<< HEAD
 	"name": "formplate",
-	"version": "2.1.0",
+	"version": "2.1.2",
 	"description": "A global form component.",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/chrishumboldt/Formplate.git"
 	},
 	"keywords": [
-=======
-   "name": "formplate",
-   "version": "2.1.0",
-   "description": "A global form component.",
-   "repository": {
-      "type": "git",
-      "url": "https://github.com/chrishumboldt/Formplate.git"
-   },
-   "keywords": [
->>>>>>> origin/dev-chris
       "Form",
       "Javascript",
       "CSS",
