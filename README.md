@@ -130,6 +130,21 @@ new formplate({
 </div>
 ```
 
+## SASS Implementation
+If you would like to use a more lightweight version of the form styles you can execute a mixin that will generate one particaluar style that you want. To start you will need to include the Formplate SASS file and then execute based on your requirement. See an example below.
+
+```
+// Import
+@import "formplate/sass/import";
+
+// Generate styles
+@include formplate-css(flat);
+```
+
+| Mixin | Default | Options | Description |
+| ---- | ---- | ---- | ---- |
+| formplate-css($x) | all | all, flat, line, raised | Generate the style of forms you want. |
+
 ## Author
 Created and maintained by Chris Humboldt<br>
 Website: <a href="http://chrishumboldt.com/">chrishumboldt.com</a><br>
