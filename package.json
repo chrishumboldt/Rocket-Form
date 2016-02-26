@@ -1,27 +1,27 @@
 {
-   "name": "formplate",
-   "version": "2.1.0",
-   "description": "A global form component.",
-   "repository": {
-      "type": "git",
-      "url": "https://github.com/chrishumboldt/Formplate.git"
-   },
-   "keywords": [
+	"name": "formplate",
+	"version": "2.1.2",
+	"description": "A global form component.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chrishumboldt/Formplate.git"
+	},
+	"keywords": [
       "Form",
       "Javascript",
       "CSS",
       "Webplate"
    ],
-   "author": "Chris Humboldt",
-   "license": "Apache License, Version 2.0",
-   "bugs": {
-      "url": "https://github.com/chrishumboldt/Formplate/issues"
-   },
-   "homepage": "http://getwebplate.com/plugins/formplate",
-   "devDependencies": {
-      "gulp": "^3.9.0",
-      "gulp-livereload": "^3.8.0",
-      "gulp-sass": "^2.0.4",
-      "gulp-uglify": "^1.3.0"
-   }
+	"author": "Chris Humboldt",
+	"license": "Apache License, Version 2.0",
+	"bugs": {
+		"url": "https://github.com/chrishumboldt/Formplate/issues"
+	},
+	"homepage": "http://getwebplate.com/plugins/formplate",
+	"devDependencies": {
+		"gulp": "^3.9.0",
+		"gulp-livereload": "^3.8.0",
+		"gulp-sass": "^2.0.4",
+		"gulp-uglify": "^1.3.0"
+	}
 }

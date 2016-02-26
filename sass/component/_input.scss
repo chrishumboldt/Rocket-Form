@@ -6,12 +6,13 @@
 
 // Table of contents
 // Input
+// Styles
 // Input colour states
 // Input groups
 // Input icon
 
 // Input
-@mixin form-input() {
+@mixin form-input($type: all) {
 	.fp-inp {
 		input {
 			@include width(100%);
@@ -21,7 +22,7 @@
 			@include text-font($font-family);
 			@include text-size(13px);
 			@include background-colour($white);
-			@include border-no();
+			@include border($white);
 			@include level(1);
 			outline: none;
 			-webkit-appearance: none;
@@ -33,26 +34,61 @@
 				@include text-size(14px);
 			}
 		}
-		// Styles
-		&._s-line input {
+	}
+	@include form-input-styles($type);
+	@include form-input-hover();
+}
+
+// Styles
+@mixin form-input-styles($type: all) {
+	@if $type == line {
+		.fp-inp._s-line input {
 			@include border($grey-form);
 			@include border-radius(2px);
 			&:focus {
 				@include border($grey-dark);
 			}
 		}
-		&._s-flat input {
-			@include background-colour($grey-x2-light);
+	} @else if $type == flat {
+		.fp-inp._s-flat input {
+			@include background-colour($grey-x-light);
+			@include border($grey-x-light);
 			&:focus {
-				@include background-colour($grey-x-light);
+				@include border($grey-light);
 			}
 		}
-		&._s-raised {
+	} @else if $type == raised {
+		.fp-inp._s-raised {
 			input {
 				@include border-radius();
-				@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
+				@include drop-shadow(fade-out($black, 0.85), 4px, 1px);
 				&:focus {
-					@include drop-shadow(fade-out($black, 0.6), 4px, 1px);
+					@include border($grey);
+				}
+			}
+		}
+	} @else {
+		.fp-inp._s-line input {
+			@include border($grey-form);
+			@include border-radius(2px);
+			&:focus {
+				@include border($grey-dark);
+				@include background-colour($white);
+			}
+		}
+		.fp-inp._s-flat input {
+			@include background-colour($grey-x-light);
+			@include border($grey-x-light);
+			&:focus {
+				@include border($grey-light);
+			}
+		}
+		.fp-inp._s-raised {
+			input {
+				@include border-radius();
+				@include drop-shadow(fade-out($black, 0.85), 4px, 1px);
+				&:focus {
+					@include border($grey);
 				}
 			}
 		}
@@ -62,24 +98,10 @@
 // Input colour states
 @mixin form-input-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-inp._s-line._c-#{$colour-name} input {
+		.fp-inp._c-#{$colour-name} input {
 			&:active,
 			&:focus {
 				@include border($colour);
-			}
-		}
-		.fp-inp._s-flat._c-#{$colour-name} input {
-			&:active,
-			&:focus {
-				@include background-colour(fade-out($colour, 0.95));
-			}
-		}
-		.fp-inp._s-raised._c-#{$colour-name} {
-			&._focused .input-group {
-				@include drop-shadow-no();
-			}
-			input:focus {
-				@include drop-shadow(fade-out($colour, 0.5), 4px, 1px);
 			}
 		}
 	}

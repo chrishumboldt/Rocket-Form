@@ -1,20 +1,20 @@
 {
-   "name": "formplate",
-   "version": "2.1.0",
-   "homepage": "http://paypur.com/#/view/formplate",
-   "authors": [
+	"name": "formplate",
+	"version": "2.1.2",
+	"homepage": "http://paypur.com/#/view/formplate",
+	"authors": [
       "Chris Humboldt <chrismodem@gmail.com>"
    ],
-   "description": "A global form component.",
-   "main": ["css/formplate.css", "js/min/formplate.js"],
-   "keywords": [
+	"description": "A global form component.",
+	"main": ["css/formplate.css", "js/min/formplate.js"],
+	"keywords": [
       "Webplate",
       "Formplate",
       "Form",
       "CSS"
    ],
-   "license": "Apache License, Version 2.0",
-   "ignore": [
+	"license": "Apache License, Version 2.0",
+	"ignore": [
       "**/.*",
       "node_modules",
       "bower_components",
@@ -26,7 +26,6 @@
       "bower.json",
       "css/demo.css",
       "js/demo.js",
-      "js/min/demo.js",
-      "sass"
+      "js/min/demo.js"
    ]
 }
