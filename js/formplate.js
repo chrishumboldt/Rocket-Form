@@ -145,17 +145,33 @@ function formplate($userOptions) {
 			var $inputType = $input.getAttribute('type');
 
 			if ($inputType === 'checkbox') {
-				$baseClasses += ($input.checked === true) ? ' _checked' : '';
-				if (tool.hasClass($input, 'toggler')) {
-					tool.classAdd($thisFormEl, 'fp-tog' + $baseClasses);
+				if (tool.hasClass($thisFormEl, 'fp-tog') || tool.hasClass($thisFormEl, 'fp-check')) {
+					if ($input.checked === true) {
+						tool.classAdd($thisFormEl, '_checked');
+					} else {
+						tool.classRemove($thisFormEl, '_checked');
+					}
 				} else {
-					tool.classAdd($thisFormEl, 'fp-check' + $baseClasses);
+					$baseClasses += ($input.checked === true) ? ' _checked' : '';
+					if (tool.hasClass($input, 'toggler')) {
+						tool.classAdd($thisFormEl, 'fp-tog' + $baseClasses);
+					} else {
+						tool.classAdd($thisFormEl, 'fp-check' + $baseClasses);
+					}
+					checkToggle($input);
 				}
-				checkToggle($input);
 			} else if ($inputType === 'radio') {
-				$baseClasses += ($input.checked === true) ? ' _checked' : '';
-				tool.classAdd($thisFormEl, 'fp-check _t-radio' + $baseClasses);
-				radioToggle($input);
+				if (tool.hasClass($thisFormEl, 'fp-check')) {
+					if ($input.checked === true) {
+						tool.classAdd($thisFormEl, '_checked');
+					} else {
+						tool.classRemove($thisFormEl, '_checked');
+					}
+				} else {
+					$baseClasses += ($input.checked === true) ? ' _checked' : '';
+					tool.classAdd($thisFormEl, 'fp-check _t-radio' + $baseClasses);
+					radioToggle($input);
+				}
 			} else if ($inputType === 'password') {
 				tool.classAdd($thisFormEl, 'fp-inp _t-password' + $baseClasses);
 				inputFocus($thisFormEl);
