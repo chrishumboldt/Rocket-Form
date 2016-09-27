@@ -13,6 +13,7 @@
 		@include text-font($font-family);
 		@include text-size(14px);
 		@include text-weight(normal);
+		@include level(5);
 		// Hover
 		.fp-no-touch &:hover {
 			@include cursor(pointer);
