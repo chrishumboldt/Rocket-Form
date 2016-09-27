@@ -9,7 +9,7 @@ $font-face-formplate: "icon-font-formplate" !default;
 $grey-form: lighten(#000, 85%);
 
 // Imports
-@import "../../bower_components/blueplate/sass/import";
+@import "../../bower_components/blueplate/build/sass/import";
 
 @import "component/setup";
 
