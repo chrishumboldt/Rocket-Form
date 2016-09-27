@@ -2,14 +2,14 @@
  * File: _import.scss
  * Type: SASS import
  * Author: Chris Humboldt
- */
+**/
 
 // Variables
 $font-face-formplate: "icon-font-formplate" !default;
 $grey-form: lighten(#000, 85%);
 
 // Imports
-@import "../bower_components/blueplate/sass/import";
+@import "../../bower_components/blueplate/sass/import";
 
 @import "component/setup";
 

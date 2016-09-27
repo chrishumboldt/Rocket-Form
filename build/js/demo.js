@@ -2,7 +2,7 @@
  * File: script.js
  * Type: Javascript Prettify
  * Author: Chris Humboldt
- */
+**/
 
 // Prettify
 ! function() {

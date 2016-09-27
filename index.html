@@ -9,8 +9,8 @@
 	<title>Formplate Component</title>
 	<!-- Styles -->
 	<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="css/formplate.css" rel="stylesheet" type="text/css">
-	<link href="css/demo.css" rel="stylesheet" type="text/css">
+	<link href="css/formplate.min.css" rel="stylesheet" type="text/css">
+	<link href="css/demo.min.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -58,9 +58,17 @@ new formplate({
 					<label for="password-1">Password Label</label>
 					<input type="password" id="password-1" placeholder="Password input">
 				</div>
+				<div class="form-el-2">
+					<label for="text-2">Shift Label</label>
+					<input type="text" id="text-2" value="This is a test">
+				</div>
 				<div class="form-el">
 					<label for="textarea-1">Textarea Label</label>
 					<textarea id="textarea-1" placeholder="Textarea"></textarea>
+				</div>
+				<div class="form-el-2">
+					<label for="textarea-2">Textarea Shift Label</label>
+					<textarea id="textarea-2"></textarea>
 				</div>
 				<div class="form-el">
 					<label for="text-2">Input Icon</label>
@@ -171,11 +179,17 @@ new formplate({
 	</div></div></footer>
 
 	<!-- Scripts -->
-	<script src="js/formplate.js"></script>
-	<script src="js/min/demo.js"></script>
+	<script src="js/formplate.min.js"></script>
+	<script src="js/demo.min.js"></script>
 	<script>
 	new formplate({
 		selector: '.form-el',
+		colour: 'blue',
+		style: 'flat'
+	});
+	new formplate({
+		selector: '.form-el-2',
+		label: 'shift',
 		colour: 'blue',
 		style: 'flat'
 	});

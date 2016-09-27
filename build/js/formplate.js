@@ -2,7 +2,7 @@
  * File: formplate.js
  * Type: Javascript component
  * Author: Chris Humboldt
- */
+**/
 
 // Table of contents
 // Defaults
@@ -10,11 +10,11 @@
 // Variables
 
 // Defaults
-// Defaults
 var $formplateDefault = {
 	selector: '.formplate',
 	colour: 'blue',
-	style: 'line'
+	style: 'line',
+	label: 'normal'
 };
 
 function formplate($userOptions) {
@@ -80,6 +80,20 @@ function formplate($userOptions) {
 				}
 			}
 		};
+		var clone = function ($elm) {
+			var $clone;
+
+			switch(typeof $elm) {
+				case 'object':
+					if ($elm instanceof Array) {
+						return JSON.parse(JSON.stringify($elm));
+					}
+					break;
+				default:
+					return false;
+					break;
+			}
+		};
 		var eventAdd = function($elem, $type, $eventHandle) {
 			if ($elem == null || typeof($elem) == 'undefined') return;
 			if ($elem.addEventListener) {
@@ -107,6 +121,7 @@ function formplate($userOptions) {
 			classAdd: classAdd,
 			classClear: classClear,
 			classRemove: classRemove,
+			clone: clone,
 			element: $toolEl,
 			eventAdd: eventAdd,
 			hasClass: hasClass,
@@ -119,10 +134,12 @@ function formplate($userOptions) {
 	$self.options = {
 		selector: ($userOptions && $userOptions.selector) ? $userOptions.selector : $formplateDefault.selector,
 		colour: ($userOptions && $userOptions.colour) ? $userOptions.colour : $formplateDefault.colour,
-		style: ($userOptions && $userOptions.style) ? $userOptions.style : $formplateDefault.style
+		style: ($userOptions && $userOptions.style) ? $userOptions.style : $formplateDefault.style,
+		label: ($userOptions && $userOptions.label) ? $userOptions.label : $formplateDefault.label,
 	}
 
 	var $formplateEls = document.querySelectorAll($self.options.selector);
+	var $tester = tool.clone(document.querySelector($self.options.selector));
 
 	if (!tool.isTouch() && !tool.hasClass(tool.element.html, 'fp-no-touch')) {
 		tool.classAdd(tool.element.html, 'fp-no-touch');
@@ -140,17 +157,20 @@ function formplate($userOptions) {
 			}
 		};
 	};
-	var inputFocus = function($thisFormEl) {
+	var inputContentFocus = function($thisFormEl) {
 		var $inputs = $thisFormEl.querySelectorAll('input');
 		for (var $i = 0, $len = $inputs.length; $i < $len; $i++) {
 			var $thisInput = $inputs[$i];
 			$thisInput.onfocus = function() {
 				var $parent = ($thisInput.parentNode.getAttribute('class').indexOf('fp-') > -1) ? $thisInput.parentNode : ($thisInput.parentNode.parentNode.getAttribute('class').indexOf('fp-') > -1) ? $thisInput.parentNode.parentNode : $thisInput.parentNode.parentNode.parentNode;
-				tool.classAdd($parent, '_focused');
+				tool.classAdd($parent, '_focused _valued');
 			};
 			$thisInput.onblur = function() {
 				var $parent = ($thisInput.parentNode.getAttribute('class').indexOf('fp-') > -1) ? $thisInput.parentNode : ($thisInput.parentNode.parentNode.getAttribute('class').indexOf('fp-') > -1) ? $thisInput.parentNode.parentNode : $thisInput.parentNode.parentNode.parentNode;
 				tool.classRemove($parent, '_focused');
+				if ($thisInput.value.length < 1) {
+					tool.classRemove($parent, '_valued');
+				}
 			};
 		}
 	};
@@ -165,19 +185,26 @@ function formplate($userOptions) {
 			tool.classAdd($element.parentNode, '_checked');
 		};
 	};
-	var textareaFocus = function($textarea) {
+	var textareaContentFocus = function($textarea) {
 		$textarea.onfocus = function() {
-			tool.classAdd($textarea.parentNode, '_focused');
+			tool.classAdd($textarea.parentNode, '_focused _valued');
 		};
 		$textarea.onblur = function() {
 			tool.classRemove($textarea.parentNode, '_focused');
+			if ($textarea.value.length < 1) {
+				tool.classRemove($textarea.parentNode, '_valued');
+			}
 		};
 	};
 
 	// Loop over all elements and apply
+	var $globalClasses = ['_c-' + $self.options.colour, '_s-' + $self.options.style];
+	if ($self.options.label.length > 0 && $self.options.label !== 'normal') {
+		$globalClasses.push('_l-' + $self.options.label);
+	}
 	for (var $i = 0, $len = $formplateEls.length; $i < $len; $i++) {
 		var $thisFormEl = $formplateEls[$i];
-		var $classes = ['_c-' + $self.options.colour, '_s-' + $self.options.style];
+		var $classes = tool.clone($globalClasses);
 
 		// Set the input classes
 		if ($thisFormEl.querySelector('input')) {
@@ -211,18 +238,27 @@ function formplate($userOptions) {
 				}
 			} else if ($inputType === 'password') {
 				$classes.push('fp-inp', '_t-password');
+				if ($input.value.length > 0) {
+					$classes.push('_valued');
+				}
 				tool.classAdd($thisFormEl, $classes);
-				inputFocus($thisFormEl);
+				inputContentFocus($thisFormEl);
 			} else {
 				$classes.push('fp-inp');
+				if ($input.value.length > 0) {
+					$classes.push('_valued');
+				}
 				tool.classAdd($thisFormEl, $classes);
-				inputFocus($thisFormEl);
+				inputContentFocus($thisFormEl);
 			}
 		} else if ($thisFormEl.querySelector('textarea')) {
 			var $textarea = $thisFormEl.querySelector('textarea');
 			$classes.push('fp-text');
+			if ($textarea.value.length > 0) {
+				$classes.push('_valued');
+			}
 			tool.classAdd($thisFormEl, $classes);
-			textareaFocus($textarea);
+			textareaContentFocus($textarea);
 		} else if ($thisFormEl.querySelector('select')) {
 			var $select = $thisFormEl.querySelector('select');
 			if ($select != null) {

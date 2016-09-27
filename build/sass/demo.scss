@@ -2,7 +2,7 @@
  * File: demo.scss
  * Type: SASS demo
  * Author: Chris Humboldt
- */
+**/
 
 // Table of contents
 // Import
@@ -10,7 +10,7 @@
 // Demo
 
 // Import
-@import "../bower_components/blueplate/sass/blueplate";
+@import "../../bower_components/blueplate/sass/blueplate";
 
 // Code
 .prettyprint {
@@ -169,7 +169,7 @@ footer a {
 
 // Container
 .container {
-	@include limit(60em);
+	@include limit();
 	@include padding(20px);
 	@include breakpoint(large) {
 		@include padding-vertical(60px);
@@ -183,7 +183,8 @@ footer a {
 	.right {
 		@include span(12);
 		@include breakpoint(large) {
-			@include span(6);
+		    @include span-new(6);
+			 @include padding-right($space-small);
 		}
 	}
 	@include breakpoint(large) {

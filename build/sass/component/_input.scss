@@ -2,7 +2,7 @@
  * File: sass/_input.scss
  * Type: SASS component
  * Author: Chris Humboldt
- */
+**/
 
 // Table of contents
 // Input
@@ -14,6 +14,7 @@
 // Input
 @mixin form-input($type: all) {
 	.fp-inp {
+		@include position(relative);
 		input {
 			@include width(100%);
 			@include padding(14px);
