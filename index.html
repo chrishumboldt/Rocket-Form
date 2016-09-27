@@ -28,11 +28,11 @@ bower install formplate
 		<p>Start by including the necessary files.</p>
 <pre class="prettyprint linenums">
 &lt;head&gt;
-    &lt;link href=&quot;css/formplate.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+    &lt;link href=&quot;css/formplate.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
 &lt;/head&gt;
 &lt;body&gt;
     /* Your content goes here */
-    &lt;script src=&quot;js/min/formplate.js&quot;>&lt;/script&gt;
+    &lt;script src=&quot;js/formplate.min.js&quot;>&lt;/script&gt;
 &lt;/body&gt;
 </pre>
 		<br>
@@ -43,6 +43,13 @@ new formplate({
     selector: '.form-el',
     colour: 'red',
     style: 'flat'
+});
+// With Shifting Label
+new formplate({
+    selector: '.form-el-2',
+    colour: 'red',
+    style: 'flat',
+    label: 'shift'
 });
 &lt;/script&gt;
 </pre>
@@ -60,7 +67,7 @@ new formplate({
 				</div>
 				<div class="form-el-2">
 					<label for="text-2">Shift Label</label>
-					<input type="text" id="text-2" value="This is a test">
+					<input type="text" id="text-2">
 				</div>
 				<div class="form-el">
 					<label for="textarea-1">Textarea Label</label>
