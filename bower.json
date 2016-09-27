@@ -15,18 +15,17 @@
    ],
 	"license": "Apache License, Version 2.0",
 	"ignore": [
-      "**/.*",
-      "node_modules",
-      "bower_components",
-      "test",
-      "tests",
-      "gulpfile.js",
-      "package.json",
-      "index.html",
-      "bower.json",
-      "css/demo.css",
-      "js/demo.js",
-      "js/min/demo.js"
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests",
+		"package.json",
+		"index.html",
+		"bower.json",
+		"build",
+		"css/demo.min.css",
+		"js/demo.min.js"
    ],
 	"devDependencies": {
 		"blueplate": "^2.2.2"
