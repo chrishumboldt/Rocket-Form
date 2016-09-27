@@ -12,25 +12,23 @@ Start by including the necessary files. **NOTE** to include the formplate data a
 
 ```
 <head>
-	<link href="css/formplate.css" rel="stylesheet" type="text/css">
+	<link href="css/formplate.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     /* Your content goes here */
-    <script src="js/min/formplate.js"></script>
+    <script src="js/formplate.min.js"></script>
 </body>
 ```
 
 ## Basic Example
 You will need to wrap your form elements with an identifier of your choice. Below is an example of executing the component complete with required HTML and Javascript.
 ```
-<div class="form-el">
+<div class="formplate">
    <label for="input-example">Example Label<label>
    <input id="input-example" type="text" placeholder="Example Input">
 </div>
 <script>
-new formplate({
-   selector: '.form-el'
-});
+new formplate();
 </script>
 ```
 
@@ -39,8 +37,9 @@ See the different options you have available on component call.
 
 | Name | Default | Options | Description |
 | ---- | ---- | ---- | ---- |
-| selector | false | | Set the HTML selector. |
+| selector | formplate | | Set the HTML selector. |
 | colour | blue | grey, black, white, aqua, blue, green, orange, pink, purple, red, grey-blue | Set the colour of the form elements. |
+| label | normal | normal, shift | Set an animation on the form label. |
 | style | line | flat, line, raised | Set the style of the form elements. |
 
 #### Defaults
@@ -60,19 +59,19 @@ new formplate();
 
 ## HTML Examples
 ```
-<div class="form-el">
+<div class="formplate">
    <label for="text-1">Text Label</label>
    <input type="text" id="text-1" placeholder="Text input">
 </div>
-<div class="form-el">
+<div class="formplate">
    <label for="password-1">Password Label</label>
    <input type="password" id="password-1" placeholder="Password input">
 </div>
-<div class="form-el">
+<div class="formplate">
    <label for="textarea-1">Textarea Label</label>
    <textarea id="textarea-1" placeholder="Textarea"></textarea>
 </div>
-<div class="form-el">
+<div class="formplate">
    <label for="text-2">Input Icon</label>
    <div class="input-icon">
       <i class="fa fa-cog"></i>
@@ -81,7 +80,7 @@ new formplate();
 </div>
 
 // Drop-down
-<div class="form-el">
+<div class="formplate">
    <select>
       <option value="1">Select Option 1</option>
       <option value="2">Select Option 2</option>
@@ -90,48 +89,48 @@ new formplate();
 </div>
 
 // Checkboxes
-<div class="form-el">
+<div class="formplate">
    <input type="checkbox" id="checkbox-1" checked="checked">
    <label for="checkbox-1">Checkbox 1</label>
 </div>
-<div class="form-el">
+<div class="formplate">
    <input type="checkbox" id="checkbox-2">
    <label for="checkbox-2">Checkbox 2</label>
 </div>
-<div class="form-el">
+<div class="formplate">
    <input type="checkbox" id="checkbox-3">
    <label for="checkbox-3">Checkbox 3</label>
 </div>
 
 // Toggler
-<div class="form-el">
+<div class="formplate">
    <input type="checkbox" class="toggler">
 	<span class="handle"></span>
 </div>
 
 // Radio Inputs
-<div class="form-el">
+<div class="formplate">
    <input type="radio" id="radio-1" name="radio-selection" value="1" checked="checked">
    <label for="radio-1">Radio Selection</label>
 </div>
-<div class="form-el">
+<div class="formplate">
    <input type="radio" id="radio-2" name="radio-selection" value="2">
    <label for="radio-2">Radio Selection</label>
 </div>
-<div class="form-el">
+<div class="formplate">
    <input type="radio" id="radio-3" name="radio-selection" value="2">
    <label for="radio-3">Radio Selection</label>
 </div>
 
 // Input Group
-<div class="form-el">
+<div class="formplate">
    <label for="text-3">Two</label>
    <div class="input-group-two">
       <input type="text" id="text-3" placeholder="Text input">
       <input type="text" id="text-4" placeholder="Text input">
    </div>
 </div>
-<div class="form-el">
+<div class="formplate">
    <label for="text-5">Three</label>
    <div class="input-group-three">
       <input type="text" id="text-5" placeholder="Text input">
@@ -139,7 +138,7 @@ new formplate();
       <input type="text" id="text-7" placeholder="Text input">
    </div>
 </div>
-<div class="form-el">
+<div class="formplate">
    <label for="text-8">Two With Icon</label>
    <div class="input-group-two">
       <div class="input-icon">
@@ -153,21 +152,6 @@ new formplate();
    </div>
 </div>
 ```
-
-## SASS Implementation
-If you would like to use a more lightweight version of the form styles you can execute a mixin that will generate one particaluar style that you want. To start you will need to include the Formplate SASS file and then execute based on your requirement. See an example below.
-
-```
-// Import
-@import "formplate/sass/import";
-
-// Generate styles
-@include formplate-css(flat);
-```
-
-| Mixin | Default | Options | Description |
-| ---- | ---- | ---- | ---- |
-| formplate-css($x) | all | all, flat, line, raised | Generate the style of forms you want. |
 
 ## Author
 Created and maintained by Chris Humboldt<br>
