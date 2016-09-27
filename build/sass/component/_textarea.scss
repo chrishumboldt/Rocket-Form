@@ -24,6 +24,7 @@
 			@include border($white);
 			@include level(1);
 			@include animate(all);
+			line-height: normal;
 			outline: none;
 			-webkit-appearance: none;
 			&:focus {
