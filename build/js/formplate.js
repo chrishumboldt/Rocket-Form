@@ -199,9 +199,6 @@ function formplate($userOptions) {
 
 	// Loop over all elements and apply
 	var $globalClasses = ['_c-' + $self.options.colour, '_s-' + $self.options.style];
-	if ($self.options.label.length > 0 && $self.options.label !== 'normal') {
-		$globalClasses.push('_l-' + $self.options.label);
-	}
 	for (var $i = 0, $len = $formplateEls.length; $i < $len; $i++) {
 		var $thisFormEl = $formplateEls[$i];
 		var $classes = tool.clone($globalClasses);
@@ -237,6 +234,9 @@ function formplate($userOptions) {
 					radioToggle($input);
 				}
 			} else if ($inputType === 'password') {
+				if ($self.options.label.length > 0 && $self.options.label !== 'normal') {
+					$classes.push('_l-' + $self.options.label);
+				}
 				$classes.push('fp-inp', '_t-password');
 				if ($input.value.length > 0) {
 					$classes.push('_valued');
@@ -245,6 +245,9 @@ function formplate($userOptions) {
 				inputContentFocus($thisFormEl);
 			} else {
 				$classes.push('fp-inp');
+				if ($self.options.label.length > 0 && $self.options.label !== 'normal') {
+					$classes.push('_l-' + $self.options.label);
+				}
 				if ($input.value.length > 0) {
 					$classes.push('_valued');
 				}
@@ -253,6 +256,9 @@ function formplate($userOptions) {
 			}
 		} else if ($thisFormEl.querySelector('textarea')) {
 			var $textarea = $thisFormEl.querySelector('textarea');
+			if ($self.options.label.length > 0 && $self.options.label !== 'normal') {
+				$classes.push('_l-' + $self.options.label);
+			}
 			$classes.push('fp-text');
 			if ($textarea.value.length > 0) {
 				$classes.push('_valued');
