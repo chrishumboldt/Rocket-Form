@@ -1,12 +1,11 @@
 {
 	"name": "formplate",
-	"version": "2.2.3",
 	"homepage": "http://paypur.com/#/view/formplate",
 	"authors": [
       "Chris Humboldt <chrismodem@gmail.com>"
    ],
 	"description": "A global form component.",
-	"main": ["css/formplate.css", "js/min/formplate.js"],
+	"main": ["css/formplate.min.css", "js/formplate.min.js"],
 	"keywords": [
       "Webplate",
       "Formplate",
@@ -20,14 +19,12 @@
 		"bower_components",
 		"test",
 		"tests",
-		"package.json",
 		"index.html",
 		"bower.json",
-		"build",
-		"css/demo.min.css",
-		"js/demo.min.js"
+		"build"
    ],
 	"devDependencies": {
-		"blueplate": "^2.2.2"
+		"blueplate": "^2.2.2",
+		"webplate-demo": "^1.0.0"
 	}
 }
