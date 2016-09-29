@@ -9,23 +9,27 @@
 	<title>Formplate Component</title>
 	<!-- Styles -->
 	<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="bower_components/webplate-demo/css/demo.min.css" rel="stylesheet" type="text/css">
 	<link href="css/formplate.min.css" rel="stylesheet" type="text/css">
-	<link href="css/demo.min.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 
-	<div class="heading"><div class="container">
-		<h2>Formplate Component</h2>
-	</div></div>
+	<div id="web-demo-message">
+		You need to run "bower install" and include the neccessary demo files in order to view this file.
+	</div>
+	<div id="web-demo" style="display:none;">
+		<div class="heading"><div class="container">
+			<h2>Formplate Component</h2>
+		</div></div>
 
-	<div class="container">
-		<h4>Getting Started</h4>
-		<p>You can either download a copy of the <a href="https://github.com/chrishumboldt/Formplate/archive/master.zip" class="link">source files</a> or install Formplate via Bower.</p>
+		<div class="container">
+			<h4>Getting Started</h4>
+			<p>You can either download a copy of the <a href="https://github.com/chrishumboldt/Formplate/archive/master.zip" class="link">source files</a> or install Formplate via Bower.</p>
 <pre class="prettyprint linenums">
 bower install formplate
 </pre>
-		<p>Start by including the necessary files.</p>
+			<p>Start by including the necessary files.</p>
 <pre class="prettyprint linenums">
 &lt;head&gt;
     &lt;link href=&quot;css/formplate.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
@@ -35,8 +39,8 @@ bower install formplate
     &lt;script src=&quot;js/formplate.min.js&quot;>&lt;/script&gt;
 &lt;/body&gt;
 </pre>
-		<br>
-		<h4>Javascript Call</h4>
+			<br>
+			<h4>Javascript Call</h4>
 <pre class="prettyprint linenums">
 &lt;script&gt;
 new formplate({
@@ -53,141 +57,142 @@ new formplate({
 });
 &lt;/script&gt;
 </pre>
-		<br>
-		<h4>HTML Examples</h4>
-		<div class="block">
-			<div class="left">
-				<h3>Basic Inputs</h3>
-				<div class="form-el">
-					<input type="text" id="text-1" placeholder="Text input">
-				</div>
-				<div class="form-el">
-					<label for="password-1">Password Label</label>
-					<input type="password" id="password-1" placeholder="Password input">
-				</div>
-				<div class="form-el-2">
-					<label for="text-2">Shift Label</label>
-					<input type="text" id="text-2">
-				</div>
-				<div class="form-el">
-					<label for="textarea-1">Textarea Label</label>
-					<textarea id="textarea-1" placeholder="Textarea"></textarea>
-				</div>
-				<div class="form-el-2">
-					<label for="textarea-2">Textarea Shift Label</label>
-					<textarea id="textarea-2"></textarea>
-				</div>
-				<div class="form-el">
-					<label for="text-2">Input Icon</label>
-					<div class="input-icon">
-						<i class="fa fa-cog"></i>
-						<input type="text" id="text-2" placeholder="Text input">
+			<br>
+			<h4>HTML Examples</h4>
+			<div class="block">
+				<div class="left">
+					<h3>Basic Inputs</h3>
+					<div class="form-el">
+						<input type="text" id="text-1" placeholder="Text input">
+					</div>
+					<div class="form-el">
+						<label for="password-1">Password Label</label>
+						<input type="password" id="password-1" placeholder="Password input">
+					</div>
+					<div class="form-el-2">
+						<label for="text-2">Shift Label</label>
+						<input type="text" id="text-2">
+					</div>
+					<div class="form-el">
+						<label for="textarea-1">Textarea Label</label>
+						<textarea id="textarea-1" placeholder="Textarea"></textarea>
+					</div>
+					<div class="form-el-2">
+						<label for="textarea-2">Textarea Shift Label</label>
+						<textarea id="textarea-2"></textarea>
+					</div>
+					<div class="form-el">
+						<label for="text-2">Input Icon</label>
+						<div class="input-icon">
+							<i class="fa fa-cog"></i>
+							<input type="text" id="text-2" placeholder="Text input">
+						</div>
+					</div>
+					<h3>Drop-down</h3>
+					<div class="form-el">
+						<select>
+							<option value="1">Select Option 1</option>
+							<option value="2">Select Option 2</option>
+							<option value="3">Select Option 3</option>
+						</select>
 					</div>
 				</div>
-				<h3>Drop-down</h3>
-				<div class="form-el">
-					<select>
-						<option value="1">Select Option 1</option>
-						<option value="2">Select Option 2</option>
-						<option value="3">Select Option 3</option>
-					</select>
+				<div class="right">
+					<h3>Checkboxes</h3>
+
+					<div class="form-el">
+						<input type="checkbox" id="checkbox-1" checked="checked">
+						<label for="checkbox-1">Checkbox 1</label>
+					</div>
+
+					<div class="form-el">
+						<input type="checkbox" id="checkbox-2" checked="checked">
+						<label for="checkbox-2">Checkbox 2</label>
+					</div>
+
+					<div class="form-el">
+						<input type="checkbox" id="checkbox-3">
+						<label for="checkbox-3">Checkbox 3</label>
+					</div>
+
+					<h3>Toggler</h3>
+
+					<div class="form-el">
+						<input type="checkbox" id="toggler-1" class="toggler">
+						<span class="handle"></span>
+					</div>
+
+					<h3>Radio Inputs</h3>
+
+					<div class="form-el">
+						<input type="radio" id="radio-1" name="radio-selection" value="1" checked="checked">
+						<label for="radio-1">Radio Selection</label>
+					</div>
+
+					<div class="form-el">
+						<input type="radio" id="radio-2" name="radio-selection" value="2">
+						<label for="radio-2">Radio Selection</label>
+					</div>
+
+					<div class="form-el">
+						<input type="radio" id="radio-3" name="radio-selection" value="2">
+						<label for="radio-3">Radio Selection</label>
+					</div>
 				</div>
+			</div>
+			<div class="block">
+				<h3>Input Group</h3>
+
+				<div class="form-el">
+					<label for="text-3">Two</label>
+					<div class="input-group-two">
+						<input type="text" id="text-3" placeholder="Text input">
+						<input type="text" id="text-4" placeholder="Text input">
+					</div>
+				</div>
+
+				<div class="form-el">
+					<label for="text-5">Three</label>
+					<div class="input-group-three">
+						<input type="text" id="text-5" placeholder="Text input">
+						<input type="text" id="text-6" placeholder="Text input">
+						<input type="text" id="text-7" placeholder="Text input">
+					</div>
+				</div>
+
+				<div class="form-el">
+					<label for="text-8">Two With Icon</label>
+					<div class="input-group-two">
+						<div class="input-icon">
+							<i class="fa fa-cog"></i>
+							<input type="text" id="text-8" placeholder="Text input">
+						</div>
+						<div class="input-icon">
+							<i class="fa fa-cog"></i>
+							<input type="text" id="text-9" placeholder="Text input">
+						</div>
+					</div>
+				</div>
+			</div>
+	      <br><br>
+	      <h4>Detailed Documentation</h4>
+	      <p>For a more detailed look into the available options, you can read the documentation at <a target="_blank" href="https://github.com/chrishumboldt/Formplate" class="link">https://github.com/chrishumboldt/Formplate</a></p>
+		</div>
+
+		<footer><div class="container"><div class="col-double">
+			<div class="left">
+				Made by <a href="http://chrishumboldt.com" target="_blank">Chris Humboldt</a>
 			</div>
 			<div class="right">
-				<h3>Checkboxes</h3>
-
-				<div class="form-el">
-					<input type="checkbox" id="checkbox-1" checked="checked">
-					<label for="checkbox-1">Checkbox 1</label>
-				</div>
-
-				<div class="form-el">
-					<input type="checkbox" id="checkbox-2" checked="checked">
-					<label for="checkbox-2">Checkbox 2</label>
-				</div>
-
-				<div class="form-el">
-					<input type="checkbox" id="checkbox-3">
-					<label for="checkbox-3">Checkbox 3</label>
-				</div>
-
-				<h3>Toggler</h3>
-
-				<div class="form-el">
-					<input type="checkbox" id="toggler-1" class="toggler">
-					<span class="handle"></span>
-				</div>
-
-				<h3>Radio Inputs</h3>
-
-				<div class="form-el">
-					<input type="radio" id="radio-1" name="radio-selection" value="1" checked="checked">
-					<label for="radio-1">Radio Selection</label>
-				</div>
-
-				<div class="form-el">
-					<input type="radio" id="radio-2" name="radio-selection" value="2">
-					<label for="radio-2">Radio Selection</label>
-				</div>
-
-				<div class="form-el">
-					<input type="radio" id="radio-3" name="radio-selection" value="2">
-					<label for="radio-3">Radio Selection</label>
-				</div>
+				A <a href="http://getwebplate.com" target="_blank">Webplate Project</a>&nbsp;&nbsp;
+				Want updates? <a href="http://twitter.com/webplatetweets" target="_blank">@webplatetweets</a>
 			</div>
-		</div>
-		<div class="block">
-			<h3>Input Group</h3>
-
-			<div class="form-el">
-				<label for="text-3">Two</label>
-				<div class="input-group-two">
-					<input type="text" id="text-3" placeholder="Text input">
-					<input type="text" id="text-4" placeholder="Text input">
-				</div>
-			</div>
-
-			<div class="form-el">
-				<label for="text-5">Three</label>
-				<div class="input-group-three">
-					<input type="text" id="text-5" placeholder="Text input">
-					<input type="text" id="text-6" placeholder="Text input">
-					<input type="text" id="text-7" placeholder="Text input">
-				</div>
-			</div>
-
-			<div class="form-el">
-				<label for="text-8">Two With Icon</label>
-				<div class="input-group-two">
-					<div class="input-icon">
-						<i class="fa fa-cog"></i>
-						<input type="text" id="text-8" placeholder="Text input">
-					</div>
-					<div class="input-icon">
-						<i class="fa fa-cog"></i>
-						<input type="text" id="text-9" placeholder="Text input">
-					</div>
-				</div>
-			</div>
-		</div>
-      <br><br>
-      <h4>Detailed Documentation</h4>
-      <p>For a more detailed look into the available options, you can read the documentation at <a target="_blank" href="https://github.com/chrishumboldt/Formplate" class="link">https://github.com/chrishumboldt/Formplate</a></p>
+		</div></div></footer>
 	</div>
 
-	<footer><div class="container"><div class="col-double">
-		<div class="left">
-			Made by <a href="http://chrishumboldt.com" target="_blank">Chris Humboldt</a>
-		</div>
-		<div class="right">
-			A <a href="http://getwebplate.com" target="_blank">Webplate Project</a>&nbsp;&nbsp;
-			Want updates? <a href="http://twitter.com/webplatetweets" target="_blank">@webplatetweets</a>
-		</div>
-	</div></div></footer>
-
 	<!-- Scripts -->
+	<script src="bower_components/webplate-demo/js/demo.min.js"></script>
 	<script src="js/formplate.min.js"></script>
-	<script src="js/demo.min.js"></script>
 	<script>
 	new formplate({
 		selector: '.form-el',
