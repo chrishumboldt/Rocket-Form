@@ -1,6 +1,5 @@
 {
 	"name": "formplate",
-	"homepage": "http://paypur.com/#/view/formplate",
 	"authors": [
       "Chris Humboldt <chrismodem@gmail.com>"
    ],
@@ -8,23 +7,22 @@
 	"main": ["css/formplate.min.css", "js/formplate.min.js"],
 	"keywords": [
       "Webplate",
+		"Component",
       "Formplate",
       "Form",
       "CSS"
    ],
-	"license": "Apache License, Version 2.0",
+	"license": "Apache-2.0",
 	"ignore": [
 		"**/.*",
-		"node_modules",
 		"bower_components",
-		"test",
-		"tests",
 		"index.html",
 		"bower.json",
 		"build"
    ],
 	"devDependencies": {
-		"blueplate": "^2.2.2",
-		"webplate-demo": "^1.0.0"
+		"blueplate": "^2.0.0",
+		"webplate-demo": "^1.0.0",
+		"font-awesome": "^4.6.3"
 	}
 }
