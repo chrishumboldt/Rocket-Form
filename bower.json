@@ -4,7 +4,7 @@
       "Chris Humboldt <chrismodem@gmail.com>"
    ],
 	"description": "A global form component.",
-	"main": ["css/formplate.min.css", "js/formplate.min.js"],
+	"main": ["build/sass/formplate.scss", "build/js/formplate.js"],
 	"keywords": [
       "Webplate",
 		"Component",
@@ -16,9 +16,7 @@
 	"ignore": [
 		"**/.*",
 		"bower_components",
-		"index.html",
-		"bower.json",
-		"build"
+		"index.html"
    ],
 	"devDependencies": {
 		"blueplate": "^2.0.0",

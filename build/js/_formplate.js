@@ -1,5 +1,5 @@
 /**
- * File: build/js/formplate.js
+ * File: formplate.js
  * Type: Javascript component
  * Author: Chris Humboldt
 **/
