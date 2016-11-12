@@ -54,7 +54,8 @@ var forms = Rocket.form();
 // The form elements and all methods
 for (var i = 0, len = forms.length; i < len; i++) {
     console.log(forms[i].form);
-    forms[i].toggle('on'); // Toggle the form element to "on". Works only on radio and checkboxes.
+	 forms[i].clear(); // Clear the value. Works on text inputs and textareas.
+    forms[i].toggle('on'); // Toggle the form element to "on". Works on radio and checkboxes.
 	 forms[i].toggle('off');
 }
 ```
