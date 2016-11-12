@@ -106,7 +106,7 @@ Rocket.defaults.form.colour = 'green';
    </div>
 </div>
 
-// Drop-down
+<!-- Drop-down -->
 <div class="form">
    <select>
       <option value="1">Select Option 1</option>
@@ -115,7 +115,7 @@ Rocket.defaults.form.colour = 'green';
    </select>
 </div>
 
-// Checkboxes
+<!-- Checkboxes -->
 <div class="form">
    <input type="checkbox" id="checkbox-1" checked="checked">
    <label for="checkbox-1">Checkbox 1</label>
@@ -129,13 +129,13 @@ Rocket.defaults.form.colour = 'green';
    <label for="checkbox-3">Checkbox 3</label>
 </div>
 
-// Toggler
+<!-- Toggler -->
 <div class="form">
    <input type="checkbox" class="toggler">
 	<span class="handle"></span>
 </div>
 
-// Radio Inputs
+<!-- Radio Inputs -->
 <div class="form">
    <input type="radio" id="radio-1" name="radio-selection" value="1" checked="checked">
    <label for="radio-1">Radio Selection</label>
@@ -149,7 +149,7 @@ Rocket.defaults.form.colour = 'green';
    <label for="radio-3">Radio Selection</label>
 </div>
 
-// Input Group
+<!-- Input Group -->
 <div class="form">
    <label for="text-3">Two</label>
    <div class="input-group-two">
