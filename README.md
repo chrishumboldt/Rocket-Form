@@ -28,7 +28,10 @@ You will need to wrap your form elements with an identifier of your choice. Belo
    <input id="input-example" type="text" placeholder="Example Input">
 </div>
 <script>
-Rocket.form();
+Rocket.form({
+	selector: '.form-elements',
+	style: 'raised'
+});
 </script>
 ```
 
