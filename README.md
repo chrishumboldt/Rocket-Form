@@ -1,6 +1,15 @@
 # Rocket Form
 A universal form component.
 
+* [Getting Started](#getting-started)
+* [Basic Example](#basic-example)
+* [Initialization](#initialization)
+	* [Options](#options)
+	* [Defaults](#defaults)
+* [HTML Examples](#html-examples)
+* [Rocket Tools](#rocket-tools)
+* [Buttonplate Deprecated](#buttonplate-deprecated)
+
 ## Getting Started
 You can either download a copy of the [source files](https://github.com/chrishumboldt/Rocket-Form/archive/master.zip) or install via NPM.
 
@@ -35,8 +44,29 @@ Rocket.form({
 </script>
 ```
 
-## Javascript Options
-See the different options you have available on component call.
+## Initialization
+Each initialization will return an array of component objects (An array will always be returned even if the selector is an id). This includes the flicker element itself as well as relevant methods. For example:
+
+```javascript
+var forms = Rocket.form();
+
+// The flickers and all methods
+for (var i = 0, len = forms.length; i < len; i++) {
+    console.log(forms[i].form);
+    forms[i].toggle('on'); // Toggle the form element to "on". Works only on radio and checkboxes.
+}
+```
+
+Alternatively if you know the selector is unique you can reference the flicker right away with the 0 index. For example:
+
+```javascript
+var form = Rocket.form({
+    selector: '#form-element'
+})[0]; // Reference the first item in the array right away.
+```
+
+#### Options
+See the different options you have available on initialization.
 
 Name | Default | Options | Description
 ---- | ---- | ---- | ----
@@ -148,6 +178,12 @@ Rocket.defaults.form.colour = 'green';
    </div>
 </div>
 ```
+
+## Rocket Tools
+If you are using this component in conjunction with [Rocket Tools](https://github.com/chrishumboldt/Rocket-Tools), then **always** load the Rocket Tools library first. This component extends that library when detected.
+
+## Formplate Deprecated
+The original library, Formplate, has been deprecated. The entire Webplate project is being refactored and rebranded with a new development philosophy. Formplate will be maintained only with bug fixes under the **formplate** branch.
 
 ## Author
 Created and maintained by Chris Humboldt<br>
