@@ -51,7 +51,7 @@ Each initialization will return an array of component objects (An array will alw
 ```javascript
 var forms = Rocket.form();
 
-// The flickers and all methods
+// The form elements and all methods
 for (var i = 0, len = forms.length; i < len; i++) {
     console.log(forms[i].form);
     forms[i].toggle('on'); // Toggle the form element to "on". Works only on radio and checkboxes.
