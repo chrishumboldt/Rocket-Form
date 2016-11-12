@@ -1,5 +1,5 @@
 /**
- * File: sass/_select.scss
+ * File: build/sass/component/_select.scss
  * Type: SASS component
  * Author: Chris Humboldt
 **/
@@ -11,12 +11,12 @@
 // Fixes
 
 // Select
-@mixin form-select($type: all) {
-	.fp-sel {
+@mixin rocket-form-select($type: all) {
+	.rf-sel {
 		@include display(inline-block);
 		@include position(relative);
 		@include width(auto);
-		@include text-font('formplate');
+		@include text-font('rocket-form');
 		@include background-colour($white);
 		@include border($white);
 		@include overflow(hidden);
@@ -59,7 +59,7 @@
 				@include hide();
 			}
 		}
-		.fp-no-touch &:hover:before {
+		.rocket-no-touch &:hover:before {
 			@include text-colour($grey-dark);
 		}
 	}
@@ -71,48 +71,48 @@
 // Styles
 @mixin form-select-styles($type: all) {
 	@if $type == line {
-		.fp-sel._s-line {
+		.rf-sel._s-line {
 			@include border($grey-form);
 			@include border-radius();
-			.fp-no-touch &:hover {
+			.rocket-no-touch &:hover {
 				@include border($grey-dark);
 			}
 		}
 	} @else if $type == flat {
-		.fp-sel._s-flat {
+		.rf-sel._s-flat {
 			@include background-colour($grey-x-light);
 			@include border($grey-x-light);
-			.fp-no-touch &:hover {
+			.rocket-no-touch &:hover {
 				@include border($grey);
 			}
 		}
 	} @else if $type == raised {
-		.fp-sel._s-raised {
+		.rf-sel._s-raised {
 			@include border-radius();
-			@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
-			.fp-no-touch &:hover {
+			@include rocket-form-shadow();
+			.rocket-no-touch &:hover {
 				@include border($grey);
 			}
 		}
 	} @else {
-		.fp-sel._s-line {
+		.rf-sel._s-line {
 			@include border($grey-form);
 			@include border-radius();
-			.fp-no-touch &:hover {
+			.rocket-no-touch &:hover {
 				@include border($grey-dark);
 			}
 		}
-		.fp-sel._s-flat {
+		.rf-sel._s-flat {
 			@include background-colour($grey-x-light);
 			@include border($grey-x-light);
-			.fp-no-touch &:hover {
+			.rocket-no-touch &:hover {
 				@include border($grey);
 			}
 		}
-		.fp-sel._s-raised {
+		.rf-sel._s-raised {
 			@include border-radius();
-			@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
-			.fp-no-touch &:hover {
+			@include rocket-form-shadow();
+			.rocket-no-touch &:hover {
 				@include border($grey);
 			}
 		}
@@ -122,7 +122,7 @@
 // Select colour states
 @mixin form-select-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-no-touch .fp-sel._c-#{$colour-name}:hover {
+		.rocket-no-touch .rf-sel._c-#{$colour-name}:hover {
 			@include border($colour);
 			&:before {
 				@include text-colour($colour);
@@ -134,12 +134,12 @@
 // Fixes
 @mixin form-select-fixes() {
 	@-moz-document url-prefix() {
-		.fp-sel select {
+		.rf-sel select {
 			@include padding-top($space-small - 2px);
 			@include padding-bottom($space-small - 4px);
 		}
 	}
-	.no-cssanimations .fp-sel {
+	.no-cssanimations .rf-sel {
 		&:after {
 			@include hide();
 			content: "";

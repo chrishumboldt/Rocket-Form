@@ -1,6 +1,6 @@
 /**
- * File: _toggler.scss
- * Type: SASS module
+ * File: build/sass/component/_toggler.scss
+ * Type: SASS component
  * Author: Chris Humboldt
 **/
 
@@ -14,8 +14,8 @@ $toggler-w: 50px;
 $toggler-handle-dim: $toggler-h - 2px;
 
 // Toggler
-@mixin form-toggler($type: all) {
-	.fp-tog {
+@mixin rocket-form-toggler($type: all) {
+	.rf-tog {
 		@include position(relative);
 		@include display(inline-block);
 		@include size($toggler-w, $toggler-h);
@@ -29,8 +29,8 @@ $toggler-handle-dim: $toggler-h - 2px;
 			@include size(50px, 30px);
 			@include opacity(0);
 			@include level(1);
-			.fp-no-touch &:hover {
-				cursor: pointer;
+			.rocket-no-touch &:hover {
+				@include cursor(pointer);
 			}
 		}
 		.handle {
@@ -54,25 +54,25 @@ $toggler-handle-dim: $toggler-h - 2px;
 			}
 		} @else if $type == raised {
 			&._s-raised {
-				@include background-colour(lighten($grey, 25%));
-				@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
+				@include background-colour(lighten($grey, 28%));
+				@include rocket-form-shadow();
 			}
 		} @else {
 			&._s-line {
 				@include drop-shadow-inset(fade-out($black, 0.85), 2px, 1px);
 			}
 			&._s-raised {
-				@include background-colour(lighten($grey, 25%));
-				@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
+				@include background-colour(lighten($grey, 28%));
+				@include rocket-form-shadow();
 			}
 		}
-		.fp-no-touch &:hover {
-			cursor: pointer;
+		.rocket-no-touch &:hover {
+			@include cursor(pointer);
 		}
 	}
 	// Hover / checked
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-tog._c-#{$colour-name} {
+		.rf-tog._c-#{$colour-name} {
 			&._checked {
 				@include background-color($colour);
 			}
