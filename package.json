@@ -1,11 +1,11 @@
 {
-   "name": "formplate",
-   "version": "3.0.1",
+   "name": "rocket-form",
+   "version": "3.0.2",
    "description": "A universal form component.",
    "main": "js/form.min.js",
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/chrishumboldt/Formplate.git"
+      "url": "git+https://github.com/chrishumboldt/Rocket-Form.git"
    },
    "keywords": [
       "Rocket",
@@ -18,9 +18,9 @@
    "author": "Chris Humboldt <chrismodem@gmail.com>",
    "license": "Apache-2.0",
    "bugs": {
-      "url": "https://github.com/chrishumboldt/Formplate/issues"
+      "url": "https://github.com/chrishumboldt/Rocket-Form/issues"
    },
-   "homepage": "https://github.com/chrishumboldt/Formplate#readme",
+   "homepage": "https://github.com/chrishumboldt/Rocket-Form#readme",
    "engines": {
       "npm": "^3.0.0"
    },
