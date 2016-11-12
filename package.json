@@ -1,6 +1,6 @@
 {
    "name": "formplate",
-   "version": "3.0.0",
+   "version": "3.0.1",
    "description": "A universal form component.",
    "main": "js/form.min.js",
    "repository": {
