@@ -45,7 +45,7 @@ Rocket.form({
 ```
 
 ## Initialization
-Each initialization will return an array of component objects (An array will always be returned even if the selector is an id). This includes the flicker element itself as well as relevant methods. For example:
+Each initialization will return an array of component objects (An array will always be returned even if the selector is an id). This includes the form element itself as well as relevant methods. For example:
 
 ```javascript
 var forms = Rocket.form();
@@ -57,7 +57,7 @@ for (var i = 0, len = forms.length; i < len; i++) {
 }
 ```
 
-Alternatively if you know the selector is unique you can reference the flicker right away with the 0 index. For example:
+Alternatively if you know the selector is unique you can reference the form element right away with the 0 index. For example:
 
 ```javascript
 var form = Rocket.form({
