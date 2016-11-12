@@ -19,7 +19,7 @@ npm install rocket-form
 
 Start by including the necessary files.
 
-```
+```html
 <head>
 	<link href="rocket-form/css/form.min.css" rel="stylesheet" type="text/css">
 </head>
@@ -31,7 +31,8 @@ Start by including the necessary files.
 
 ## Basic Example
 You will need to wrap your form elements with an identifier of your choice. Below is an example of executing the component complete with required HTML and Javascript.
-```
+
+```html
 <div class="form">
    <label for="input-example">Example Label<label>
    <input id="input-example" type="text" placeholder="Example Input">
@@ -84,7 +85,7 @@ Rocket.defaults.form.colour = 'green';
 ```
 
 ## HTML Examples
-```
+```html
 <div class="form">
    <label for="text-1">Text Label</label>
    <input type="text" id="text-1" placeholder="Text input">
