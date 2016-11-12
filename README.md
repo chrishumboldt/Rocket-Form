@@ -8,7 +8,7 @@ A universal form component.
 	* [Defaults](#defaults)
 * [HTML Examples](#html-examples)
 * [Rocket Tools](#rocket-tools)
-* [Buttonplate Deprecated](#buttonplate-deprecated)
+* [Formplate Deprecated](#formplate-deprecated)
 
 ## Getting Started
 You can either download a copy of the [source files](https://github.com/chrishumboldt/Rocket-Form/archive/master.zip) or install via NPM.
