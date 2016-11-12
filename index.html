@@ -1,59 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html class="_propel">
 <head>
 
 	<!-- Meta setup - Required for apple device -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<!-- Title -->
-	<title>Formplate Component</title>
+	<title>Rocket Form Component</title>
 	<!-- Styles -->
-	<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="bower_components/webplate-demo/css/demo.min.css" rel="stylesheet" type="text/css">
-	<link href="css/formplate.min.css" rel="stylesheet" type="text/css">
+	<link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="node_modules/rocket-propel/css/propel.min.css" rel="stylesheet" type="text/css">
+	<link href="node_modules/rocket-demo/css/demo.min.css" rel="stylesheet" type="text/css">
+	<link href="css/form.min.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 
-	<div id="web-demo-message">
-		You need to run "bower install" and include the neccessary demo files in order to view this file.
+	<div id="rocket-demo-message">
+		You need to run "npm install" and include the neccessary demo files in order to view this file.
 	</div>
-	<div id="web-demo" style="display:none;">
+	<div id="rocket-demo" style="display:none;">
 		<div class="heading"><div class="container">
-			<h2>Formplate Component</h2>
+			<h2>Rocket Form Component</h2>
 		</div></div>
 
 		<div class="container">
 			<h4>Getting Started</h4>
-			<p>You can either download a copy of the <a href="https://github.com/chrishumboldt/Formplate/archive/master.zip" class="link">source files</a> or install Formplate via Bower.</p>
+			<p>You can either download a copy of the <a href="https://github.com/chrishumboldt/Rocket-Form/archive/master.zip" class="link">source files</a> or install via NPM.</p>
 <pre class="prettyprint linenums">
-bower install formplate
+npm install rocket-form
 </pre>
 			<p>Start by including the necessary files.</p>
 <pre class="prettyprint linenums">
 &lt;head&gt;
-    &lt;link href=&quot;css/formplate.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+    &lt;link href=&quot;rocket-form/css/form.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
 &lt;/head&gt;
 &lt;body&gt;
     /* Your content goes here */
-    &lt;script src=&quot;js/formplate.min.js&quot;>&lt;/script&gt;
+    &lt;script src=&quot;rocket-form/js/form.min.js&quot;>&lt;/script&gt;
 &lt;/body&gt;
 </pre>
 			<br>
 			<h4>Javascript Call</h4>
 <pre class="prettyprint linenums">
 &lt;script&gt;
-new formplate({
+Rocket.form({
     selector: '.form-el',
     colour: 'red',
-    style: 'flat'
+    style: 'raised'
 });
 // With Shifting Label
-new formplate({
+Rocket.form({
     selector: '.form-el-2',
     colour: 'red',
-    style: 'flat',
-    label: 'shift'
+    label: 'shift',
+    style: 'raised'
 });
 &lt;/script&gt;
 </pre>
@@ -135,7 +136,7 @@ new formplate({
 					</div>
 
 					<div class="form-el">
-						<input type="radio" id="radio-3" name="radio-selection" value="2">
+						<input type="radio" id="radio-3" name="radio-selection" value="3">
 						<label for="radio-3">Radio Selection</label>
 					</div>
 				</div>
@@ -176,38 +177,35 @@ new formplate({
 			</div>
 	      <br><br>
 	      <h4>Detailed Documentation</h4>
-	      <p>For a more detailed look into the available options, you can read the documentation at <a target="_blank" href="https://github.com/chrishumboldt/Formplate" class="link">https://github.com/chrishumboldt/Formplate</a></p>
+	      <p>For a more detailed look into the available options, you can read the documentation at <a target="_blank" href="https://github.com/chrishumboldt/Rocket-Form" class="link">https://github.com/chrishumboldt/Rocket-Form</a></p>
 		</div>
 
 		<footer><div class="container"><div class="col-double">
 			<div class="left">
 				Made by <a href="http://chrishumboldt.com" target="_blank">Chris Humboldt</a>
 			</div>
-			<div class="right">
+			<!-- <div class="right">
 				A <a href="http://getwebplate.com" target="_blank">Webplate Project</a>&nbsp;&nbsp;
 				Want updates? <a href="http://twitter.com/webplatetweets" target="_blank">@webplatetweets</a>
-			</div>
+			</div> -->
 		</div></div></footer>
 	</div>
 
 	<!-- Scripts -->
-	<script src="bower_components/webplate-demo/js/demo.min.js"></script>
-	<script src="js/formplate.min.js"></script>
+	<script src="node_modules/rocket-demo/js/demo.min.js"></script>
+	<script src="js/form.min.js"></script>
 	<script>
-	Formplate.init({
-		selector: '.form-el'
+	Rocket.form({
+		selector: '.form-el',
+		colour: 'red',
+		style: 'raised'
 	});
-	// new formplate({
-	// 	selector: '.form-el',
-	// 	colour: 'red',
-	// 	style: 'flat'
-	// });
-	// new formplate({
-	// 	selector: '.form-el-2',
-	// 	label: 'shift',
-	// 	colour: 'red',
-	// 	style: 'flat'
-	// });
+	Rocket.form({
+		selector: '.form-el-2',
+		colour: 'red',
+		label: 'shift',
+		style: 'raised'
+	});
 	</script>
 
 </body>

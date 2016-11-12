@@ -1,5 +1,5 @@
 /**
- * File: build/sass/_import.scss
+ * File: build/sass_development.scss
  * Type: SASS import
  * Author: Chris Humboldt
 **/
@@ -9,7 +9,7 @@ $font-face-rocket-form: "icon-font-rocket-form" !default;
 $grey-form: lighten(#000, 85%);
 
 // Imports
-@import "../../../rocket-propel/build/sass/import";
+@import "../../node_modules/rocket-propel/build/sass/import";
 
 @import "component/setup";
 

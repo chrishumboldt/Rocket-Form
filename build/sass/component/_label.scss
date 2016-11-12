@@ -1,10 +1,10 @@
 /**
- * File: sass/_label.scss
+ * File: build/sass/component/_label.scss
  * Type: SASS component
  * Author: Chris Humboldt
 **/
 
-@mixin form-label() {
+@mixin rocket-form-label() {
 	label {
 		@include display(inline-block);
 		@include spacing-no();
@@ -15,14 +15,14 @@
 		@include text-weight(normal);
 		@include level(5);
 		// Hover
-		.fp-no-touch &:hover {
+		.rocket-no-touch &:hover {
 			@include cursor(pointer);
 		}
 	}
 	._l-shift {
 		label {
 			@include spacing-no();
-			@include position(absolute, left 15px top 11px);
+			@include position(absolute, left 15px top 12px);
 			@include text-size(13px);
 			@include opacity(0.5);
 			@include animate(all);
@@ -31,7 +31,7 @@
 			}
 		}
 		&._valued label {
-			@include position-set(top -18px left 0px);
+			@include position-set(top -19px left 0px);
 			@include text-size(11px);
 			@include opacity(1);
 		}

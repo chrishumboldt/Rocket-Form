@@ -1,5 +1,5 @@
 /**
- * File: sass/_check.scss
+ * File: build/sass/component/_check.scss
  * Type: SASS component
  * Author: Chris Humboldt
 **/
@@ -18,10 +18,10 @@
 $tick-scale-large: 1.4;
 
 // Checkbox / radio
-@mixin form-checkbox($type: all) {
-	.fp-check {
+@mixin rocket-form-checkbox($type: all) {
+	.rf-check {
 		@include position(relative);
-		@include text-font('formplate');
+		@include text-font('rocket-form');
 		&:before {
 			content: "";
 			@include display(inline-block);
@@ -47,8 +47,8 @@ $tick-scale-large: 1.4;
 		&._checked {
 			&:after {
 				content: "\e600";
-				-webkit-animation: form-checkbox-animate-tick 0.5s;
-    			animation: form-checkbox-animate-tick 0.5s;
+				-webkit-animation: rocket-form-checkbox-animate-tick 0.25s;
+    			animation: rocket-form-checkbox-animate-tick 0.25s;
 			}
 		}
 		// Hide inputs
@@ -64,67 +64,67 @@ $tick-scale-large: 1.4;
 			}
 		}
 	}
-	@include form-checkbox-styles($type);
-	@include form-checkbox-hover();
-	@include form-checkbox-radio();
-	@include form-checkbox-fixes();
+	@include rocket-form-checkbox-styles($type);
+	@include rocket-form-checkbox-hover();
+	@include rocket-form-checkbox-radio();
+	@include rocket-form-checkbox-fixes();
 }
 
 // Styles
-@mixin form-checkbox-styles($type: all) {
+@mixin rocket-form-checkbox-styles($type: all) {
 	@if $type == line {
-		.fp-check._s-line {
+		.rf-check._s-line {
 			&:before {
 				@include border($grey-form);
 				@include border-radius();
 			}
 		}
 	} @else if $type == flat {
-		.fp-check._s-flat {
+		.rf-check._s-flat {
 			&:before {
 				@include background-colour($grey-x-light);
 				@include border($grey-x-light);
 			}
 		}
 	} @else if $type == raised {
-		.fp-check._s-raised {
+		.rf-check._s-raised {
 			&:before {
 				@include border-radius();
-				@include drop-shadow(fade-out($black, 0.85), 4px, 1px);
+				@include rocket-form-shadow();
 			}
 		}
 	} @else {
-		.fp-check._s-line {
+		.rf-check._s-line {
 			&:before {
 				@include border($grey-form);
 				@include border-radius();
 			}
 		}
-		.fp-check._s-flat {
+		.rf-check._s-flat {
 			&:before {
 				@include background-colour($grey-x-light);
 				@include border($grey-x-light);
 			}
 		}
-		.fp-check._s-raised {
+		.rf-check._s-raised {
 			&:before {
 				@include border-radius();
-				@include drop-shadow(fade-out($black, 0.85), 4px, 1px);
+				@include rocket-form-shadow();
 			}
 		}
 	}
 }
 
 // Checkbox / radio colour states
-@mixin form-checkbox-hover() {
+@mixin rocket-form-checkbox-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-check._c-#{$colour-name} {
+		.rf-check._c-#{$colour-name} {
 			&._checked:before,
-			.fp-no-touch &._checked:hover:before  {
+			.rf-no-touch &._checked:hover:before  {
 				@include background-color($colour);
 				@include border($colour);
 			}
-			.fp-no-touch &:hover:before {
+			.rf-no-touch &:hover:before {
 				@include border($colour);
 			}
 		}
@@ -132,7 +132,7 @@ $tick-scale-large: 1.4;
 }
 
 // Radio inputs
-@mixin form-checkbox-radio() {
+@mixin rocket-form-checkbox-radio() {
 	._t-radio:before,
 	._t-radio._s-flat:before,
 	._t-radio._s-line:before,
@@ -143,9 +143,9 @@ $tick-scale-large: 1.4;
 }
 
 // Fixes
-@mixin form-checkbox-fixes() {
+@mixin rocket-form-checkbox-fixes() {
 	@-moz-document url-prefix() {
-		.fp-check {
+		.rf-check {
 			&._s-line,
 			&._s-raised,
 			&._s-flat {
@@ -156,28 +156,28 @@ $tick-scale-large: 1.4;
 }
 
 // Tick animation
-@-webkit-keyframes form-checkbox-animate-tick {
+@-webkit-keyframes rocket-form-checkbox-animate-tick {
 	0% {
 		@include opacity(0);
 		@include transform-scale-3d(0,0,0);
 	}
-	50% {
-		@include opacity(1);
-		@include transform-scale-3d($tick-scale-large,$tick-scale-large,$tick-scale-large);
-	}
+	// 50% {
+	// 	@include opacity(1);
+	// 	@include transform-scale-3d($tick-scale-large,$tick-scale-large,$tick-scale-large);
+	// }
 	100% {
 		@include transform-scale-3d(1,1,1);
 	}
 }
-@keyframes form-checkbox-animate-tick {
+@keyframes rocket-form-checkbox-animate-tick {
 	0% {
 		@include opacity(0);
 		@include transform-scale-3d(0,0,0);
 	}
-	50% {
-		@include opacity(1);
-		@include transform-scale-3d($tick-scale-large,$tick-scale-large,$tick-scale-large);
-	}
+	// 50% {
+	// 	@include opacity(1);
+	// 	@include transform-scale-3d($tick-scale-large,$tick-scale-large,$tick-scale-large);
+	// }
 	100% {
 		@include transform-scale-3d(1,1,1);
 	}

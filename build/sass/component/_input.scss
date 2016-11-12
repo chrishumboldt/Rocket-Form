@@ -1,5 +1,5 @@
 /**
- * File: sass/_input.scss
+ * File: build/sass/component/_input.scss
  * Type: SASS component
  * Author: Chris Humboldt
 **/
@@ -12,8 +12,8 @@
 // Input icon
 
 // Input
-@mixin form-input($type: all) {
-	.fp-inp {
+@mixin rocket-form-input($type: all) {
+	.rf-inp {
 		@include position(relative);
 		input {
 			@include width(100%);
@@ -36,14 +36,16 @@
 			}
 		}
 	}
-	@include form-input-styles($type);
-	@include form-input-hover();
+	@include rocket-form-input-styles($type);
+	@include rocket-form-input-hover();
+	@include rocket-form-input-groups();
+	@include rocket-form-input-icon();
 }
 
 // Styles
-@mixin form-input-styles($type: all) {
+@mixin rocket-form-input-styles($type: all) {
 	@if $type == line {
-		.fp-inp._s-line input {
+		.rf-inp._s-line input {
 			@include border($grey-form);
 			@include border-radius(2px);
 			&:focus {
@@ -51,7 +53,7 @@
 			}
 		}
 	} @else if $type == flat {
-		.fp-inp._s-flat input {
+		.rf-inp._s-flat input {
 			@include background-colour($grey-x-light);
 			@include border($grey-x-light);
 			&:focus {
@@ -59,17 +61,17 @@
 			}
 		}
 	} @else if $type == raised {
-		.fp-inp._s-raised {
+		.rf-inp._s-raised {
 			input {
 				@include border-radius();
-				@include drop-shadow(fade-out($black, 0.85), 4px, 1px);
+				@include rocket-form-shadow();
 				&:focus {
 					@include border($grey);
 				}
 			}
 		}
 	} @else {
-		.fp-inp._s-line input {
+		.rf-inp._s-line input {
 			@include border($grey-form);
 			@include border-radius(2px);
 			&:focus {
@@ -77,17 +79,17 @@
 				@include background-colour($white);
 			}
 		}
-		.fp-inp._s-flat input {
+		.rf-inp._s-flat input {
 			@include background-colour($grey-x-light);
 			@include border($grey-x-light);
 			&:focus {
 				@include border($grey-light);
 			}
 		}
-		.fp-inp._s-raised {
+		.rf-inp._s-raised {
 			input {
 				@include border-radius();
-				@include drop-shadow(fade-out($black, 0.85), 4px, 1px);
+				@include rocket-form-shadow();
 				&:focus {
 					@include border($grey);
 				}
@@ -97,9 +99,9 @@
 }
 
 // Input colour states
-@mixin form-input-hover() {
+@mixin rocket-form-input-hover() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-inp._c-#{$colour-name} input {
+		.rf-inp._c-#{$colour-name} input {
 			&:active,
 			&:focus {
 				@include border($colour);
@@ -109,77 +111,81 @@
 }
 
 // Input groups
-.fp-inp .input-group {
-	@include row();
-	input {
-		@include margin-left(-1px);
-	}
-	input:first-child {
-		@include margin-left(0px);
-	}
-	.input-icon {
+@mixin rocket-form-input-groups() {
+	.rf-inp .input-group {
+		@include row();
 		input {
-			@include width(100%);
+			@include margin-left(-1px);
 		}
-		&:first-child input {
+		input:first-child {
 			@include margin-left(0px);
 		}
+		.input-icon {
+			input {
+				@include width(100%);
+			}
+			&:first-child input {
+				@include margin-left(0px);
+			}
+		}
 	}
-}
-.fp-inp._s-line .input-group {
-	input {
-		@include border-radius(0px);
-	}
-	input:first-child {
-		@include border-radius-left(2px);
-	}
-	input:last-child {
-		@include border-radius-right(2px);
-	}
-	.input-icon {
-		&:first-child input {
+	.rf-inp._s-line .input-group {
+		input {
+			@include border-radius(0px);
+		}
+		input:first-child {
 			@include border-radius-left(2px);
 		}
-		&:last-child input {
+		input:last-child {
 			@include border-radius-right(2px);
 		}
+		.input-icon {
+			&:first-child input {
+				@include border-radius-left(2px);
+			}
+			&:last-child input {
+				@include border-radius-right(2px);
+			}
+		}
 	}
-}
-.fp-inp._s-raised .input-group {
-	@include margin-bottom(1.5em);
-	@include animate(all);
-	@include drop-shadow(fade-out($black, 0.8), 4px, 1px);
-	input {
-		@include margin-no();
-		@include drop-shadow-no();
+	.rf-inp._s-raised .input-group {
+		@include margin-bottom(1.5em);
+		@include animate(all);
+		@include rocket-form-shadow();
+		input {
+			@include margin-no();
+			@include drop-shadow-no();
+		}
 	}
-}
-.fp-inp .input-group-two {
-	@extend .input-group;
-	input,
-	.input-icon {
-		@include span(6);
+	.rf-inp .input-group-two {
+		@extend .input-group;
+		input,
+		.input-icon {
+			@include span(6);
+		}
 	}
-}
-.fp-inp .input-group-three {
-	@extend .input-group;
-	input,
-	.input-icon {
-		@include span(4);
+	.rf-inp .input-group-three {
+		@extend .input-group;
+		input,
+		.input-icon {
+			@include span(4);
+		}
 	}
 }
 
 // Input icon
-.fp-inp .input-icon {
-	@include position(relative);
-	// Icons
-	i {
-		@include position(absolute, margin-top ($space-small + 5px) right $space-small);
-		@include font-size($size-base);
-		@include level(4);
-	}
-	// Input
-	input {
-		@include padding-right($space-slight);
+@mixin rocket-form-input-icon() {
+	.rf-inp .input-icon {
+		@include position(relative);
+		// Icons
+		i {
+			@include position(absolute, margin-top ($space-small + 5px) right $space-small);
+			@include font-size($size-base);
+			@include level(4);
+		}
+		// Input
+		input {
+			@include padding-right($space-slight);
+		}
 	}
 }

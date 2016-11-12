@@ -1,5 +1,5 @@
 /**
- * File: sass/_textarea.scss
+ * File: build/sass/component/_textarea.scss
  * Type: SASS component
  * Author: Chris Humboldt
 **/
@@ -10,8 +10,8 @@
 // Textarea colour states
 
 // Textarea
-@mixin form-textarea($type: all) {
-	.fp-text {
+@mixin rocket-form-textarea($type: all) {
+	.rf-text {
 		@include position(relative);
 		textarea {
 			@include size(100%, 114px);
@@ -42,7 +42,7 @@
 // Styles
 @mixin form-textarea-styles($type: all) {
 	@if $type == line {
-		.fp-text._s-line textarea {
+		.rf-text._s-line textarea {
 			@include border($grey-form);
 			@include border-radius(2px);
 			&:focus {
@@ -50,7 +50,7 @@
 			}
 		}
 	} @else if $type == flat {
-		.fp-text._s-flat textarea {
+		.rf-text._s-flat textarea {
 			@include background-colour($grey-x-light);
 			@include border($grey-x-light);
 			&:focus {
@@ -58,34 +58,34 @@
 			}
 		}
 	} @else if $type == raised {
-		.fp-text._s-raised {
+		.rf-text._s-raised {
 			textarea {
 				@include border-radius();
-				@include drop-shadow(fade-out($black, 0.85), 4px, 1px);
+				@include rocket-form-shadow();
 				&:focus {
 					@include border($grey);
 				}
 			}
 		}
 	} @else {
-		.fp-text._s-line textarea {
+		.rf-text._s-line textarea {
 			@include border($grey-form);
 			@include border-radius(2px);
 			&:focus {
 				@include border($grey-dark);
 			}
 		}
-		.fp-text._s-flat textarea {
+		.rf-text._s-flat textarea {
 			@include background-colour($grey-x-light);
 			@include border($grey-x-light);
 			&:focus {
 				@include border($grey-light);
 			}
 		}
-		.fp-text._s-raised {
+		.rf-text._s-raised {
 			textarea {
 				@include border-radius();
-				@include drop-shadow(fade-out($black, 0.85), 4px, 1px);
+				@include rocket-form-shadow();
 				&:focus {
 					@include border($grey);
 				}
@@ -97,7 +97,7 @@
 // Textarea colour states
 @mixin form-textarea-states() {
 	@each $colour-name, $colour in $ar-colours-form {
-		.fp-text._c-#{$colour-name} textarea {
+		.rf-text._c-#{$colour-name} textarea {
 			&:active,
 			&:focus {
 				@include border($colour);
