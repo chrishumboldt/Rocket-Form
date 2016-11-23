@@ -1,7 +1,7 @@
 {
    "name": "rocket-form",
-   "version": "3.0.2",
-   "description": "A universal form component.",
+   "version": "3.0.3",
+   "description": "A universal form module.",
    "main": "js/form.min.js",
    "repository": {
       "type": "git",
@@ -10,7 +10,7 @@
    "keywords": [
       "Rocket",
       "Part",
-      "Component",
+      "Module",
       "Form",
       "Javascript",
       "CSS"
@@ -30,15 +30,5 @@
    "devDependencies": {
       "rocket-demo": "^2.0.0",
       "font-awesome": "^4.6.3"
-   },
-   "rocket": {
-      "build": [
-         "build/js/form.js",
-         "build/sass/_import.scss"
-      ],
-      "production": [
-         "css/form.min.css",
-         "js/form.min.js"
-      ]
    }
 }
