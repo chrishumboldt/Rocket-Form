@@ -1,0 +1,11 @@
+{
+   "build": [{
+      "name": "form",
+      "css": [
+         "form.scss"
+      ],
+      "js": [
+         "form.js"
+      ]
+   }]
+}
