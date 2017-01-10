@@ -355,22 +355,6 @@ var RocketFormComponent = (function () {
 				}
 				break;
 
-			case 'text':
-         case 'email':
-         case 'number':
-			case 'password':
-				classes.push('rf-inp');
-				if (type === 'password') {
-					classes.push('_t-password');
-				}
-				if (options.label.length > 0 && options.label !== 'normal') {
-					classes.push('_l-' + options.label);
-				}
-				if (element.value.length > 0) {
-					classes.push('_valued');
-				}
-				break;
-
 			case 'textarea':
 				classes.push('rf-text');
 				if (options.label.length > 0 && options.label !== 'normal') {
@@ -384,6 +368,19 @@ var RocketFormComponent = (function () {
 			case 'select':
 				classes.push('rf-sel');
 				break;
+
+         default:
+            classes.push('rf-inp');
+            if (type === 'password') {
+               classes.push('_t-password');
+            }
+            if (options.label.length > 0 && options.label !== 'normal') {
+               classes.push('_l-' + options.label);
+            }
+            if (element.value.length > 0) {
+               classes.push('_valued');
+            }
+            break;
 
 		}
 		Rocket.class.add(formContainer, classes);
