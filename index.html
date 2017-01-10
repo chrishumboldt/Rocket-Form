@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<!-- Title -->
-	<title>Rocket Form Component</title>
+	<title>Rocket Form Module</title>
 	<!-- Styles -->
 	<link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="node_modules/rocket-propel/css/propel.min.css" rel="stylesheet" type="text/css">
@@ -21,7 +21,7 @@
 	</div>
 	<div id="rocket-demo" style="display:none;">
 		<div class="heading"><div class="container">
-			<h2>Rocket Form Component</h2>
+			<h2>Rocket Form Module</h2>
 		</div></div>
 
 		<div class="container">
@@ -45,13 +45,13 @@ npm install rocket-form
 <pre class="prettyprint linenums">
 &lt;script&gt;
 Rocket.form({
-    selector: '.form-el',
+    targets: '.form-el',
     colour: 'red',
     style: 'raised'
 });
 // With Shifting Label
 Rocket.form({
-    selector: '.form-el-2',
+    targets: '.form-el-2',
     colour: 'red',
     label: 'shift',
     style: 'raised'
@@ -196,12 +196,12 @@ Rocket.form({
 	<script src="js/form.min.js"></script>
 	<script>
 	Rocket.form({
-		selector: '.form-el',
+		targets: '.form-el',
 		colour: 'red',
 		style: 'raised'
 	});
 	Rocket.form({
-		selector: '.form-el-2',
+		targets: '.form-el-2',
 		colour: 'red',
 		label: 'shift',
 		style: 'raised'

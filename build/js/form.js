@@ -11,7 +11,7 @@ var Rocket = (function (Rocket) {
 		Rocket.defaults = {};
 	}
 	Rocket.defaults.form = {
-		selector: '.form',
+		targets: '.form',
 		colour: 'blue',
 		label: 'normal',
 		size: 'normal',
@@ -356,6 +356,8 @@ var RocketFormComponent = (function () {
 				break;
 
 			case 'text':
+         case 'email':
+         case 'number':
 			case 'password':
 				classes.push('rf-inp');
 				if (type === 'password') {
@@ -499,13 +501,13 @@ var RocketFormComponent = (function () {
 		// Options
 		var uOptions = (typeof uOptions === 'object') ? uOptions : false; // User options
 		var options = {
-			selector: Rocket.helper.setDefault(uOptions.selector, Rocket.defaults.form.selector),
+			targets: Rocket.helper.setDefault(uOptions.targets, Rocket.defaults.form.targets),
 			colour: Rocket.helper.setDefault(uOptions.colour, Rocket.defaults.form.colour),
 			label: Rocket.helper.setDefault(uOptions.label, Rocket.defaults.form.label),
 			size: Rocket.helper.setDefault(uOptions.size, Rocket.defaults.form.size),
 			style: Rocket.helper.setDefault(uOptions.style, Rocket.defaults.form.style)
 		};
-		var formElements = document.querySelectorAll(options.selector);
+		var formElements = document.querySelectorAll(options.targets);
 		// Catch
 		if (formElements.length < 1) {
 			return false;

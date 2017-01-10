@@ -30,7 +30,7 @@ Start by including the necessary files.
 ```
 
 ## Basic Example
-You will need to wrap your form elements with an identifier of your choice. Below is an example of executing the component complete with required HTML and Javascript.
+You will need to wrap your form elements with an identifier of your choice. Below is an example of executing the module complete with required HTML and Javascript.
 
 ```html
 <div class="form">
@@ -39,14 +39,14 @@ You will need to wrap your form elements with an identifier of your choice. Belo
 </div>
 <script>
 Rocket.form({
-	selector: '.form-elements',
+	targets: '.form-elements',
 	style: 'raised'
 });
 </script>
 ```
 
 ## Initialization
-Each initialization will return an array of component objects (An array will always be returned even if the selector is an id). This includes the form element itself as well as relevant methods. For example:
+Each initialization will return an array of module objects (An array will always be returned even if the target is an id). This includes the form element itself as well as relevant methods. For example:
 
 ```javascript
 var forms = Rocket.form();
@@ -60,11 +60,11 @@ for (var i = 0, len = forms.length; i < len; i++) {
 }
 ```
 
-Alternatively if you know the selector is unique you can reference the form element right away with the 0 index. For example:
+Alternatively if you know the target is unique you can reference the form element right away with the 0 index. For example:
 
 ```javascript
 var form = Rocket.form({
-    selector: '#form-element'
+    targets: '#form-element'
 })[0]; // Reference the first item in the array right away.
 ```
 
@@ -73,16 +73,16 @@ See the different options you have available on initialization.
 
 Name | Default | Options | Description
 ---- | ---- | ---- | ----
-`selector` | `.form` | | Set the HTML selector.
+`targets` | `.form` | | Set the HTML targets.
 `colour` | `blue` | `grey` `black` `white` `aqua` `blue` `green` `orange` `pink` `purple` `red` `grey-blue` | Set the colour of the form elements.
 `label` | `normal` | `normal` `shift` | Set an animation on the form label.
 `style` | `line` | `flat` `line` `raised` | Set the style of the form elements.
 
 #### Defaults
-You can also overwrite the component selector option globally by altering the Rocket defaults. To do so reference the defaults object property, for example:
+You can also overwrite the module options globally by altering the Rocket defaults. To do so reference the defaults object property, for example:
 
 ```javascript
-Rocket.defaults.form.selector = '.new-form-class';
+Rocket.defaults.form.targets = '.new-form-class';
 Rocket.defaults.form.colour = 'green';
 ```
 
@@ -183,7 +183,7 @@ Rocket.defaults.form.colour = 'green';
 ```
 
 ## Rocket Tools
-If you are using this component in conjunction with [Rocket Tools](https://github.com/chrishumboldt/Rocket-Tools), then **always** load the Rocket Tools library first. This component extends that library when detected.
+If you are using this module in conjunction with [Rocket Tools](https://github.com/chrishumboldt/Rocket-Tools), then **always** load the Rocket Tools library first. This module extends that library when detected.
 
 ## Formplate Deprecated
 The original library, Formplate, has been deprecated. The entire Webplate project is being refactored and rebranded with a new development philosophy. Formplate will be maintained only with bug fixes under the **formplate** branch.
