@@ -1,6 +1,4 @@
 /**
- * File: build/js/form.js
- * Type: Javascript component
  * Author: Chris Humboldt
 **/
 
@@ -360,7 +358,7 @@ var RocketFormComponent = (function () {
 				if (options.label.length > 0 && options.label !== 'normal') {
 					classes.push('_l-' + options.label);
 				}
-				if (element.value.length > 0) {
+				if (typeof element.value === 'string' && element.value.length > 0) {
 					classes.push('_valued');
 				}
 				break;
@@ -377,7 +375,7 @@ var RocketFormComponent = (function () {
             if (options.label.length > 0 && options.label !== 'normal') {
                classes.push('_l-' + options.label);
             }
-            if (element.value.length > 0) {
+            if (typeof element.value === 'string' && element.value.length > 0) {
                classes.push('_valued');
             }
             break;
