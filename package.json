@@ -25,11 +25,11 @@
     "npm": "^3.0.0"
   },
   "dependencies": {
-    "rocket-propel": "^3.0.0",
     "rocket-tools": "^1.11.0"
   },
   "devDependencies": {
     "rocket-demo": "^2.0.0",
+    "rocket-propel": "^3.0.0",
     "font-awesome": "^4.6.3"
   }
 }

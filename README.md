@@ -7,7 +7,6 @@ A universal form module.
 	* [Options](#options)
 	* [Defaults](#defaults)
 * [HTML Examples](#html-examples)
-* [Rocket Tools](#rocket-tools)
 * [Formplate Deprecated](#formplate-deprecated)
 
 ## Getting Started
@@ -185,9 +184,6 @@ Rocket.defaults.form.colour = 'green';
 </div>
 ```
 
-## Rocket Tools
-If you are using this module in conjunction with [Rocket Tools](https://github.com/chrishumboldt/Rocket-Tools), then **always** load the Rocket Tools library first. This module extends that library when detected.
-
 ## Formplate Deprecated
 The original library, Formplate, has been deprecated. The entire Webplate project is being refactored and rebranded with a new development philosophy. Formplate will be maintained only with bug fixes under the **formplate** branch.
 
@@ -198,7 +194,7 @@ Twitter: <a href="https://twitter.com/chrishumboldt">twitter.com/chrishumboldt</
 GitHub <a href="https://github.com/chrishumboldt">github.com/chrishumboldt</a><br>
 
 ## Copyright and License
-Copyright 2016 Rocket Project
+Copyright 2017 Rocket Project
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
