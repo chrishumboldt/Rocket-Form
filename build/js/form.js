@@ -160,7 +160,7 @@ var RockMod_Form;
     }
     function init(uOptions) {
         if (!Rocket.is.object(uOptions)) {
-            return false;
+            uOptions = {};
         }
         var options = {
             targets: Rocket.helper.setDefault(uOptions.targets, Rocket.defaults.form.targets),
