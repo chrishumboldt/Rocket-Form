@@ -11,7 +11,7 @@ A universal form module.
 * [Formplate Deprecated](#formplate-deprecated)
 
 ## Getting Started
-Install via NPM. Please note that this module has a dependency [Rocket Tools (20kb)](https://github.com/chrishumboldt/Rocket-Tools).
+Install via NPM. Please note that this module has a dependency [Rocket Tools (20kb)](https://github.com/chrishumboldt/Rocket-Tools) which will be automatically installed as well.
 
 ```
 npm install rocket-form
