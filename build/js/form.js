@@ -95,7 +95,6 @@ var RockMod_Form;
                 if (typeof element.value === 'string' && element.value.length > 0) {
                     classes.push('_valued');
                 }
-                break;
         }
         Rocket.classes.add(formContainer, classes);
         function clearValue() {
@@ -133,7 +132,6 @@ var RockMod_Form;
                 Rocket.event.add(element, 'blur', function () {
                     Rocket.classes.remove(formContainer, ['_focused'].concat((element.value.length < 1) ? ['_valued'] : []));
                 });
-                break;
         }
         ;
         return {
