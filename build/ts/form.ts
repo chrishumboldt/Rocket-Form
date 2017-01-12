@@ -187,11 +187,9 @@ module RockMod_Form {
 
    // Initialiser
    export function init (uOptions: any) {
-      // Catch
       if (!Rocket.is.object(uOptions)) {
-         return false;
+         uOptions = {};
       }
-      // Continue
       const options = {
          targets: Rocket.helper.setDefault(uOptions.targets, Rocket.defaults.form.targets),
          colour: Rocket.helper.setDefault(uOptions.colour, Rocket.defaults.form.colour),
