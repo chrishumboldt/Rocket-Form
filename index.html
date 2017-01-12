@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="_propel">
+<html>
 <head>
 
 	<!-- Meta setup - Required for apple device -->
@@ -9,7 +9,6 @@
 	<title>Rocket Form Module</title>
 	<!-- Styles -->
 	<link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="node_modules/rocket-propel/css/propel.min.css" rel="stylesheet" type="text/css">
 	<link href="node_modules/rocket-demo/css/demo.min.css" rel="stylesheet" type="text/css">
 	<link href="css/form.min.css" rel="stylesheet" type="text/css">
 
@@ -26,18 +25,19 @@
 
 		<div class="container">
 			<h4>Getting Started</h4>
-			<p>You can either download a copy of the <a href="https://github.com/chrishumboldt/Rocket-Form/archive/master.zip" class="link">source files</a> or install via NPM.</p>
+			<p>Install via NPM. Please note that this module has a dependency <a href="https://github.com/chrishumboldt/Rocket-Tools" class="link" target="_blank">Rocket Tools (20kb)</a>.</p>
 <pre class="prettyprint linenums">
 npm install rocket-form
 </pre>
 			<p>Start by including the necessary files.</p>
 <pre class="prettyprint linenums">
 &lt;head&gt;
-    &lt;link href=&quot;rocket-form/css/form.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+    &lt;link href=&quot;node_modules/rocket-form/css/form.min.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
 &lt;/head&gt;
 &lt;body&gt;
     /* Your content goes here */
-    &lt;script src=&quot;rocket-form/js/form.min.js&quot;>&lt;/script&gt;
+    &lt;script src=&quot;node_modules/rocket-tools/js/tools.min.js&quot;>&lt;/script&gt;
+    &lt;script src=&quot;node_modules/rocket-form/js/form.min.js&quot;>&lt;/script&gt;
 &lt;/body&gt;
 </pre>
 			<br>
@@ -192,20 +192,21 @@ Rocket.form({
 	</div>
 
 	<!-- Scripts -->
+   <script src="node_modules/rocket-tools/js/tools.min.js"></script>
 	<script src="node_modules/rocket-demo/js/demo.min.js"></script>
 	<script src="js/form.min.js"></script>
 	<script>
-	Rocket.form({
-		targets: '.form-el',
-		colour: 'red',
-		style: 'raised'
-	});
-	Rocket.form({
-		targets: '.form-el-2',
-		colour: 'red',
-		label: 'shift',
-		style: 'raised'
-	});
+   	Rocket.form({
+   		targets: '.form-el',
+   		colour: 'red',
+   		style: 'raised'
+   	});
+   	Rocket.form({
+   		targets: '.form-el-2',
+   		colour: 'red',
+   		label: 'shift',
+   		style: 'raised'
+   	});
 	</script>
 
 </body>
