@@ -13,11 +13,11 @@ A universal form module.
 ## Getting Started
 Install via NPM.
 
-**NOTE** that this module has a dependency [Rocket Tools (20kb)](https://github.com/chrishumboldt/Rocket-Tools) which will be automatically installed as well.
-
 ```
 npm install rocket-form
 ```
+
+**NOTE** that this module has a dependency [Rocket Tools (20kb)](https://github.com/chrishumboldt/Rocket-Tools) which will be automatically installed as well.
 
 Start by including the necessary files.
 
