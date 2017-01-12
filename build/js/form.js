@@ -77,7 +77,7 @@ var RockMod_Form;
                 if (options.label.length > 0 && options.label !== 'normal') {
                     classes.push('_l-' + options.label);
                 }
-                if (typeof element.value === 'string' && element.value.length > 0) {
+                if (Rocket.exists(element) && Rocket.is.string(element.value) && element.value.length > 0) {
                     classes.push('_valued');
                 }
                 break;
@@ -92,7 +92,7 @@ var RockMod_Form;
                 if (options.label.length > 0 && options.label !== 'normal') {
                     classes.push('_l-' + options.label);
                 }
-                if (typeof element.value === 'string' && element.value.length > 0) {
+                if (Rocket.exists(element) && Rocket.is.string(element.value) && element.value.length > 0) {
                     classes.push('_valued');
                 }
         }

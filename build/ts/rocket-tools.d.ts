@@ -15,6 +15,7 @@ declare namespace Rocket {
 
    interface is {
       object(check: any): boolean;
+      string(check: any): boolean;
       touch(): boolean;
    }
    var is: is;
