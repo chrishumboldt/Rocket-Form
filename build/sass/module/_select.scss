@@ -1,6 +1,4 @@
 /**
- * File: build/sass/component/_select.scss
- * Type: SASS component
  * Author: Chris Humboldt
 **/
 
@@ -21,7 +19,9 @@
 		@include border($white);
 		@include overflow(hidden);
 		@include level(1);
-		@include animate(all);
+      &._animate {
+   		@include animate(all);
+      }
 		// Icon
 		&:before {
 			@include position(absolute, right ($space-x-small + 1px));

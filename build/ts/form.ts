@@ -115,6 +115,9 @@ module RockMod_Form {
 
       }
       Rocket.classes.add(formContainer, classes);
+      setTimeout(function () {
+         Rocket.classes.add(formContainer, '_animate');
+      }, 50);
 
       // Functions
       function clearValue() {

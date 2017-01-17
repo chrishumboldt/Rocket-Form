@@ -1,6 +1,4 @@
 /**
- * File: build/sass/component/_input.scss
- * Type: SASS component
  * Author: Chris Humboldt
 **/
 
@@ -27,7 +25,6 @@
 			@include level(1);
 			outline: none;
 			-webkit-appearance: none;
-			@include animate(all);
 			&:focus {
 				@include level(2);
 			}
@@ -35,6 +32,9 @@
 				@include text-size(14px);
 			}
 		}
+      &._animate input {
+			@include animate(all);
+      }
 	}
 	@include rocket-form-input-styles($type);
 	@include rocket-form-input-hover();

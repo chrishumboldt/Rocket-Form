@@ -1,6 +1,4 @@
 /**
- * File: build/sass/component/_toggler.scss
- * Type: SASS component
  * Author: Chris Humboldt
 **/
 
@@ -21,7 +19,9 @@ $toggler-handle-dim: $toggler-h - 2px;
 		@include size($toggler-w, $toggler-h);
 		@include background-colour($grey-x-light);
 		@include border-radius($toggler-h / 2);
-		@include animate(background-color);
+      &._animate {
+   		@include animate(background-color);
+      }
 		// Hide the input
 		> input {
 			@include spacing-no();

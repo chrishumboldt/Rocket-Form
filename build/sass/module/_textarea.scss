@@ -1,6 +1,4 @@
 /**
- * File: build/sass/component/_textarea.scss
- * Type: SASS component
  * Author: Chris Humboldt
 **/
 
@@ -23,7 +21,6 @@
 			@include background-colour($white);
 			@include border($white);
 			@include level(1);
-			@include animate(all);
 			line-height: normal;
 			outline: none;
 			-webkit-appearance: none;
@@ -34,6 +31,9 @@
 				@include text-size(14px);
 			}
 		}
+      &._animate textarea {
+			@include animate(all);
+      }
 	}
 	@include form-textarea-styles($type);
 	@include form-textarea-states();
