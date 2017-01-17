@@ -23,11 +23,13 @@
 			@include position(absolute, left 15px top 12px);
 			@include text-size(13px);
 			@include opacity(0.5);
-			@include animate(all);
 			@include breakpoint(large) {
 				@include text-size(14px);
 			}
 		}
+      &._animate label {
+         @include animate(all);
+      }
 		&._valued label {
 			@include position-set(top -19px left 0px);
 			@include text-size(11px);
