@@ -97,6 +97,9 @@ var RockMod_Form;
                 }
         }
         Rocket.classes.add(formContainer, classes);
+        setTimeout(function () {
+            Rocket.classes.add(formContainer, '_animate');
+        }, 50);
         function clearValue() {
             if (type === 'text' || type === 'textarea') {
                 element.value = '';

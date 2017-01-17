@@ -1,6 +1,4 @@
 /**
- * File: build/sass_development.scss
- * Type: SASS import
  * Author: Chris Humboldt
 **/
 
@@ -11,13 +9,13 @@ $grey-form: lighten(#000, 85%);
 // Imports
 @import "../../node_modules/rocket-propel/build/sass/import";
 
-@import "component/setup";
+@import "module/setup";
 
-@import "component/check";
-@import "component/input";
-@import "component/label";
-@import "component/select";
-@import "component/textarea";
-@import "component/toggler";
+@import "module/check";
+@import "module/input";
+@import "module/label";
+@import "module/select";
+@import "module/textarea";
+@import "module/toggler";
 
 @import "css/execute";
