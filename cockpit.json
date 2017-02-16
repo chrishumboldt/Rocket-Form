@@ -2,10 +2,10 @@
    "build": [{
       "name": "form",
       "css": [
-         "form.scss"
+         "~/form.scss"
       ],
       "js": [
-         "form.js"
+         "~/form.js"
       ]
    }]
 }

@@ -1,6 +1,6 @@
 {
   "name": "rocket-form",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "description": "A universal form module.",
   "main": "js/form.min.js",
   "repository": {
@@ -25,7 +25,7 @@
     "npm": "^3.0.0"
   },
   "dependencies": {
-    "rocket-tools": "^1.11.0"
+    "rocket-tools": "^1.12.6"
   },
   "devDependencies": {
     "rocket-demo": "^2.0.0",
