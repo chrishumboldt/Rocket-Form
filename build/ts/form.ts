@@ -1,6 +1,6 @@
-/**
- * Author: Chris Humboldt
-**/
+/*
+Author: Chris Humboldt
+*/
 
 // Extend Rocket
 Rocket.defaults.form = {

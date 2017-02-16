@@ -2,5 +2,9 @@
    "compilerOptions": {
       "outDir": "../js",
       "target": "es5"
-   }
+   },
+   "filesGlob": [
+      "./**/*.ts",
+      "../../node_modules/rocket-tools/index.d.ts"
+   ]
 }
