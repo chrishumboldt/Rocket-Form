@@ -1,6 +1,6 @@
-/*
-Author: Chris Humboldt
-*/
+/**
+@author Chris Humboldt
+**/
 
 // Extend Rocket
 Rocket.defaults.form = {
@@ -51,6 +51,40 @@ module RockMod_Form {
       let classes = ['_c-' + options.colour, '_s-' + options.style, '_sz-' + options.size];
       let type;
 
+      // Functions
+      var bindings = {
+         blur: function () {
+            Rocket.classes.remove(formContainer, ['_focused'].concat((element.value.length < 1) ? ['_valued'] : []));
+         },
+         checkbox: function () {
+            checkSelect(false, type, element, formContainer);
+         },
+         focus: function () {
+            Rocket.classes.add(formContainer, ['_focused', '_valued']);
+         },
+         radio: function () {
+            radioSelect(false, type, element, formContainer);
+         }
+      };
+
+      function clearValue() {
+         if (type === 'text' || type === 'textarea') {
+            element.value = '';
+            Rocket.classes.remove(formContainer, ['_focused'].concat((element.value.length < 1) ? ['_valued'] : []));
+         }
+      }
+
+      function toggle(option) {
+         switch (type) {
+            case 'checkbox':
+               checkSelect(option, type, element, formContainer);
+               break;
+            case 'radio':
+               radioSelect(option, type, element, formContainer);
+               break;
+         };
+      }
+
       // Set type
       if (formContainer.querySelector('input')) {
          // Inputs
@@ -65,6 +99,25 @@ module RockMod_Form {
          element = formContainer.querySelector('select');
          type = 'select';
       }
+
+      // Bind events
+      switch (type) {
+         case 'checkbox':
+            if (!Rocket.has.class(formContainer, 'rf-check') && !Rocket.has.class(formContainer, 'rf-tog')) {
+               Rocket.event.add(element, 'click', bindings.checkbox);
+            }
+            break;
+
+         case 'radio':
+            if (!Rocket.has.class(formContainer, 'rf-check') && !Rocket.has.class(formContainer, 'rf-tog')) {
+               Rocket.event.add(element, 'click', bindings.radio);
+            }
+            break;
+
+         default:
+            Rocket.event.add(element, 'focus', bindings.focus);
+            Rocket.event.add(element, 'blur', bindings.blur);
+      };
 
       // Apply styles
       switch (type) {
@@ -118,48 +171,6 @@ module RockMod_Form {
       setTimeout(function () {
          Rocket.classes.add(formContainer, '_animate');
       }, 50);
-
-      // Functions
-      function clearValue() {
-         if (type === 'text' || type === 'textarea') {
-            element.value = '';
-            Rocket.classes.remove(formContainer, ['_focused'].concat((element.value.length < 1) ? ['_valued'] : []));
-         }
-      }
-
-      function toggle(option) {
-         switch (type) {
-            case 'checkbox':
-               checkSelect(option, type, element, formContainer);
-               break;
-            case 'radio':
-               radioSelect(option, type, element, formContainer);
-               break;
-         };
-      }
-
-      // Bind events
-      switch (type) {
-         case 'checkbox':
-            Rocket.event.add(element, 'click', function () {
-               checkSelect(false, type, element, formContainer);
-            });
-            break;
-
-         case 'radio':
-            Rocket.event.add(element, 'click', function () {
-               radioSelect(false, type, element, formContainer);
-            });
-            break;
-
-         default:
-            Rocket.event.add(element, 'focus', function () {
-               Rocket.classes.add(formContainer, ['_focused', '_valued']);
-            });
-            Rocket.event.add(element, 'blur', function () {
-               Rocket.classes.remove(formContainer, ['_focused'].concat((element.value.length < 1) ? ['_valued'] : []));
-            });
-      };
 
       // Return
       return {
