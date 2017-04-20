@@ -25,7 +25,7 @@
     "npm": "^3.0.0"
   },
   "dependencies": {
-    "rocket-tools": "^1.12.6"
+    "rocket-tools": "^1.14.2"
   },
   "devDependencies": {
     "rocket-demo": "^2.0.0",
