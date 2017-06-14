@@ -4,7 +4,7 @@
 
 // Extend Rocket
 Rocket.defaults.form = {
-   targets: '.form',
+   target: '.form',
    colour: 'blue',
    label: 'normal',
    size: 'normal',
@@ -205,13 +205,14 @@ module RockMod_Form {
          uOptions = {};
       }
       const options = {
-         targets: Rocket.helper.setDefault(uOptions.targets, Rocket.defaults.form.targets),
+         target: Rocket.helper.setDefault(uOptions.target, Rocket.defaults.form.target),
          colour: Rocket.helper.setDefault(uOptions.colour, Rocket.defaults.form.colour),
          label: Rocket.helper.setDefault(uOptions.label, Rocket.defaults.form.label),
          size: Rocket.helper.setDefault(uOptions.size, Rocket.defaults.form.size),
          style: Rocket.helper.setDefault(uOptions.style, Rocket.defaults.form.style)
       };
-      const formElms = Rocket.dom.select(options.targets);
+      const formElms = Rocket.dom.select(options.target);
+
       // Catch
       if (formElms.length <= 0) {
          return false;
