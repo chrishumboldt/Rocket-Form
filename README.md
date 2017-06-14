@@ -35,7 +35,7 @@ Start by including the necessary files.
 You will need to wrap your form elements with an identifier of your choice. Below is an example of executing the module complete with required HTML and Javascript.
 
 ```html
-<div class="form">
+<div class="form-element">
    <label for="input-example">Example Label<label>
    <input id="input-example" type="text" placeholder="Example Input">
 </div>
