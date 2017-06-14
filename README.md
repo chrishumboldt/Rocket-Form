@@ -22,12 +22,12 @@ Start by including the necessary files.
 
 ```html
 <head>
-	<link href="node_modules/rocket-form/css/form.min.css" rel="stylesheet" type="text/css">
+   <link href="node_modules/rocket-form/css/form.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    /* Your content goes here */
-    <script src="node_modules/rocket-tools/js/tools.min.js"></script>
-    <script src="node_modules/rocket-form/js/form.min.js"></script>
+   /* Your content goes here */
+   <script src="node_modules/rocket-tools/js/tools.min.js"></script>
+   <script src="node_modules/rocket-form/js/form.min.js"></script>
 </body>
 ```
 
@@ -39,10 +39,11 @@ You will need to wrap your form elements with an identifier of your choice. Belo
    <label for="input-example">Example Label<label>
    <input id="input-example" type="text" placeholder="Example Input">
 </div>
+
 <script>
 Rocket.form({
-	target: '.form-elements',
-	style: 'raised'
+   target: '.form-elements',
+   style: 'raised'
 });
 </script>
 ```
@@ -55,10 +56,10 @@ var forms = Rocket.form();
 
 // The form elements and all methods
 for (var i = 0, len = forms.length; i < len; i++) {
-	console.log(forms[i].form);
-	forms[i].clear(); // Clear the value. Works on text inputs and textareas.
-	forms[i].toggle('on'); // Toggle the form element to "on". Works on radio and checkboxes.
-	forms[i].toggle('off');
+   console.log(forms[i].form);
+   forms[i].clear(); // Clear the value. Works on text inputs and textareas.
+   forms[i].toggle('on'); // Toggle the form element to "on". Works on radio and checkboxes.
+   forms[i].toggle('off');
 }
 ```
 
@@ -66,7 +67,7 @@ Alternatively if you know the target is unique you can reference the form elemen
 
 ```javascript
 var form = Rocket.form({
-    target: '#form-element'
+   target: '#form-element'
 })[0]; // Reference the first item in the array right away.
 ```
 
