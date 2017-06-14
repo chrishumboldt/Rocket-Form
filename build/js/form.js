@@ -124,7 +124,7 @@ var RockMod_Form;
                     classes.push('_checked');
                 }
                 else {
-                    Rocket.classes.remove(element, '_checked');
+                    Rocket.classes.remove(formContainer, '_checked');
                 }
                 // Toggler?
                 if (Rocket.has.class(element, 'toggler')) {
