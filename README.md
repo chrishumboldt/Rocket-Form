@@ -41,7 +41,7 @@ You will need to wrap your form elements with an identifier of your choice. Belo
 </div>
 <script>
 Rocket.form({
-	targets: '.form-elements',
+	target: '.form-elements',
 	style: 'raised'
 });
 </script>
@@ -66,7 +66,7 @@ Alternatively if you know the target is unique you can reference the form elemen
 
 ```javascript
 var form = Rocket.form({
-    targets: '#form-element'
+    target: '#form-element'
 })[0]; // Reference the first item in the array right away.
 ```
 
@@ -75,7 +75,7 @@ See the different options you have available on initialization.
 
 Name | Default | Options | Description
 ---- | ---- | ---- | ----
-`targets` | `.form` | | Set the HTML targets.
+`target` | `.form` | | Set the HTML target.
 `colour` | `blue` | `grey` `black` `white` `aqua` `blue` `green` `orange` `pink` `purple` `red` `grey-blue` | Set the colour of the form elements.
 `label` | `normal` | `normal` `shift` | Set an animation on the form label.
 `style` | `line` | `flat` `line` `raised` | Set the style of the form elements.
@@ -84,7 +84,7 @@ Name | Default | Options | Description
 You can also overwrite the module options globally by altering the Rocket defaults. To do so reference the defaults object property, for example:
 
 ```javascript
-Rocket.defaults.form.targets = '.new-form-class';
+Rocket.defaults.form.target = '.new-form-class';
 Rocket.defaults.form.colour = 'green';
 ```
 
