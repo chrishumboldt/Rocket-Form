@@ -7,7 +7,6 @@ Rocket.defaults.form = {
    targets: '.mod-form',
    colour: 'blue',
    label: 'normal',
-   refresh: false,
    size: 'normal',
    style: 'line'
 };
@@ -17,37 +16,74 @@ Rocket.form = ({
    targets = Rocket.defaults.form.targets,
    colour = Rocket.defaults.form.colour,
    label = Rocket.defaults.form.label,
-   refresh = Rocket.defaults.form.refresh,
    size = Rocket.defaults.form.size,
    style = Rocket.defaults.form.style
 } = {}) => {
    // Variables
-   const baseClasses = [`is-applied`, `_mod-colour-${colour}`, `_mod-style-${style}`, `_mod-size-${size}`];
+   const baseClasses = [`mod-form-applied`, `_mod-colour-${colour}`, `_mod-style-${style}`, `_mod-size-${size}`];
+   const regExpModForm = new RegExp('mod-form-');
 
    // Methods
    const action = {
-      checkboxChange() {
-         const { container, element } = this;
-
-         if (element.checked) {
-            Rocket.classes.add(container, 'is-checked');
+      checkboxChange(formElm) {
+         if (formElm.checked) {
+            Rocket.classes.add(formElm.parentNode, 'is-checked');
          } else {
-            Rocket.classes.remove(container, 'is-checked');
+            Rocket.classes.remove(formElm.parentNode, 'is-checked');
          }
       },
-      eventBlur() {
-         Rocket.classes.remove(this, 'is-focused');
+      makeValued(formElm) {
+         setTimeout(() => { Rocket.classes.add(formElm.parentNode, 'is-valued') }, 0);
       },
-      eventFocus() {
-         Rocket.classes.add(this, 'is-focused');
+      processEvent(ev) {
+         const elmTagName = Rocket.string.lowercase.all(ev.target.tagName);
+         const elmParentClass = ev.target.parentNode.className;
+
+         if ((elmTagName === 'input' || elmTagName === 'textarea') && regExpModForm.test(elmParentClass)) {
+            const elmType = Rocket.string.lowercase.all(ev.target.getAttribute('type'));
+
+            switch (elmType) {
+               case 'checkbox':
+                  if (ev.type === 'click') { action.checkboxChange(ev.target); }
+                  break;
+
+               case 'radio':
+                  if (ev.type === 'click') { action.radioChange(ev.target); }
+                  break;
+
+               default:
+                  if (ev.type === 'click') {
+                     action.makeValued(ev.target);
+                  } else if (ev.type === 'focusout') {
+                     action.removeValued(ev.target);
+                  }
+            }
+         }
+      },
+      radioChange(formElm) {
+         const radioName = formElm.getAttribute('name') || false;
+         if (!radioName) { return; }
+
+         Rocket.classes.remove(Rocket.dom.select(`input[name="${radioName}"]`).map((item) => item.parentNode), 'is-checked');
+         Rocket.classes.add(formElm.parentNode, 'is-checked');
+      },
+      removeValued(formElm) {
+         if (formElm.value.length < 1) { Rocket.classes.remove(formElm.parentNode, 'is-valued'); }
       }
    };
 
-   function applyForm(container) {
-      // Check applied state
-      if (Rocket.has.class(container, 'is-applied') && !refresh) { return; }
+   function applyEventListener() {
+      if (Rocket.has.class(Rocket.dom.html, 'mod-form-listener')) {
+         return;
+      } else {
+         Rocket.classes.add(Rocket.dom.html, 'mod-form-listener');
+      }
 
-      // Continue
+      Rocket.event.add('.mod-form-listener', 'click', action.processEvent);
+      Rocket.event.add('.mod-form-listener', 'focusout', action.processEvent);
+   };
+
+   function applyForm(container) {
       const form = {container, element: undefined};
       const formClasses = Rocket.clone(baseClasses);
       let formType = '';
@@ -66,8 +102,8 @@ Rocket.form = ({
          formType = 'textarea';
       }
 
-      // Remove existing styles based on refresh property
-      if (refresh) {
+      // Remove styles if already applied
+      if (Rocket.has.class(form.container, 'mod-form-applied')) {
          const removeClasses = form.container.className
                                  .split(' ')
                                  .filter((item) => { return item.substring(0, 5) === '_mod-'; })
@@ -107,27 +143,17 @@ Rocket.form = ({
             break;
 
          default:
+            if (label === 'shift') { formClasses.push('_mod-label-shift'); }
             formClasses.push((formType === 'password') ? '_mod-type-password' : '_mod-type-input');
       }
       Rocket.classes.add(form.container, formClasses);
       setTimeout(() => { Rocket.classes.add(form.container, '_mod-animate'); }, 0);
-
-      // Apply event handling
-      switch (formType) {
-         case 'checkbox':
-            Rocket.event.add(form.element, 'change', action.checkboxChange.bind(form));
-            break;
-
-         default:
-            setTimeout(() => { Rocket.event.add(form.element, 'blur', action.eventBlur.bind(form.container)) }, 0);
-            setTimeout(() => { Rocket.event.add(form.element, 'focus', action.eventFocus.bind(form.container)) }, 0);
-
-      }
    };
 
    function init() {
       const formElms = Rocket.dom.select(targets);
       if (formElms.length > 0) { formElms.map((item) => applyForm(item)) };
+      applyEventListener();
    };
 
    // Execute
