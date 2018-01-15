@@ -114,8 +114,8 @@ There are a variety of unique form elements with each being viable targets.  See
 </div>
 ```
 
-#### Checkbox
-In the checkbox example the only difference to basic inputs is the oder of the elements and the type. Although it is not 100% necessary to change the order, it is good practice.
+#### Checkboxes
+In this example the only difference to basic inputs is the oder of the elements and the type. Although it is not 100% necessary to change the order, it is good practice.
 
 ```html
 <div class="mod-form">
