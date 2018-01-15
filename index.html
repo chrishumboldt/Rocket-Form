@@ -42,21 +42,31 @@ npm install rocket-form
 &lt;/body&gt;
 </pre>
 			<br>
-			<h4>Javascript Call</h4>
+			<h4>HTML and Javascript Call</h4>
 <pre class="prettyprint linenums">
+&lt;div class="mod-form"&gt;
+   &lt;label for="text-1"&gt;Form Label&lt;/label&gt;
+   &lt;input type="text" id="text-1"&gt;
+&lt;/div&gt;
+
+&lt;div class="mod-form-alt"&gt;
+   &lt;label for="text-2"&gt;Form Label&lt;/label&gt;
+   &lt;input type="text" id="text-2"&gt;
+&lt;/div&gt;
+
 &lt;script&gt;
+// Default targets property is ".mod-form".
 Rocket.form({
-    targets: '.mod-form',
-    colour: 'red',
-    style: 'raised'
+   colour: 'red',
+   style: 'raised'
 });
 
 // With Shifting Label
 Rocket.form({
-    targets: '.mod-form-alt',
-    colour: 'red',
-    label: 'shift',
-    style: 'raised'
+   targets: '.mod-form-alt',
+   colour: 'red',
+   label: 'shift',
+   style: 'raised'
 });
 &lt;/script&gt;
 </pre>

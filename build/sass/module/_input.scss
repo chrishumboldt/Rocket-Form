@@ -35,6 +35,5 @@
    .mod-form input:focus,
    .mod-form textarea:focus {
       @include border($blue);
-      @include level(2);
    }
 }

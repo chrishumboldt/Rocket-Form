@@ -6,6 +6,9 @@
    .mod-form-group {
       @include row;
    }
+   .mod-form .mod-form-group input:focus {
+      @include level(2);
+   }
 
    // Two
    .mod-form .mod-form-group._mod-group-two > input,
