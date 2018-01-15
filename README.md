@@ -7,7 +7,7 @@ A universal form module.
    * [Options](#options)
    * [Defaults](#defaults)
 * [HTML Examples](#html-examples)
-   * [Input fields](input-fields)
+   * [Basic Inputs](#basic-inputs)
 * [Formplate Deprecated](#formplate-deprecated)
 
 ## Getting Started
@@ -38,7 +38,7 @@ You will need to wrap your form elements with an identifier of your choice. Belo
 ```html
 <div class="mod-form">
    <label for="input-example">Example Label<label>
-   <input id="input-example" type="text" placeholder="Example Input">
+   <input id="input-example" type="text">
 </div>
 
 <script>
@@ -79,18 +79,27 @@ Rocket.defaults.form.colour = 'green';
 ## HTML Examples
 There are a variety of unique form elements with each being viable targets.  See an example of each below:
 
-#### Input fields
+#### Basic Inputs
 ```html
 // Regular text input
 <div class="mod-form">
-   <label for="text-1">Text Label</label>
-   <input type="text" id="text-1">
+   <label for="text-1">Text Field</label>
+   <input id="text-1" type="text">
 </div>
 
 // Password input
 <div class="mod-form">
-   <label for="password-1">Password Label</label>
-   <input type="password" id="password-1">
+   <label for="password-1">Password Field</label>
+   <input id="password-1" type="password">
+</div>
+
+// With icon
+<div class="mod-form">
+   <label for="text-2">Text Field</label>
+   <div class="mod-form-icon">
+      <i class="fa fa-cog"></i>
+      <input id="text-2" type="text">
+   </div>
 </div>
 ```
 
