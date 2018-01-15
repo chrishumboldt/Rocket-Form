@@ -10,6 +10,7 @@ A universal form module.
    * [Basic Inputs](#basic-inputs)
    * [Text Area](#text-area)
    * [Checkbox](#checkbox)
+   * [Radio Buttons](#radio-buttons)
 * [Formplate Deprecated](#formplate-deprecated)
 
 ## Getting Started
@@ -126,6 +127,26 @@ In the checkbox example the only difference to basic inputs is the oder of the e
 <div class="mod-form">
    <input id="check-2" type="checkbox" checked="checked">
    <label for="check-2">Checkbox 2</label>
+</div>
+```
+
+#### Radio Buttons
+Radio buttons have the same element order as checkboxes.
+
+```html
+<div class="mod-form">
+   <input id="radio-1" type="radio" name="radio-option" checked="checked">
+   <label for="radio-1">Radio Option</label>
+</div>
+
+<div class="mod-form">
+   <input id="radio-2" type="radio" name="radio-option">
+   <label for="radio-2">Radio Option</label>
+</div>
+
+<div class="mod-form">
+   <input id="radio-3" type="radio" name="radio-option">
+   <label for="radio-3">Radio Option</label>
 </div>
 ```
 
