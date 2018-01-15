@@ -10,6 +10,7 @@ A universal form module.
    * [Basic Inputs](#basic-inputs)
    * [Text Area](#text-area)
    * [Checkboxes](#checkboxes)
+   * [Toggler](#toggler)
    * [Radio Buttons](#radio-buttons)
 * [Formplate Deprecated](#formplate-deprecated)
 
@@ -127,6 +128,15 @@ In this example the only difference to basic inputs is the oder of the elements 
 <div class="mod-form">
    <input id="check-2" type="checkbox" checked="checked">
    <label for="check-2">Checkbox 2</label>
+</div>
+```
+
+#### Toggler
+A toggler is a special modifier made to a checkbox. It just looks cool.
+
+```html
+<div class="mod-form">
+   <input type="checkbox" class="_mod-make-toggler">
 </div>
 ```
 
