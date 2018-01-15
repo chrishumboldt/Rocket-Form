@@ -9,7 +9,7 @@ A universal form module.
 * [HTML Examples](#html-examples)
    * [Basic Inputs](#basic-inputs)
    * [Text Area](#text-area)
-   * [Checkbox](#checkbox)
+   * [Checkboxes](#checkboxes)
    * [Radio Buttons](#radio-buttons)
 * [Formplate Deprecated](#formplate-deprecated)
 
