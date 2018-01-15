@@ -12,6 +12,7 @@ A universal form module.
    * [Checkboxes](#checkboxes)
    * [Toggler](#toggler)
    * [Radio Buttons](#radio-buttons)
+   * [Select Element](#select-element)
 * [Formplate Deprecated](#formplate-deprecated)
 
 ## Getting Started
@@ -157,6 +158,18 @@ Radio buttons have the same element order as checkboxes.
 <div class="mod-form">
    <input id="radio-3" type="radio" name="radio-option">
    <label for="radio-3">Radio Option</label>
+</div>
+```
+
+#### Select Element
+
+```html
+<div class="mod-form">
+   <select>
+      <option value="1">Select Option 1</option>
+      <option value="2">Select Option 2</option>
+      <option value="3">Select Option 3</option>
+   </select>
 </div>
 ```
 
