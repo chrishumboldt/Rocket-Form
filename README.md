@@ -81,7 +81,7 @@ There are a variety of unique form elements with each being viable targets.  See
 
 #### Basic Inputs
 ```html
-// Regular text input
+// Regular input (applies to text, email, search etc...)
 <div class="mod-form">
    <label for="text-1">Text Field</label>
    <input id="text-1" type="text">
