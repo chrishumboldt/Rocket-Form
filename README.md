@@ -166,9 +166,9 @@ Radio buttons have the same element order as checkboxes.
 ```html
 <div class="mod-form">
    <select>
-      <option value="1">Select Option 1</option>
-      <option value="2">Select Option 2</option>
-      <option value="3">Select Option 3</option>
+      <option>Select Option 1</option>
+      <option>Select Option 2</option>
+      <option>Select Option 3</option>
    </select>
 </div>
 ```
