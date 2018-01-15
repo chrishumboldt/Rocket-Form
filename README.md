@@ -8,6 +8,8 @@ A universal form module.
    * [Defaults](#defaults)
 * [HTML Examples](#html-examples)
    * [Basic Inputs](#basic-inputs)
+   * [Text Area](#text-area)
+   * [Checkbox](#checkbox)
 * [Formplate Deprecated](#formplate-deprecated)
 
 ## Getting Started
@@ -100,6 +102,30 @@ There are a variety of unique form elements with each being viable targets.  See
       <i class="fa fa-cog"></i>
       <input id="text-2" type="text">
    </div>
+</div>
+```
+
+#### Text Area
+```html
+<div class="mod-form">
+   <label for="textarea-1">Text Area</label>
+   <textarea id="textarea-1"></textarea>
+</div>
+```
+
+#### Checkbox
+In the checkbox example the only difference to basic inputs is the oder of the elements and the type. Although it is not 100% necessary to change the order, it is good practice.
+
+```html
+<div class="mod-form">
+   <input id="check-1" type="checkbox">
+   <label for="check-1">Checkbox 1</label>
+</div>
+
+<!-- Checked example -->
+<div class="mod-form">
+   <input id="check-2" type="checkbox" checked="checked">
+   <label for="check-2">Checkbox 2</label>
 </div>
 ```
 
