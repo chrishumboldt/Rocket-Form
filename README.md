@@ -26,7 +26,7 @@ Start by including the necessary files.
    <link href="node_modules/rocket-form/css/form.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-   /* Your content goes here */
+   <!-- Your content goes here -->
    <script src="node_modules/rocket-tools/js/tools.min.js"></script>
    <script src="node_modules/rocket-form/js/form.min.js"></script>
 </body>
@@ -87,13 +87,13 @@ There are a variety of unique form elements with each being viable targets.  See
    <input id="text-1" type="text">
 </div>
 
-// Password input
+<!-- Password input -->
 <div class="mod-form">
    <label for="password-1">Password Field</label>
    <input id="password-1" type="password">
 </div>
 
-// With icon
+<!-- With icon -->
 <div class="mod-form">
    <label for="text-2">Text Field</label>
    <div class="mod-form-icon">
