@@ -1,0 +1,37 @@
+/**
+@author Chris Humboldt
+**/
+
+@mixin mod-form-style {
+   // Flat style
+   .mod-form._mod-style-flat input,
+   .mod-form._mod-style-flat textarea,
+   .mod-form._mod-style-flat._mod-type-select {
+      @include background-colour($grey-x-light);
+      @include border($grey-x-light);
+   }
+   .mod-form._mod-style-flat::before {
+      @include background-colour($grey-x-light);
+      @include border($grey-x-light);
+   }
+   .mod-form._mod-style-flat input:focus,
+   .mod-form._mod-style-flat textarea:focus {
+      @include border($blue);
+   }
+
+   // Raised style
+   .mod-form._mod-style-raised input,
+   .mod-form._mod-style-raised textarea,
+   .mod-form._mod-style-raised::before,
+   .mod-form._mod-style-raised._mod-type-select {
+      @include rocket-form-shadow();
+      @include border($white);
+   }
+   .mod-form._mod-style-raised._mod-type-toggler {
+      @include rocket-form-shadow();
+   }
+   .mod-form._mod-style-raised input:focus,
+   .mod-form._mod-style-raised textarea:focus {
+      @include border($blue);
+   }
+}

@@ -1,0 +1,22 @@
+/**
+@author Chris Humboldt
+**/
+
+@mixin mod-form-colour {
+   @each $colour-name, $colour in $ar-colours-form {
+      .mod-form._mod-colour-#{$colour-name} input:focus,
+      .mod-form._mod-colour-#{$colour-name} textarea:focus {
+         @include border($colour);
+      }
+      .mod-form._mod-colour-#{$colour-name}.is-checked::before {
+         @include background-colour($colour);
+         @include border($colour);
+      }
+      .mod-form._mod-type-toggler._mod-colour-#{$colour-name}.is-checked {
+         @include background-colour($colour);
+      }
+      .rocket-no-touch .mod-form._mod-type-select._mod-colour-#{$colour-name}:hover::after {
+         @include text-colour($colour);
+      }
+   }
+}

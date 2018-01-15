@@ -20,8 +20,8 @@ Rocket.form = ({
    style = Rocket.defaults.form.style
 } = {}) => {
    // Variables
-   const baseClasses = [`mod-form-applied`, `_mod-colour-${colour}`, `_mod-style-${style}`, `_mod-size-${size}`];
-   const regExpModForm = new RegExp('mod-form-');
+   const baseClasses = [`mod-form`];
+   const regExpModForm = new RegExp('mod-form ');
 
    // Methods
    const action = {
@@ -52,7 +52,7 @@ Rocket.form = ({
                   break;
 
                default:
-                  if (ev.type === 'click') {
+                  if (ev.type === 'focusin') {
                      action.makeValued(ev.target);
                   } else if (ev.type === 'focusout') {
                      action.removeValued(ev.target);
@@ -80,6 +80,7 @@ Rocket.form = ({
       }
 
       Rocket.event.add('.mod-form-listener', 'click', action.processEvent);
+      Rocket.event.add('.mod-form-listener', 'focusin', action.processEvent);
       Rocket.event.add('.mod-form-listener', 'focusout', action.processEvent);
    };
 
@@ -87,32 +88,23 @@ Rocket.form = ({
       const form = {container, element: undefined};
       const formClasses = Rocket.clone(baseClasses);
       let formType = '';
+      let formIsInput = false;
 
       // Detect form element & type
       if (form.container.querySelector('input')) {
          form.element = form.container.querySelectorAll('input');
-         formType = Rocket.string.lowercase.all(form.element[0].getAttribute('type'));
 
+         formType = Rocket.string.lowercase.all(form.element[0].getAttribute('type'));
          if (formType === 'checkbox' || formType === 'radio') { form.element = form.element[0]; }
       } else if (form.container.querySelector('select')) {
          form.element = form.container.querySelector('select');
          formType = 'select';
       } else if (form.container.querySelector('textarea')) {
-         form.element = form.container.querySelector('textarea');
+         form.element = form.container.querySelectorAll('textarea');
          formType = 'textarea';
       }
 
-      // Remove styles if already applied
-      if (Rocket.has.class(form.container, 'mod-form-applied')) {
-         const removeClasses = form.container.className
-                                 .split(' ')
-                                 .filter((item) => { return item.substring(0, 5) === '_mod-'; })
-                                 .concat(['is-checked', 'is-valued']);
-
-         Rocket.classes.remove(form.container, removeClasses);
-      }
-
-      // Apply styles
+      // Update form styles
       switch (formType) {
          case 'checkbox':
          case 'radio':
@@ -124,10 +116,8 @@ Rocket.form = ({
 
             if (Rocket.has.class(form.element, '_mod-make-toggler')) {
                formClasses.push('_mod-type-toggler');
-            } else if (formType === 'checkbox') {
-               formClasses.push('_mod-type-checkbox');
             } else {
-               formClasses.push('_mod-type-radio');
+               formClasses.push(`_mod-type-check--${formType}`);
             }
 
             break;
@@ -136,25 +126,55 @@ Rocket.form = ({
             formClasses.push('_mod-type-select');
             break;
 
-         case 'textarea':
-            formClasses.push('_mod-type-textarea');
-            if (label === 'shift') { formClasses.push('_mod-label-shift'); }
-            if (form.element.value.length > 0) { formClasses.push('is-valued'); }
-            break;
-
          default:
-            if (label === 'shift') { formClasses.push('_mod-label-shift'); }
-            formClasses.push((formType === 'password') ? '_mod-type-password' : '_mod-type-input');
+            formIsInput = true;
+            formClasses.push(`_mod-type-input--${formType}`);
+
+            setTimeout(() => {
+               for (let i = 0, len = form.element.length; i < len; i++) {
+                  /*
+                  NOTE This is a hack to get around an autofill issue with Chrome. The input value
+                  is not detected when trying to determine the "is-valued" class. Chrome does register
+                  the value once it has been interacted with so this click event should get around that.
+                  */
+                  if (formType === 'password') { form.element[i].click(); }
+
+                  if (form.element[i].value.length > 0) {
+                     Rocket.classes.add(form.container, 'is-valued');
+                     break;
+                  }
+               }
+            }, 0);
       }
+
+      // Remove styles if already applied
+      if (Rocket.has.class(form.container, 'mod-form')) {
+         const removeClasses = form.container.className
+                                 .split(' ')
+                                 .filter((item) => { return item.substring(0, 5) === '_mod-'; })
+                                 .concat(['is-checked', 'is-valued']);
+
+         Rocket.classes.remove(form.container, removeClasses);
+      }
+
+      // Apply styles
+      if (label === 'shift' && formIsInput) { Rocket.classes.add(form.container, '_mod-label-shift'); }
       Rocket.classes.add(form.container, formClasses);
-      setTimeout(() => { Rocket.classes.add(form.container, '_mod-animate'); }, 0);
    };
 
    function init() {
       const formElms = Rocket.dom.select(targets);
+
+      updateFormClasses();
       if (formElms.length > 0) { formElms.map((item) => applyForm(item)) };
       applyEventListener();
    };
+
+   function updateFormClasses() {
+      if (colour !== 'blue') { baseClasses.push(`_mod-colour-${colour}`); }
+      if (size !== 'normal') { baseClasses.push(`_mod-size-${size}`); }
+      if (style !== 'line') { baseClasses.push(`_mod-style-${style}`); }
+   }
 
    // Execute
    return init();

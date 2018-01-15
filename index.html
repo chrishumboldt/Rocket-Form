@@ -29,7 +29,7 @@
 <pre class="prettyprint linenums">
 npm install rocket-form
 </pre>
-         <p class="note">Note that this module has a dependency <a href="https://github.com/chrishumboldt/Rocket-Tools" class="link" target="_blank">Rocket Tools (21kb)</a> which will automatically be installed as well.</p>
+         <p class="note">Note that this module has a dependency <a href="https://github.com/chrishumboldt/Rocket-Tools" class="link" target="_blank">Rocket Tools (28kb)</a> which will automatically be installed as well.</p>
 			<p>Start by including the necessary files.</p>
 <pre class="prettyprint linenums">
 &lt;head&gt;
@@ -50,9 +50,10 @@ Rocket.form({
     colour: 'red',
     style: 'raised'
 });
+
 // With Shifting Label
 Rocket.form({
-    targets: '.mod-form',
+    targets: '.mod-form-alt',
     colour: 'red',
     label: 'shift',
     style: 'raised'
@@ -71,7 +72,7 @@ Rocket.form({
 						<label for="password-1">Password Label</label>
 						<input type="password" id="password-1" placeholder="Password input">
 					</div>
-					<div class="mod-form">
+					<div class="mod-form-alt">
 						<label for="text-2">Shift Label</label>
 						<input type="text" id="text-2">
 					</div>
@@ -79,7 +80,7 @@ Rocket.form({
 						<label for="textarea-1">Textarea Label</label>
 						<textarea id="textarea-1" placeholder="Textarea">This is a test.</textarea>
 					</div>
-					<div class="mod-form">
+					<div class="mod-form-alt">
 						<label for="textarea-2">Textarea Shift Label</label>
 						<textarea id="textarea-2"></textarea>
 					</div>
@@ -120,8 +121,7 @@ Rocket.form({
 					<h3>Toggler</h3>
 
 					<div class="mod-form">
-						<input type="checkbox" id="toggler-1" class="toggler">
-						<span class="handle"></span>
+						<input type="checkbox" id="toggler-1" class="_mod-make-toggler" checked="checked">
 					</div>
 
 					<h3>Radio Inputs</h3>
@@ -147,7 +147,7 @@ Rocket.form({
 
 				<div class="mod-form">
 					<label for="text-4">Two</label>
-					<div class="mod-form-group _mod-two">
+					<div class="mod-form-group _mod-group-two">
 						<input type="text" id="text-4" placeholder="Text input">
 						<input type="text" id="text-5" placeholder="Text input">
 					</div>
@@ -155,7 +155,7 @@ Rocket.form({
 
 				<div class="mod-form">
 					<label for="text-6">Three</label>
-					<div class="mod-form-group _mod-three">
+					<div class="mod-form-group _mod-group-three">
 						<input type="text" id="text-6" placeholder="Text input">
 						<input type="text" id="text-7" placeholder="Text input">
 						<input type="text" id="text-8" placeholder="Text input">
@@ -164,7 +164,7 @@ Rocket.form({
 
 				<div class="mod-form">
 					<label for="text-9">Two With Icon</label>
-					<div class="mod-form-group _mod-two">
+					<div class="mod-form-group _mod-group-two">
 						<div class="mod-form-icon">
 							<i class="fa fa-cog"></i>
 							<input type="text" id="text-9" placeholder="Text input">
@@ -197,17 +197,8 @@ Rocket.form({
 	<script src="node_modules/rocket-demo/js/demo.min.js"></script>
 	<script src="build/js/form.js"></script>
 	<script>
-      Rocket.form({
-   		colour: 'red',
-   		style: 'raised'
-   	});
-
-   	// Rocket.form({
-   	// 	targets: '.mod-form',
-   	// 	colour: 'red',
-   	// 	label: 'shift',
-   	// 	style: 'raised'
-   	// });
+      Rocket.form();
+      Rocket.form({targets: '.mod-form-alt', label: 'shift'});
 	</script>
 
 </body>
