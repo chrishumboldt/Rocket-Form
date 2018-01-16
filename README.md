@@ -3,7 +3,7 @@ A universal form module.
 
 * [Getting Started](#getting-started)
 * [Basic Example](#basic-example)
-* [Initialization](#initialization)
+* [Initialisation](#initialisation)
    * [Options](#options)
    * [Defaults](#defaults)
 * [HTML Examples](#html-examples)
