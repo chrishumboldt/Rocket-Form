@@ -52,7 +52,7 @@ Rocket.form();
 ```
 
 ## Initialisation
-Each initialization will bind to new form targets but will overlook existing ones. However existing form targets will have the state updated.
+Each initialisation will bind to new form targets but will overlook existing ones. However existing form targets will have the state updated.
 
 #### Options
 See the different options you have available on initialisation.
