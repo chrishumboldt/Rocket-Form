@@ -1,0 +1,55 @@
+/**
+@author Chris Humboldt
+**/
+
+@mixin mod-form-group {
+   .mod-form-group {
+      @include row;
+   }
+   .mod-form .mod-form-group input:focus {
+      @include level(2);
+   }
+
+   // Two
+   .mod-form .mod-form-group._mod-group-two > input,
+   .mod-form .mod-form-group._mod-group-two > .mod-form-icon {
+      @include span(6);
+      @include margin-l(-1px);
+   }
+   .mod-form .mod-form-group._mod-group-two > input:first-child,
+   .mod-form .mod-form-group._mod-group-two > .mod-form-icon:first-child {
+      @include margin-l(0px);
+   }
+   .mod-form .mod-form-group._mod-group-two > input:first-child,
+   .mod-form .mod-form-group._mod-group-two > .mod-form-icon:first-child > input {
+      @include margin-l(0px);
+      @include border-radius-l;
+   }
+   .mod-form .mod-form-group._mod-group-two > input:last-child,
+   .mod-form .mod-form-group._mod-group-two > .mod-form-icon:last-child > input {
+      @include border-radius-r;
+   }
+
+   // Three
+   .mod-form .mod-form-group._mod-group-three > input {
+      @include border-radius-no;
+   }
+   .mod-form .mod-form-group._mod-group-three > input,
+   .mod-form .mod-form-group._mod-group-three > .mod-form-icon {
+      @include span(4);
+      @include margin-l(-1px);
+   }
+   .mod-form .mod-form-group._mod-group-three > input:first-child,
+   .mod-form .mod-form-group._mod-group-three > .mod-form-icon:first-child {
+      @include margin-l(0px);
+   }
+   .mod-form .mod-form-group._mod-group-three > input:first-child,
+   .mod-form .mod-form-group._mod-group-three > .mod-form-icon:first-child > input {
+      @include margin-l(0px);
+      @include border-radius-l;
+   }
+   .mod-form .mod-form-group._mod-group-three > input:last-child,
+   .mod-form .mod-form-group._mod-group-three > .mod-form-icon:last-child > input {
+      @include border-radius-r;
+   }
+}

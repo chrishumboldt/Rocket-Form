@@ -29,7 +29,7 @@
 <pre class="prettyprint linenums">
 npm install rocket-form
 </pre>
-         <p class="note">Note that this module has a dependency <a href="https://github.com/chrishumboldt/Rocket-Tools" class="link" target="_blank">Rocket Tools (21kb)</a> which will automatically be installed as well.</p>
+         <p class="note">Note that this module has a dependency <a href="https://github.com/chrishumboldt/Rocket-Tools" class="link" target="_blank">Rocket Tools (28kb)</a> which will automatically be installed as well.</p>
 			<p>Start by including the necessary files.</p>
 <pre class="prettyprint linenums">
 &lt;head&gt;
@@ -42,20 +42,31 @@ npm install rocket-form
 &lt;/body&gt;
 </pre>
 			<br>
-			<h4>Javascript Call</h4>
+			<h4>HTML and Javascript Call</h4>
 <pre class="prettyprint linenums">
+&lt;div class="mod-form"&gt;
+   &lt;label for="text-1"&gt;Form Label&lt;/label&gt;
+   &lt;input type="text" id="text-1"&gt;
+&lt;/div&gt;
+
+&lt;div class="mod-form-alt"&gt;
+   &lt;label for="text-2"&gt;Form Label&lt;/label&gt;
+   &lt;input type="text" id="text-2"&gt;
+&lt;/div&gt;
+
 &lt;script&gt;
+// Default targets property is ".mod-form".
 Rocket.form({
-    targets: '.form-el',
-    colour: 'red',
-    style: 'raised'
+   colour: 'red',
+   style: 'raised'
 });
+
 // With Shifting Label
 Rocket.form({
-    targets: '.form-el-2',
-    colour: 'red',
-    label: 'shift',
-    style: 'raised'
+   targets: '.mod-form-alt',
+   colour: 'red',
+   label: 'shift',
+   style: 'raised'
 });
 &lt;/script&gt;
 </pre>
@@ -64,34 +75,34 @@ Rocket.form({
 			<div class="block">
 				<div class="left">
 					<h3>Basic Inputs</h3>
-					<div class="form-el">
+					<div class="mod-form">
 						<input type="text" id="text-1" placeholder="Text input">
 					</div>
-					<div class="form-el">
+					<div class="mod-form">
 						<label for="password-1">Password Label</label>
 						<input type="password" id="password-1" placeholder="Password input">
 					</div>
-					<div class="form-el-2">
+					<div class="mod-form-alt">
 						<label for="text-2">Shift Label</label>
 						<input type="text" id="text-2">
 					</div>
-					<div class="form-el">
+					<div class="mod-form">
 						<label for="textarea-1">Textarea Label</label>
-						<textarea id="textarea-1" placeholder="Textarea"></textarea>
+						<textarea id="textarea-1" placeholder="Textarea">This is a test.</textarea>
 					</div>
-					<div class="form-el-2">
+					<div class="mod-form-alt">
 						<label for="textarea-2">Textarea Shift Label</label>
 						<textarea id="textarea-2"></textarea>
 					</div>
-					<div class="form-el">
-						<label for="text-2">Input Icon</label>
-						<div class="input-icon">
+					<div class="mod-form">
+						<label for="text-3">Input Icon</label>
+						<div class="mod-form-icon">
 							<i class="fa fa-cog"></i>
-							<input type="text" id="text-2" placeholder="Text input">
+							<input type="text" id="text-3" placeholder="Text input">
 						</div>
 					</div>
 					<h3>Drop-down</h3>
-					<div class="form-el">
+					<div class="mod-form">
 						<select>
 							<option value="1">Select Option 1</option>
 							<option value="2">Select Option 2</option>
@@ -102,41 +113,40 @@ Rocket.form({
 				<div class="right">
 					<h3>Checkboxes</h3>
 
-					<div class="form-el">
+					<div class="mod-form">
 						<input type="checkbox" id="checkbox-1" checked="checked">
 						<label for="checkbox-1">Checkbox 1</label>
 					</div>
 
-					<div class="form-el">
+					<div class="mod-form">
 						<input type="checkbox" id="checkbox-2" checked="checked">
 						<label for="checkbox-2">Checkbox 2</label>
 					</div>
 
-					<div class="form-el">
+					<div class="mod-form">
 						<input type="checkbox" id="checkbox-3">
 						<label for="checkbox-3">Checkbox 3</label>
 					</div>
 
 					<h3>Toggler</h3>
 
-					<div class="form-el">
-						<input type="checkbox" id="toggler-1" class="toggler">
-						<span class="handle"></span>
+					<div class="mod-form">
+						<input type="checkbox" id="toggler-1" class="_mod-make-toggler" checked="checked">
 					</div>
 
 					<h3>Radio Inputs</h3>
 
-					<div class="form-el">
+					<div class="mod-form">
 						<input type="radio" id="radio-1" name="radio-selection" value="1" checked="checked">
 						<label for="radio-1">Radio Selection</label>
 					</div>
 
-					<div class="form-el">
+					<div class="mod-form">
 						<input type="radio" id="radio-2" name="radio-selection" value="2">
 						<label for="radio-2">Radio Selection</label>
 					</div>
 
-					<div class="form-el">
+					<div class="mod-form">
 						<input type="radio" id="radio-3" name="radio-selection" value="3">
 						<label for="radio-3">Radio Selection</label>
 					</div>
@@ -145,33 +155,33 @@ Rocket.form({
 			<div class="block">
 				<h3>Input Group</h3>
 
-				<div class="form-el">
-					<label for="text-3">Two</label>
-					<div class="input-group-two">
-						<input type="text" id="text-3" placeholder="Text input">
+				<div class="mod-form">
+					<label for="text-4">Two</label>
+					<div class="mod-form-group _mod-group-two">
 						<input type="text" id="text-4" placeholder="Text input">
+						<input type="text" id="text-5" placeholder="Text input">
 					</div>
 				</div>
 
-				<div class="form-el">
-					<label for="text-5">Three</label>
-					<div class="input-group-three">
-						<input type="text" id="text-5" placeholder="Text input">
+				<div class="mod-form">
+					<label for="text-6">Three</label>
+					<div class="mod-form-group _mod-group-three">
 						<input type="text" id="text-6" placeholder="Text input">
 						<input type="text" id="text-7" placeholder="Text input">
+						<input type="text" id="text-8" placeholder="Text input">
 					</div>
 				</div>
 
-				<div class="form-el">
-					<label for="text-8">Two With Icon</label>
-					<div class="input-group-two">
-						<div class="input-icon">
-							<i class="fa fa-cog"></i>
-							<input type="text" id="text-8" placeholder="Text input">
-						</div>
-						<div class="input-icon">
+				<div class="mod-form">
+					<label for="text-9">Two With Icon</label>
+					<div class="mod-form-group _mod-group-two">
+						<div class="mod-form-icon">
 							<i class="fa fa-cog"></i>
 							<input type="text" id="text-9" placeholder="Text input">
+						</div>
+						<div class="mod-form-icon">
+							<i class="fa fa-cog"></i>
+							<input type="text" id="text-10" placeholder="Text input">
 						</div>
 					</div>
 				</div>
@@ -195,19 +205,10 @@ Rocket.form({
 	<!-- Scripts -->
    <script src="node_modules/rocket-tools/js/tools.min.js"></script>
 	<script src="node_modules/rocket-demo/js/demo.min.js"></script>
-	<script src="js/form.min.js"></script>
+	<script src="build/js/form.js"></script>
 	<script>
-      Rocket.form({
-   		target: '.form-el',
-   		colour: 'red',
-   		style: 'raised'
-   	});
-   	Rocket.form({
-   		target: '.form-el-2',
-   		colour: 'red',
-   		label: 'shift',
-   		style: 'raised'
-   	});
+      Rocket.form();
+      Rocket.form({targets: '.mod-form-alt', label: 'shift'});
 	</script>
 
 </body>

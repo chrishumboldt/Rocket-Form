@@ -1,8 +1,8 @@
 /**
- * Author: Chris Humboldt
+@author Chris Humboldt
 **/
 
-@mixin rocket-form-setup() {
+@mixin mod-form-setup {
 	@font-face {
 		font-family: 'rocket-form';
 		src:url('#{$font-face-rocket-form}/icomoon.eot?c4hmew');
@@ -14,6 +14,7 @@
 		font-style: normal;
 	}
 }
+
 @mixin rocket-form-shadow() {
-	@include drop-shadow(fade-out($black, 0.88), 26px, 4px);
+   @include drop-shadow(fade-out($black, 0.88), 26px, 4px);
 };

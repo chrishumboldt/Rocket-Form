@@ -1,5 +1,5 @@
 /**
- * Author: Chris Humboldt
+@author Chris Humboldt
 **/
 
 // Variables
@@ -12,10 +12,12 @@ $grey-form: lighten(#000, 85%);
 @import "module/setup";
 
 @import "module/check";
+@import "module/colour";
+@import "module/group";
 @import "module/input";
 @import "module/label";
 @import "module/select";
-@import "module/textarea";
+@import "module/style";
 @import "module/toggler";
 
 @import "css/execute";

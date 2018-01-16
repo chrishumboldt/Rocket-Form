@@ -1,39 +1,31 @@
 /**
- * Author: Chris Humboldt
+@author Chris Humboldt
 **/
 
-@mixin rocket-form-label() {
-	label {
-		@include display(inline-block);
-		@include spacing-no();
-		@include margin-bottom(6px);
-		@include text-colour($black-base);
-		@include text-font($font-family);
-		@include text-size(14px);
-		@include text-weight(normal);
-		@include level(5);
-		// Hover
-		.rocket-no-touch &:hover {
-			@include cursor(pointer);
-		}
-	}
-	._l-shift {
-		label {
-			@include spacing-no();
-			@include position(absolute, left 15px top 12px);
-			@include text-size(13px);
-			@include opacity(0.5);
-			@include breakpoint(large) {
-				@include text-size(14px);
-			}
-		}
-      &._animate label {
-         @include animate(all);
-      }
-		&._valued label {
-			@include position-set(top -19px left 0px);
-			@include text-size(11px);
-			@include opacity(1);
-		}
-	}
+@mixin mod-form-label {
+   .mod-form label {
+      @include show(inline-block);
+      @include spacing-no();
+      @include margin-b(6px);
+      @include text-colour($black-base);
+      @include text-font($font-family);
+      @include text-size(14px);
+      @include text-weight(normal);
+      @include level(5);
+   }
+   .rocket-no-touch mod-form label:hover {
+      @include cursor(pointer);
+   }
+
+   .mod-form._mod-label-shift label {
+      @include position(absolute, left 15px top 12px);
+      @include text-size(13px);
+      @include opacity(0.5);
+      @include animate(all);
+   }
+   .mod-form._mod-label-shift.is-valued label {
+      @include position-set(top -19px left 0px);
+      @include text-size(11px);
+      @include opacity(1);
+   }
 }

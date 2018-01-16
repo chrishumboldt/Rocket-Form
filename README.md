@@ -4,9 +4,15 @@ A universal form module.
 * [Getting Started](#getting-started)
 * [Basic Example](#basic-example)
 * [Initialization](#initialization)
-	* [Options](#options)
-	* [Defaults](#defaults)
+   * [Options](#options)
+   * [Defaults](#defaults)
 * [HTML Examples](#html-examples)
+   * [Basic Inputs](#basic-inputs)
+   * [Text Area](#text-area)
+   * [Checkboxes](#checkboxes)
+   * [Toggler](#toggler)
+   * [Radio Buttons](#radio-buttons)
+   * [Select Element](#select-element)
 * [Formplate Deprecated](#formplate-deprecated)
 
 ## Getting Started
@@ -16,7 +22,7 @@ Install via NPM.
 npm install rocket-form
 ```
 
-**NOTE** that this module has a dependency [Rocket Tools (21kb)](https://github.com/chrishumboldt/Rocket-Tools) which will automatically be installed as well.
+**NOTE** that this module has a dependency [Rocket Tools (28kb)](https://github.com/chrishumboldt/Rocket-Tools) which will automatically be installed as well.
 
 Start by including the necessary files.
 
@@ -25,7 +31,7 @@ Start by including the necessary files.
    <link href="node_modules/rocket-form/css/form.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-   /* Your content goes here */
+   <!-- Your content goes here -->
    <script src="node_modules/rocket-tools/js/tools.min.js"></script>
    <script src="node_modules/rocket-form/js/form.min.js"></script>
 </body>
@@ -35,51 +41,37 @@ Start by including the necessary files.
 You will need to wrap your form elements with an identifier of your choice. Below is an example of executing the module complete with required HTML and Javascript.
 
 ```html
-<div class="form-element">
+<div class="mod-form">
    <label for="input-example">Example Label<label>
-   <input id="input-example" type="text" placeholder="Example Input">
+   <input id="input-example" type="text">
 </div>
 
 <script>
-Rocket.form({
-   target: '.form-elements',
-   style: 'raised'
-});
+Rocket.form();
 </script>
 ```
 
 ## Initialization
-Each initialization will return an array of module objects (An array will always be returned even if the target is an id). This includes the form element itself as well as relevant methods. For example:
-
-```javascript
-var forms = Rocket.form();
-
-// The form elements and all methods
-for (var i = 0, len = forms.length; i < len; i++) {
-   console.log(forms[i].form);
-   forms[i].clear(); // Clear the value. Works on text inputs and textareas.
-   forms[i].toggle('on'); // Toggle the form element to "on". Works on radio and checkboxes.
-   forms[i].toggle('off');
-}
-```
-
-Alternatively if you know the target is unique you can reference the form element right away with the 0 index. For example:
-
-```javascript
-var form = Rocket.form({
-   target: '#form-element'
-})[0]; // Reference the first item in the array right away.
-```
+Each initialization will bind to new form targets but will overlook existing ones. However existing form targets will have the state updated.
 
 #### Options
 See the different options you have available on initialization.
 
 Name | Default | Options | Description
 ---- | ---- | ---- | ----
-`target` | `.form` | | Set the HTML target.
+`targets` | `.mod-form` | | Set the HTML target.
 `colour` | `blue` | `grey` `black` `white` `aqua` `blue` `green` `orange` `pink` `purple` `red` `grey-blue` | Set the colour of the form elements.
 `label` | `normal` | `normal` `shift` | Set an animation on the form label.
 `style` | `line` | `flat` `line` `raised` | Set the style of the form elements.
+
+```javascript
+Rocket.form({
+   targets: '.form-element',
+   colour: 'red',
+   label: 'shift',
+   style: 'raised'
+});
+```
 
 #### Defaults
 You can also overwrite the module options globally by altering the Rocket defaults. To do so reference the defaults object property, for example:
@@ -90,98 +82,94 @@ Rocket.defaults.form.colour = 'green';
 ```
 
 ## HTML Examples
+There are a variety of unique form elements with each being viable targets.  See an example of each below:
+
+#### Basic Inputs
 ```html
-<div class="form">
-   <label for="text-1">Text Label</label>
-   <input type="text" id="text-1" placeholder="Text input">
+<!-- Regular input (applies to text, email, search etc...) -->
+<div class="mod-form">
+   <label for="text-1">Text Field</label>
+   <input id="text-1" type="text">
 </div>
-<div class="form">
-   <label for="password-1">Password Label</label>
-   <input type="password" id="password-1" placeholder="Password input">
+
+<!-- Password input -->
+<div class="mod-form">
+   <label for="password-1">Password Field</label>
+   <input id="password-1" type="password">
 </div>
-<div class="form">
-   <label for="textarea-1">Textarea Label</label>
-   <textarea id="textarea-1" placeholder="Textarea"></textarea>
-</div>
-<div class="form">
-   <label for="text-2">Input Icon</label>
-   <div class="input-icon">
+
+<!-- With icon -->
+<div class="mod-form">
+   <label for="text-2">Text Field</label>
+   <div class="mod-form-icon">
       <i class="fa fa-cog"></i>
-      <input type="text" id="text-2" placeholder="Text input">
+      <input id="text-2" type="text">
    </div>
 </div>
+```
 
-<!-- Drop-down -->
-<div class="form">
+#### Text Area
+```html
+<div class="mod-form">
+   <label for="textarea-1">Text Area</label>
+   <textarea id="textarea-1"></textarea>
+</div>
+```
+
+#### Checkboxes
+In this example the only difference to basic inputs is the oder of the elements and the type. Although it is not 100% necessary to change the order, it is good practice.
+
+```html
+<div class="mod-form">
+   <input id="check-1" type="checkbox">
+   <label for="check-1">Checkbox 1</label>
+</div>
+
+<!-- Checked example -->
+<div class="mod-form">
+   <input id="check-2" type="checkbox" checked="checked">
+   <label for="check-2">Checkbox 2</label>
+</div>
+```
+
+#### Toggler
+A toggler is a special modifier made to a checkbox. It just looks cool.
+
+```html
+<div class="mod-form">
+   <input type="checkbox" class="_mod-make-toggler">
+</div>
+```
+
+#### Radio Buttons
+Radio buttons have the same element order as checkboxes.
+
+```html
+<div class="mod-form">
+   <input id="radio-1" type="radio" name="radio-option" checked="checked">
+   <label for="radio-1">Radio Option</label>
+</div>
+
+<div class="mod-form">
+   <input id="radio-2" type="radio" name="radio-option">
+   <label for="radio-2">Radio Option</label>
+</div>
+
+<div class="mod-form">
+   <input id="radio-3" type="radio" name="radio-option">
+   <label for="radio-3">Radio Option</label>
+</div>
+```
+
+#### Select Element
+
+```html
+<div class="mod-form">
    <select>
-      <option value="1">Select Option 1</option>
-      <option value="2">Select Option 2</option>
-      <option value="3">Select Option 3</option>
+      <option>Select Option 1</option>
+      <option>Select Option 2</option>
+      <option>Select Option 3</option>
    </select>
-</div>
-
-<!-- Checkboxes -->
-<div class="form">
-   <input type="checkbox" id="checkbox-1" checked="checked">
-   <label for="checkbox-1">Checkbox 1</label>
-</div>
-<div class="form">
-   <input type="checkbox" id="checkbox-2">
-   <label for="checkbox-2">Checkbox 2</label>
-</div>
-<div class="form">
-   <input type="checkbox" id="checkbox-3">
-   <label for="checkbox-3">Checkbox 3</label>
-</div>
-
-<!-- Toggler -->
-<div class="form">
-   <input type="checkbox" class="toggler">
-	<span class="handle"></span>
-</div>
-
-<!-- Radio Inputs -->
-<div class="form">
-   <input type="radio" id="radio-1" name="radio-selection" value="1" checked="checked">
-   <label for="radio-1">Radio Selection</label>
-</div>
-<div class="form">
-   <input type="radio" id="radio-2" name="radio-selection" value="2">
-   <label for="radio-2">Radio Selection</label>
-</div>
-<div class="form">
-   <input type="radio" id="radio-3" name="radio-selection" value="3">
-   <label for="radio-3">Radio Selection</label>
-</div>
-
-<!-- Input Group -->
-<div class="form">
-   <label for="text-3">Two</label>
-   <div class="input-group-two">
-      <input type="text" id="text-3" placeholder="Text input">
-      <input type="text" id="text-4" placeholder="Text input">
-   </div>
-</div>
-<div class="form">
-   <label for="text-5">Three</label>
-   <div class="input-group-three">
-      <input type="text" id="text-5" placeholder="Text input">
-      <input type="text" id="text-6" placeholder="Text input">
-      <input type="text" id="text-7" placeholder="Text input">
-   </div>
-</div>
-<div class="form">
-   <label for="text-8">Two With Icon</label>
-   <div class="input-group-two">
-      <div class="input-icon">
-         <i class="fa fa-cog"></i>
-         <input type="text" id="text-8" placeholder="Text input">
-      </div>
-      <div class="input-icon">
-         <i class="fa fa-cog"></i>
-         <input type="text" id="text-9" placeholder="Text input">
-      </div>
-   </div>
 </div>
 ```
 
@@ -195,7 +183,7 @@ Twitter: <a href="https://twitter.com/chrishumboldt">twitter.com/chrishumboldt</
 GitHub <a href="https://github.com/chrishumboldt">github.com/chrishumboldt</a><br>
 
 ## Copyright and License
-Copyright 2017 Rocket Project
+Copyright 2018 Rocket Project
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
