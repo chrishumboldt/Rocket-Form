@@ -4,7 +4,7 @@
 
 // Set the defaults
 Rocket.defaults.form = {
-   targets: '.mod-form',
+   target: '.mod-form',
    colour: 'blue',
    label: 'normal',
    size: 'normal',
@@ -13,7 +13,7 @@ Rocket.defaults.form = {
 
 // Module
 Rocket.form = ({
-   targets = Rocket.defaults.form.targets,
+   target = Rocket.defaults.form.target,
    colour = Rocket.defaults.form.colour,
    label = Rocket.defaults.form.label,
    size = Rocket.defaults.form.size,
@@ -163,7 +163,7 @@ Rocket.form = ({
    };
 
    function init() {
-      const formElms = Rocket.dom.select(targets);
+      const formElms = Rocket.dom.select(target);
 
       updateFormClasses();
       if (formElms.length > 0) { formElms.map((item) => applyForm(item)) };
