@@ -51,22 +51,22 @@ Rocket.form();
 </script>
 ```
 
-## Initialization
+## Initialisation
 Each initialization will bind to new form targets but will overlook existing ones. However existing form targets will have the state updated.
 
 #### Options
-See the different options you have available on initialization.
+See the different options you have available on initialisation.
 
 Name | Default | Options | Description
 ---- | ---- | ---- | ----
-`targets` | `.mod-form` | | Set the HTML target.
+`target` | `.mod-form` | | Set the HTML target.
 `colour` | `blue` | `grey` `black` `white` `aqua` `blue` `green` `orange` `pink` `purple` `red` `grey-blue` | Set the colour of the form elements.
 `label` | `normal` | `normal` `shift` | Set an animation on the form label.
 `style` | `line` | `flat` `line` `raised` | Set the style of the form elements.
 
 ```javascript
 Rocket.form({
-   targets: '.form-element',
+   target: '.form-element',
    colour: 'red',
    label: 'shift',
    style: 'raised'
