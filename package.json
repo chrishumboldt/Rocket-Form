@@ -1,6 +1,6 @@
 {
   "name": "rocket-form",
-  "version": "3.1.8",
+  "version": "3.2.0",
   "description": "A simple form module.",
   "main": "js/form.min.js",
   "repository": {
