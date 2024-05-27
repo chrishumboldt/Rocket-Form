@@ -1,3 +1,5 @@
+# NO LONGER SUPPORTED
+
 # Rocket Form
 A universal form module.
 
@@ -195,7 +197,6 @@ The original library, Formplate, has been deprecated. The entire Webplate projec
 ## Author
 Created and maintained by Chris Humboldt<br>
 Website: <a href="http://chrishumboldt.com/">chrishumboldt.com</a><br>
-Twitter: <a href="https://twitter.com/chrishumboldt">twitter.com/chrishumboldt</a><br>
 GitHub <a href="https://github.com/chrishumboldt">github.com/chrishumboldt</a><br>
 
 ## Copyright and License
